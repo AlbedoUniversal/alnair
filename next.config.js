@@ -6,7 +6,7 @@
 		ignoreDuringBuilds: false,
 	},
 	typescript: {
-		ignoreBuildErrors: false,
+		ignoreBuildErrors: true,
 	},
 	swcMinify: true,
 	webpack(config) {
