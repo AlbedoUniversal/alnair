@@ -1,0 +1,44 @@
+@define-mixin responsiveFont
+  $mobileSize,
+  $desktopSize,
+  $lineHeight,
+  $growthRate: 0.5
+ {
+  font-size: $mobileSize;
+
+  @media (min-width: 375px) and (max-width: 1440px) {
+    font-size: calc($(mobileSize)px + ($(desktopSize) - $(mobileSize)) * ((100vw - 375px) / 1065));
+  }
+
+  @media (min-width: 1441px) {
+    font-size: $(desktopSize)px;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: calc($(desktopSize)px + $(growthRate)vw);
+  }
+
+  @media (max-width: 359px) {
+    font-size: calc($(mobileSize)px - $(growthRate)vw);
+  }
+
+  line-height: $lineHeight;
+}
+
+@define-mixin fluid $property, $minSize, $maxSize, $growthRate: 0.5 {
+
+	@media (min-width: 360px) and (max-width: 1440px) {
+		$(property): calc($(minSize)px + ($(maxSize) - $(minSize)) * ((100vw - 375px) / 1065));
+	}
+	@media (min-width: 1441px) {
+		$(property): $(maxSize)px;
+	  }
+
+	@media (min-width: 1920px) {
+		$(property): calc($(maxSize)px + $(growthRate)vw);
+	}
+
+	@media (max-width: 359px) {
+		$(property): calc($(minSize)px - $(growthRate)vw);
+	}
+}

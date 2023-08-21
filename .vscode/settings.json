@@ -1,0 +1,148 @@
+{
+	//===========================================
+	//============= Editor ======================
+	//===========================================
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	//===========================================
+	//============= Default Linters =============
+	//===========================================
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true,
+		"source.fixAll.eslint": true
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.stylelint": true
+		}
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"files.trimTrailingWhitespace": false,
+		"editor.renderWhitespace": "all",
+		"editor.acceptSuggestionOnEnter": "off",
+		"editor.parameterHints.enabled": false,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"editor.snippetSuggestions": "none"
+	},
+	//===========================================
+	//============= Linters =====================
+	//===========================================
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"eslint.workingDirectories": ["./src"],
+	"css.validate": false,
+	"scss.validate": false,
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "scss"],
+	"stylelint.packageManager": "pnpm",
+	"eslint.packageManager": "pnpm",
+	"prettier.requireConfig": true,
+	//===========================================
+	//============= Other =======================
+	//===========================================
+	"npm.packageManager": "pnpm",
+	//===========================================
+	//============= TS ==========================
+	//===========================================
+	"typescript.tsdk": "node_modules\\.pnpm\\typescript@4.9.4\\node_modules\\typescript\\lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	//===========================================
+	//============= Files =======================
+	//===========================================
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	//===========================================
+	//============= cSpell ======================
+	//===========================================
+	"cSpell.enabledLanguageIds": ["markdown", "plaintext", "text", "yml"],
+	"cSpell.language": "en,ru",
+	"cSpell.enableFiletypes": [
+		"jsonc",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"javascript"
+	],
+	"cSpell.words": [
+		"vben",
+		"windi",
+		"browserslist",
+		"tailwindcss",
+		"esnext",
+		"antv",
+		"tinymce",
+		"qrcode",
+		"sider",
+		"pinia",
+		"sider",
+		"nprogress",
+		"EDITMSG",
+		"INTLIFY",
+		"stylelint",
+		"esno",
+		"vitejs",
+		"sortablejs",
+		"mockjs",
+		"codemirror",
+		"iconify",
+		"commitlint",
+		"vditor",
+		"echarts",
+		"cropperjs",
+		"logicflow",
+		"wemake",
+		"vueuse",
+		"zxcvbn",
+		"lintstagedrc",
+		"brotli",
+		"tailwindcss",
+		"sider",
+		"tanstack",
+		"nextjs",
+		"preinstall",
+		"trivago",
+		"svgr",
+		"abouts",
+		"hookform",
+		"cadnum",
+		"msapplication",
+		"mantine",
+	],
+}
