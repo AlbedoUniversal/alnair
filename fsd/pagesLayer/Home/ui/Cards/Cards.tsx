@@ -48,7 +48,6 @@ const useStyles = createStyles((theme) => ({
 
 export const Cards = () => {
 	const { classes } = useStyles();
-	console.log(data);
 
 	return (
 		<Center style={{ gap: '15px' }}>

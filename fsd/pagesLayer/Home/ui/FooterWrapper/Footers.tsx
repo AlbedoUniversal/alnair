@@ -30,23 +30,15 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const mainLinks = [
-	{ name: 'News', link: '' },
-	{ name: 'Knowledge base', link: '' },
+	{ name: 'Cards', link: '/' },
+	{ name: 'Sortable table', link: '/sortable' },
 	{ name: 'Release Notes', link: '' },
 ];
 
 export const Footers = () => {
 	const { classes } = useStyles();
 	const items = mainLinks.map((link) => (
-		<Anchor<'a'>
-			color="dimmed"
-			key={link.name}
-			href={link.link}
-			onClick={(event) => {
-				event.preventDefault();
-			}}
-			size="sm"
-		>
+		<Anchor<'a'> color="dimmed" key={link.name} href={link.link} size="sm">
 			{link.name}
 		</Anchor>
 	));

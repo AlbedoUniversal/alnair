@@ -8,14 +8,15 @@ import {
 	rem,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import LogoSVG from 'public/logos/logo.svg';
 
 const mainLinks = [
-	{ name: 'News', link: '' },
-	{ name: 'Knowledge base', link: '' },
-	{ name: 'Release Notes', link: '' },
+	{ name: 'Cards', link: '/' },
+	{ name: 'Sortable Table', link: '/sortable' },
+	{ name: 'Release Notes', link: '/' },
 ];
 const HEADER_HEIGHT = rem(84);
 const useStyles = createStyles((theme) => ({
@@ -105,21 +106,6 @@ export const Headers = () => {
 	const { classes, cx } = useStyles();
 	const [active, setActive] = useState(0);
 
-	const mainItems = mainLinks.map((item, index) => (
-		<Anchor<'a'>
-			href={item.link}
-			key={item.name}
-			className={cx(classes.mainLink, {
-				[classes.mainLinkActive]: index === active,
-			})}
-			onClick={(event) => {
-				event.preventDefault();
-				setActive(index);
-			}}
-		>
-			{item.name}
-		</Anchor>
-	));
 	return (
 		<Header height={HEADER_HEIGHT} mb={120} className={classes.header}>
 			<Container className={classes.inner}>
@@ -129,7 +115,20 @@ export const Headers = () => {
 
 				<div className={classes.links}>
 					<Group spacing={0} position="right" className={classes.mainLinks}>
-						{mainItems}
+						{mainLinks.map((item, index) => (
+							<Link
+								key={index}
+								href={item.link}
+								className={cx(classes.mainLink, {
+									[classes.mainLinkActive]: index === active,
+								})}
+								onClick={() => {
+									setActive(index);
+								}}
+							>
+								{item.name}
+							</Link>
+						))}
 					</Group>
 				</div>
 				<Burger

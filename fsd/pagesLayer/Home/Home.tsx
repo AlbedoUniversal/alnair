@@ -1,19 +1,16 @@
 import { Graphik } from '@/shared/lib/utils/font';
 
 import { HomePageMeta } from './Home.meta';
+import { AppLayout } from './ui/AppLayout';
 import { Cards } from './ui/Cards';
-import { Footers } from './ui/FooterWrapper';
-import { Headers } from './ui/HeaderWrapper';
 
 const HomePage = () => (
-	<>
+	<AppLayout>
 		<HomePageMeta />
 		<main className={Graphik.className}>
-			<Headers />
 			<Cards />
-			<Footers />
 		</main>
-	</>
+	</AppLayout>
 );
 
 export { HomePage };
