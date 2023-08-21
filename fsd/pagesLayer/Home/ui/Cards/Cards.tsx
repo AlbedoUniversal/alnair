@@ -4,6 +4,7 @@ import {
 	Card,
 	Center,
 	createStyles,
+	Grid,
 	Group,
 	Image,
 	rem,
@@ -16,8 +17,6 @@ const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-		maxHeight: '600px',
-		maxWidth: '300px',
 	},
 
 	imageSection: {
@@ -25,6 +24,9 @@ const useStyles = createStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+		maxHeight: '600px',
+		maxWidth: '300px',
+		objectFit: 'cover',
 		borderBottom: `${rem(1)} solid ${
 			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
 		}`,
@@ -50,48 +52,50 @@ export const Cards = () => {
 	const { classes } = useStyles();
 
 	return (
-		<Center style={{ gap: '15px' }}>
+		<Grid gutter={70}>
 			{data.map((item, i) => (
-				<Card withBorder radius="md" className={classes.card} key={i}>
-					<Card.Section className={classes.imageSection}>
-						<Center>
-							<Image
-								src={
-									item.feed.content['realty-feed'].offers.levels_photos
-										.level_photo.image
-								}
-								alt="photo"
-							/>
-						</Center>
-					</Card.Section>
-					<Card.Section className={classes.section}>
-						<Group position="apart">
-							<div>
-								<Text fw={500}>
-									{item.feed.content['realty-feed'].offers.building_name.en}
-									{item.feed.content['realty-feed'].offers.title.en}
-								</Text>
-								<Text fz="xs" c="dimmed">
-									{item.feed.content['realty-feed'].offers.title.en}
-								</Text>
-							</div>
-							<Badge variant="outline">More details</Badge>
-						</Group>
-					</Card.Section>
-					<Card.Section className={classes.section}>
-						<Group position="apart">
-							<div>
-								<Text fz="m" fw={600} sx={{ lineHeight: 1 }}>
-									{item.feed.content['realty-feed'].offers.price.min}
-									{item.feed.content['realty-feed'].offers.price.currency}
-								</Text>
-							</div>
+				<Grid.Col key={i} span={4}>
+					<Card withBorder radius="md" className={classes.card} key={i}>
+						<Card.Section className={classes.imageSection}>
+							<Center>
+								<Image
+									src={
+										item.feed.content['realty-feed'].offers.levels_photos
+											.level_photo.image
+									}
+									alt="photo"
+								/>
+							</Center>
+						</Card.Section>
+						<Card.Section className={classes.section}>
+							<Group position="apart">
+								<div>
+									<Text fw={500}>
+										{item.feed.content['realty-feed'].offers.building_name.en}
+										{item.feed.content['realty-feed'].offers.title.en}
+									</Text>
+									<Text fz="xs" c="dimmed">
+										{item.feed.content['realty-feed'].offers.title.en}
+									</Text>
+								</div>
+								<Badge variant="outline">More details</Badge>
+							</Group>
+						</Card.Section>
+						<Card.Section className={classes.section}>
+							<Group position="apart">
+								<div>
+									<Text fz="m" fw={600} sx={{ lineHeight: 1 }}>
+										{item.feed.content['realty-feed'].offers.price.min}
+										{item.feed.content['realty-feed'].offers.price.currency}
+									</Text>
+								</div>
 
-							<Button radius="xl">Buy now</Button>
-						</Group>
-					</Card.Section>
-				</Card>
+								<Button radius="xl">Buy now</Button>
+							</Group>
+						</Card.Section>
+					</Card>
+				</Grid.Col>
 			))}
-		</Center>
+		</Grid>
 	);
 };

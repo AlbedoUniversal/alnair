@@ -32,7 +32,6 @@ const useStyles = createStyles((theme) => ({
 const mainLinks = [
 	{ name: 'Cards', link: '/' },
 	{ name: 'Sortable table', link: '/sortable' },
-	{ name: 'Release Notes', link: '' },
 ];
 
 export const Footers = () => {

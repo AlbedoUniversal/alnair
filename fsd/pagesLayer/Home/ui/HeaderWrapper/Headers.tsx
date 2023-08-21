@@ -16,7 +16,6 @@ import LogoSVG from 'public/logos/logo.svg';
 const mainLinks = [
 	{ name: 'Cards', link: '/' },
 	{ name: 'Sortable Table', link: '/sortable' },
-	{ name: 'Release Notes', link: '/' },
 ];
 const HEADER_HEIGHT = rem(84);
 const useStyles = createStyles((theme) => ({

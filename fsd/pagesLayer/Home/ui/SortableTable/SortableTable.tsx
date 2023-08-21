@@ -48,6 +48,24 @@ export const SortableTable = () => {
 			return true;
 		});
 
+		filtered = filtered.filter((item) => {
+			if (filters.districts.length) {
+				return filters.districts.includes(item.districts);
+			}
+
+			return true;
+		});
+
+		filtered = filtered.filter((item) => {
+			if (filters.amenities.length) {
+				return item.amenities.some((a) =>
+					filters.amenities.includes(a.amenity.en)
+				);
+			}
+
+			return true;
+		});
+
 		setFilteredData(filtered);
 	};
 
@@ -56,11 +74,20 @@ export const SortableTable = () => {
 		[]
 	);
 
+	const districtsOptions = useMemo(
+		() => objects.map((item) => item.districts),
+		[]
+	);
+
+	const amenityOptions = [
+		...new Set(
+			objects.flatMap((item) => item.amenities.map((a) => a.amenity.en))
+		),
+	];
+
 	useEffect(() => {
 		filterData();
 	}, [filters]);
-
-	console.log(filteredData);
 
 	return (
 		<AppLayout>
@@ -78,6 +105,22 @@ export const SortableTable = () => {
 					value={filters.developers}
 					onChange={(value: any) => {
 						handleFilterChange('developers', value);
+					}}
+				/>
+				<MultiSelect
+					data={districtsOptions}
+					placeholder="Choose districts"
+					value={filters.districts}
+					onChange={(value: any) => {
+						handleFilterChange('districts', value);
+					}}
+				/>
+				<MultiSelect
+					data={amenityOptions}
+					placeholder="Choose amenities"
+					value={filters.amenities}
+					onChange={(value: any) => {
+						handleFilterChange('amenities', value);
 					}}
 				/>
 				<ScrollArea>
@@ -98,11 +141,7 @@ export const SortableTable = () => {
 									<td>{row['complex-id']}</td>
 									<td>{row.title.en}</td>
 									<td>{row.developer.title.en}</td>
-									<td>
-										{row.districts.map((district) => (
-											<Text key={district}>{district}</Text>
-										))}
-									</td>
+									<td>{row.districts}</td>
 									<td>
 										{row.amenities.map((amenity) => (
 											<Text key={amenity.amenity.en}>{amenity.amenity.en}</Text>

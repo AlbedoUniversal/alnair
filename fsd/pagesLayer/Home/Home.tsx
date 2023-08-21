@@ -7,7 +7,7 @@ import { Cards } from './ui/Cards';
 const HomePage = () => (
 	<AppLayout>
 		<HomePageMeta />
-		<main className={Graphik.className}>
+		<main style={{ paddingInline: '40px' }} className={Graphik.className}>
 			<Cards />
 		</main>
 	</AppLayout>
