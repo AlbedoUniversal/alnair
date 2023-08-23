@@ -531,7 +531,7 @@ export const objects = [
 			},
 			logo: 'https://files.alnair.ae/uploads/2023/3/ce/cf/cecfd137a1c39320cc6947dac2f6a78a.jpg',
 		},
-		districts: 'Al Barsha South Fifth <br/>Jumeirah Village Triangle (JVT)',
+		districts: 'Al Barsha South Fifth',
 		address: 'Jumeirah Village, Jumeirah Village Triangle, Dubai',
 		latitude: '25.04216850',
 		longitude: '55.18873571',

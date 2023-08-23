@@ -4,34 +4,17 @@ import {
 	Container,
 	Group,
 	Button,
-	Burger,
 	rem,
+	Text,
+	Anchor,
+	Select,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import Link from 'next/link';
+import PhoneSVG from 'public/icons/Phone.svg';
+import SearchSVG from 'public/icons/gg_search.svg';
 import { useContext } from 'react';
 
 import LogoSVG from 'public/logos/logo.svg';
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
-
-const mainLinks = [
-	{
-		name: {
-			ru: 'Карточки',
-			en: 'Cards',
-			ar: 'البطاقات',
-		},
-		link: '/',
-	},
-	{
-		name: {
-			ru: 'Таблица с сортировкой',
-			en: 'Sortable Table',
-			ar: 'جدول قابل للفرز',
-		},
-		link: '/sortable',
-	},
-];
 
 const HEADER_HEIGHT = rem(60);
 
@@ -42,39 +25,25 @@ const useStyles = createStyles((theme) => ({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 	},
-
+	name: {
+		fontSize: rem(23),
+		fontWeight: 500,
+		lineHeight: 1.1,
+	},
 	links: {
 		[theme.fn.smallerThan('sm')]: {
 			display: 'none',
 		},
 	},
 
-	burger: {
-		[theme.fn.largerThan('sm')]: {
-			display: 'none',
-		},
-	},
-
 	link: {
-		display: 'block',
-		lineHeight: 1,
-		padding: `${rem(10)} ${rem(12)}`,
-		borderRadius: theme.radius.sm,
 		textDecoration: 'none',
-		color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.white,
-		fontSize: theme.fontSizes.m,
-		fontWeight: 500,
-		marginInlineEnd: rem(20),
-		'&:hover': {
-			backgroundColor:
-				theme.colorScheme === 'dark'
-					? theme.colors.dark[6]
-					: theme.colors.blue[7],
-		},
+		color: theme.colors.dark,
+		lineHeight: 1.5,
+		fontSize: rem(16),
 	},
-
-	linkLabel: {
-		marginRight: rem(5),
+	select: {
+		border: 'none',
 	},
 }));
 
@@ -83,7 +52,6 @@ const langs = ['ru', 'en', 'ar'];
 export const Headers = () => {
 	const { dir, setDir, language, setLanguage } = useContext(DirContext);
 	const { classes } = useStyles();
-	const [opened, { toggle }] = useDisclosure(false);
 	const handleSwitchLang = (lang: string) => {
 		setLanguage(lang);
 		if (lang === 'ar') {
@@ -94,72 +62,55 @@ export const Headers = () => {
 	};
 
 	return (
-		<Header
-			height={HEADER_HEIGHT}
-			style={{
-				position: 'fixed',
-				backgroundColor: 'transparent',
-				border: 'transparent',
-				maxWidth: '100%',
-			}}
-			pt={40}
-		>
+		<Header height={HEADER_HEIGHT}>
 			<Container
 				className={classes.inner}
 				size="lg"
 				style={{ flexDirection: dir === 'ar' ? 'row-reverse' : 'row' }}
 			>
-				<div style={{ color: '#fff' }}>
-					<LogoSVG style={{ width: '70px', height: '70px' }} />
-				</div>
-
-				<Group spacing={0} position="right" className={classes.links}>
-					{mainLinks.map((item, index) => {
-						const translations = {
-							ru: {
-								name: item.name.ru,
-							},
-							en: {
-								name: item.name.en,
-							},
-							ar: {
-								name: item.name.ar,
-							},
-						};
-						return (
-							<Link key={index} href={item.link} className={classes.link}>
-								{translations[language].name}
-							</Link>
-						);
-					})}
-				</Group>
 				<Group>
-					{langs.map((lan) => {
-						return (
-							<Button
-								key={lan}
-								className={classes.langButton}
-								onClick={() => handleSwitchLang(lan)}
-							>
-								{lan}
-							</Button>
-						);
-					})}
+					<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+						<LogoSVG
+							style={{ width: '30px', height: '30px', color: '#0B63E5' }}
+						/>
+						<Text className={classes.name}>Alnair</Text>
+					</div>
+					<Anchor
+						href="/projects"
+						className={classes.link}
+						style={{ borderLeft: '1px solid #E6E8EC', paddingLeft: '20px' }}
+					>
+						Projects
+					</Anchor>
+					<Anchor href="/projects" className={classes.link}>
+						Contacts
+					</Anchor>
 				</Group>
-				<Burger
-					opened={opened}
-					onClick={toggle}
-					className={classes.burger}
-					size="sm"
-				/>
+
+				<Group>
+					<SearchSVG />
+					<PhoneSVG />
+
+					<Select
+						data={langs}
+						placeholder={language}
+						value={language}
+						onChange={handleSwitchLang}
+						className={classes.select}
+						styles={{
+							input: {
+								width: '70px',
+								border: 'none',
+								paddingLeft: `calc(2.35rem / 1.5)`,
+								paddingRight: 0,
+							},
+							dropdown: {
+								width: '70px',
+							},
+						}}
+					/>
+				</Group>
 			</Container>
 		</Header>
 	);
 };
-function setLanguage(lang: string) {
-	throw new Error('Function not implemented.');
-}
-
-function setDir(arg0: string) {
-	throw new Error('Function not implemented.');
-}

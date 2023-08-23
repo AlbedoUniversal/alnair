@@ -1,56 +1,18 @@
 import {
-	Badge,
-	Card,
 	Container,
 	Grid,
-	Group,
-	Image,
 	Input,
 	MultiSelect,
-	Text,
 	createStyles,
 	rem,
 } from '@mantine/core';
 import { objects } from '../SortableTable/data';
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
-import parser from 'html-react-parser';
+import { Cards } from './Cards';
 const useStyles = createStyles((theme) => ({
-	card: {
-		backgroundColor:
-			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
-	},
-	imageSection: {
-		paddingBlockStart: 0,
-		display: 'flex',
-		justifyContent: 'center',
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
-	},
-
-	section: {
-		padding: theme.spacing.md,
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
-	},
-
-	icon: {
-		marginRight: rem(5),
-		color:
-			theme.colorScheme === 'dark'
-				? theme.colors.dark[2]
-				: theme.colors.gray[5],
-	},
-	rating: {
-		position: 'absolute',
-		top: theme.spacing.xs,
-		pointerEvents: 'none',
-		zIndex: 3,
-	},
 	container: {
-		marginBlockStart: rem(120),
+		marginBlockStart: rem(-25),
 	},
 	categories: {
 		marginBlockEnd: rem(50),
@@ -59,6 +21,7 @@ const useStyles = createStyles((theme) => ({
 
 export const ObjectCards = () => {
 	const { classes } = useStyles();
+
 	const { language, dir } = useContext(DirContext);
 	const [filters, setFilters] = useState({
 		price: '',
@@ -148,39 +111,64 @@ export const ObjectCards = () => {
 	};
 	return (
 		<Container className={classes.container}>
-			<Grid className={classes.categories}>
-				<Grid.Col span={4}>
-					<Input
-						placeholder={placeholdersTranslations[language].price}
-						value={filters.price}
-						onChange={(e) => {
-							handleFilterChange('price', e.target.value);
-						}}
-					/>
-				</Grid.Col>
-				<Grid.Col span={4}>
-					<MultiSelect
-						data={developersOptions}
-						placeholder={placeholdersTranslations[language].developer}
-						value={filters.developers}
-						onChange={(value: any) => {
-							handleFilterChange('developers', value);
-						}}
-					/>
-				</Grid.Col>
-				<Grid.Col span={4}>
-					<MultiSelect
-						data={districtsOptions}
-						placeholder={placeholdersTranslations[language].district}
-						value={filters.districts}
-						onChange={(value: any) => {
-							handleFilterChange('districts', value);
-						}}
-					/>
-				</Grid.Col>
-			</Grid>
+			<div
+				style={{
+					background: '#fff',
+					zIndex: 10,
+					position: 'relative',
+					borderRadius: '8px',
+				}}
+			>
+				<Grid className={classes.categories}>
+					<Grid.Col span={4}>
+						<Input
+							placeholder={placeholdersTranslations[language].price}
+							value={filters.price}
+							onChange={(e) => {
+								handleFilterChange('price', e.target.value);
+							}}
+							styles={{
+								input: {
+									border: 'none',
+								},
+							}}
+						/>
+					</Grid.Col>
+					<Grid.Col span={4}>
+						<MultiSelect
+							data={developersOptions}
+							placeholder={placeholdersTranslations[language].developer}
+							value={filters.developers}
+							onChange={(value: any) => {
+								handleFilterChange('developers', value);
+							}}
+							styles={{
+								input: {
+									border: 'none',
+								},
+							}}
+						/>
+					</Grid.Col>
+					<Grid.Col span={4}>
+						<MultiSelect
+							data={districtsOptions}
+							placeholder={placeholdersTranslations[language].district}
+							value={filters.districts}
+							onChange={(value: any) => {
+								handleFilterChange('districts', value);
+							}}
+							styles={{
+								input: {
+									border: 'none',
+								},
+							}}
+						/>
+					</Grid.Col>
+				</Grid>
+			</div>
+
 			<Grid gutter={30}>
-				{filteredData.map((object) => {
+				{filteredData.map((object, i) => {
 					const { amenities } = object;
 					const translations = {
 						ru: {
@@ -212,67 +200,21 @@ export const ObjectCards = () => {
 						},
 					};
 					return (
-						<Grid.Col span={4}>
-							<Card withBorder className={classes.card}>
-								{object.status && (
-									<Badge
-										className={classes.rating}
-										variant="gradient"
-										gradient={{ from: 'blue', to: 'darkBlue' }}
-									>
-										{parser(translations[language].status)}
-									</Badge>
-								)}
-								<Card.Section className={classes.imageSection}>
-									<Image src={object.album[1]} height={200} />
-								</Card.Section>
-								<Card.Section
-									className={classes.section}
-									style={{ height: '120px' }}
-								>
-									<Group
-										style={{
-											flexDirection: 'column',
-											alignItems: dir === 'rtl' ? 'flex-end' : 'flex-start',
-										}}
-									>
-										<Text>{parser(translations[language].title)}</Text>
-
-										<Text>{parser(object.districts)}</Text>
-									</Group>
-								</Card.Section>
-								<Card.Section
-									className={classes.section}
-									style={{ height: '200px' }}
-								>
-									<Group
-										style={{
-											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
-										}}
-									>
-										{translations[language].amenities.map((amenity) => {
-											return <Badge>{amenity}</Badge>;
-										})}
-									</Group>
-								</Card.Section>
-								<Card.Section
-									className={classes.section}
-									style={{ height: '100px' }}
-								>
-									<Group
-										style={{
-											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
-										}}
-									>
-										<Text>
-											from: {object.price.min} {object.price.currency}
-										</Text>
-										<Text>
-											to: {object.price.max} {object.price.currency}
-										</Text>
-									</Group>
-								</Card.Section>
-							</Card>
+						<Grid.Col span={3}>
+							<Cards
+								title={translations[language].title}
+								object={object}
+								amenities={translations[language].amenities}
+								description={translations[language].description}
+								districts={object.districts}
+								src={object.album[1]}
+								priceMin={object.price.min}
+								priceMax={object.price.max}
+								currency={object.price.currency}
+								status={translations[language].status}
+								dir={dir}
+								index={i}
+							/>
 						</Grid.Col>
 					);
 				})}
