@@ -2,7 +2,7 @@ import {
 	Badge,
 	Button,
 	Card,
-	Center,
+	Container,
 	createStyles,
 	Grid,
 	Group,
@@ -12,21 +12,19 @@ import {
 } from '@mantine/core';
 
 import { data } from './data';
+import { useContext } from 'react';
+import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
 
 const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
 	},
-
 	imageSection: {
 		padding: theme.spacing.md,
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-		maxHeight: '600px',
-		maxWidth: '300px',
-		objectFit: 'cover',
 		borderBottom: `${rem(1)} solid ${
 			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
 		}`,
@@ -48,54 +46,106 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
+const langs = ['en', 'ar'];
 export const Cards = () => {
 	const { classes } = useStyles();
-
+	const { dir, language } = useContext(DirContext);
 	return (
-		<Grid gutter={70}>
-			{data.map((item, i) => (
-				<Grid.Col key={i} span={4}>
-					<Card withBorder radius="md" className={classes.card} key={i}>
-						<Card.Section className={classes.imageSection}>
-							<Center>
-								<Image
-									src={
-										item.feed.content['realty-feed'].offers.levels_photos
-											.level_photo.image
-									}
-									alt="photo"
-								/>
-							</Center>
-						</Card.Section>
-						<Card.Section className={classes.section}>
-							<Group position="apart">
-								<div>
-									<Text fw={500}>
-										{item.feed.content['realty-feed'].offers.building_name.en}
-										{item.feed.content['realty-feed'].offers.title.en}
-									</Text>
-									<Text fz="xs" c="dimmed">
-										{item.feed.content['realty-feed'].offers.title.en}
-									</Text>
-								</div>
-								<Badge variant="outline">More details</Badge>
-							</Group>
-						</Card.Section>
-						<Card.Section className={classes.section}>
-							<Group position="apart">
-								<div>
-									<Text fz="m" fw={600} sx={{ lineHeight: 1 }}>
-										{item.feed.content['realty-feed'].offers.price.min}
-										{item.feed.content['realty-feed'].offers.price.currency}
-									</Text>
-								</div>
+		<Container>
+			<Grid gutter={50}>
+				{data.map((item, i) => {
+					const translations = {
+						en: {
+							name: item.feed.content['realty-feed'].offers.building_name.en,
+							title: item.feed.content['realty-feed'].offers.title.en,
+							amenities: {
+								room:
+									item.feed.content['realty-feed'].offers.rooms_count &&
+									item.feed.content['realty-feed'].offers.rooms_count.en,
+								concierge:
+									item.feed.content['realty-feed'].offers.concierge &&
+									item.feed.content['realty-feed'].offers.concierge.en,
+							},
+						},
+						ar: {
+							name: item.feed.content['realty-feed'].offers.building_name.ar,
+							title: item.feed.content['realty-feed'].offers.title.ar,
+							amenities: {
+								room:
+									item.feed.content['realty-feed'].offers.rooms_count &&
+									item.feed.content['realty-feed'].offers.rooms_count.ar,
+								concierge:
+									item.feed.content['realty-feed'].offers.concierge &&
+									item.feed.content['realty-feed'].offers.concierge.ar,
+							},
+						},
+					};
+					return (
+						<Grid.Col key={i} span={4}>
+							<Card withBorder radius="md" className={classes.card}>
+								<Card.Section className={classes.imageSection}>
+									<Image
+										src={
+											item.feed.content['realty-feed'].offers.levels_photos
+												.level_photo.image
+										}
+										alt="photo"
+									/>
+								</Card.Section>
+								<Card.Section className={classes.section}>
+									<Group
+										position="apart"
+										style={{
+											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+										}}
+									>
+										<div>
+											<Text fw={500}>{translations[language].name}</Text>
+											<Text fz="xs" c="dimmed">
+												{translations[language].title}
+											</Text>
+										</div>
+										<Badge variant="outline">More details</Badge>
+									</Group>
+								</Card.Section>
+								<Card.Section className={classes.section}>
+									<Group
+										style={{
+											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+										}}
+									>
+										{item.feed.content['realty-feed'].offers.rooms_count && (
+											<Badge>{translations[language].amenities.room}</Badge>
+										)}
+										{item.feed.content['realty-feed'].offers.concierge && (
+											<Badge>
+												{translations[language].amenities.concierge}
+											</Badge>
+										)}
+									</Group>
+								</Card.Section>
+								<Card.Section className={classes.section}>
+									<Group
+										position="apart"
+										style={{
+											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+										}}
+									>
+										<div>
+											<Text fz="m" fw={600} sx={{ lineHeight: 1 }}>
+												{item.feed.content['realty-feed'].offers.price.min}
+												{item.feed.content['realty-feed'].offers.price.currency}
+											</Text>
+										</div>
 
-								<Button radius="xl">Buy now</Button>
-							</Group>
-						</Card.Section>
-					</Card>
-				</Grid.Col>
-			))}
-		</Grid>
+										<Button radius="xl">Buy now</Button>
+									</Group>
+								</Card.Section>
+							</Card>
+						</Grid.Col>
+					);
+				})}
+			</Grid>
+		</Container>
 	);
 };

@@ -1,16 +1,18 @@
 import { Graphik } from '@/shared/lib/utils/font';
 
 import { HomePageMeta } from './Home.meta';
-import { AppLayout } from './ui/AppLayout';
 import { Cards } from './ui/Cards';
+import { BannerSlider } from './ui/BannerSlider';
+import { ObjectCards } from './ui/ObjectCards';
 
 const HomePage = () => (
-	<AppLayout>
+	<>
 		<HomePageMeta />
-		<main style={{ paddingInline: '40px' }} className={Graphik.className}>
-			<Cards />
+		<main className={Graphik.className}>
+			<BannerSlider />
+			<ObjectCards />
 		</main>
-	</AppLayout>
+	</>
 );
 
 export { HomePage };
