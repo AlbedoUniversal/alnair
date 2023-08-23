@@ -45,7 +45,7 @@ export const SortableTable = () => {
 
 		filtered = filtered.filter((item) => {
 			if (filters.developers.length) {
-				return filters.developers.includes(item.developer.title.en);
+				return filters.developers.includes(item.developer.title.[language]);
 			}
 
 			return true;
@@ -73,7 +73,7 @@ export const SortableTable = () => {
 	};
 
 	const developersOptions = useMemo(
-		() => objects.map((item) => item.developer.title.en),
+		() => objects.map((item) => item.developer.title[language]),
 		[]
 	);
 

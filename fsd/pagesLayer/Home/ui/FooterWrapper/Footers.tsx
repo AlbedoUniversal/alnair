@@ -44,7 +44,7 @@ export const Footers = () => {
 
 	return (
 		<div className={classes.footer}>
-			<Container className={classes.inner}>
+			<Container className={classes.inner} size="lg">
 				<LogoSVG style={{ width: '60px', height: '60px', color: '#4F70F9' }} />
 				<Group className={classes.links}>{items}</Group>
 			</Container>

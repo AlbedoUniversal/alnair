@@ -10,12 +10,12 @@ interface DirContextType {
 export const DirContext = createContext<DirContextType>({
 	dir: 'ltr',
 	setDir() {},
-	language: 'en',
+	language: 'ru',
 	setLanguage() {},
 });
 
 export const DirProvider = ({ children }: { children: ReactNode }) => {
-	const [language, setLanguage] = useState('en');
+	const [language, setLanguage] = useState('ru');
 	const [dir, setDir] = useState('ltr');
 
 	return (

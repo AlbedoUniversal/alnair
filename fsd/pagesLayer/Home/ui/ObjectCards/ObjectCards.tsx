@@ -14,17 +14,15 @@ import {
 import { objects } from '../SortableTable/data';
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
-
+import parser from 'html-react-parser';
 const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
 	},
 	imageSection: {
-		padding: theme.spacing.md,
 		paddingBlockStart: 0,
 		display: 'flex',
-		alignItems: 'center',
 		justifyContent: 'center',
 		borderBottom: `${rem(1)} solid ${
 			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
@@ -48,7 +46,6 @@ const useStyles = createStyles((theme) => ({
 	rating: {
 		position: 'absolute',
 		top: theme.spacing.xs,
-		left: rem(12),
 		pointerEvents: 'none',
 		zIndex: 3,
 	},
@@ -57,10 +54,6 @@ const useStyles = createStyles((theme) => ({
 	},
 	categories: {
 		marginBlockEnd: rem(50),
-		display: 'grid',
-	},
-	category: {
-		maxWidth: rem(260),
 	},
 }));
 
@@ -85,7 +78,6 @@ export const ObjectCards = () => {
 	const filterData = () => {
 		let filtered = objects;
 
-		// Фильтрация по цене
 		if (filters.price) {
 			filtered = filtered.filter((item) => {
 				const priceMin = item.price.min;
@@ -99,7 +91,7 @@ export const ObjectCards = () => {
 
 		filtered = filtered.filter((item) => {
 			if (filters.developers.length) {
-				return filters.developers.includes(item.developer.title.en);
+				return filters.developers.includes(item.developer.title[language]);
 			}
 
 			return true;
@@ -127,7 +119,7 @@ export const ObjectCards = () => {
 	};
 
 	const developersOptions = useMemo(
-		() => objects.map((item) => item.developer.title.en),
+		() => objects.map((item) => item.developer.title[language]),
 		[]
 	);
 
@@ -136,53 +128,61 @@ export const ObjectCards = () => {
 		[]
 	);
 
-	const amenityOptions = [
-		...new Set(
-			objects.flatMap((item) => item.amenities.map((a) => a.amenity.en))
-		),
-	];
-
 	useEffect(() => {
 		filterData();
 	}, [filters]);
 
+	const placeholdersTranslations = {
+		ru: {
+			price: 'Минимальная цена',
+			developer: 'Выберете строительную компанию',
+			district: 'Выберете район',
+		},
+		en: {
+			price: 'Minimum price',
+			developer: 'Choose developers',
+			district: 'Choose districts',
+		},
+		ar: {
+			price: 'سعر الحد الأدنى',
+			developer: 'اختر شركة بناء',
+			district: 'اختر منطقة',
+		},
+	};
 	return (
 		<Container className={classes.container}>
 			<Grid className={classes.categories}>
-				<Grid.Col>
+				<Grid.Col span={4}>
 					<Input
-						placeholder="Minimum price"
+						placeholder={placeholdersTranslations[language].price}
 						value={filters.price}
 						onChange={(e) => {
 							handleFilterChange('price', e.target.value);
 						}}
-						className={classes.category}
 					/>
 				</Grid.Col>
-				<Grid.Col>
+				<Grid.Col span={4}>
 					<MultiSelect
 						data={developersOptions}
-						placeholder="Choose developers"
+						placeholder={placeholdersTranslations[language].developer}
 						value={filters.developers}
 						onChange={(value: any) => {
 							handleFilterChange('developers', value);
 						}}
-						className={classes.category}
 					/>
 				</Grid.Col>
-				<Grid.Col>
+				<Grid.Col span={4}>
 					<MultiSelect
 						data={districtsOptions}
-						placeholder="Choose districts"
+						placeholder={placeholdersTranslations[language].district}
 						value={filters.districts}
 						onChange={(value: any) => {
 							handleFilterChange('districts', value);
 						}}
-						className={classes.category}
 					/>
 				</Grid.Col>
 			</Grid>
-			<Grid gutter={50}>
+			<Grid gutter={30}>
 				{filteredData.map((object) => {
 					const { amenities } = object;
 					const translations = {
@@ -214,9 +214,6 @@ export const ObjectCards = () => {
 							salesStatus: object.sales_status?.ar,
 						},
 					};
-
-					console.log(translations);
-
 					return (
 						<Grid.Col span={4}>
 							<Card withBorder className={classes.card}>
@@ -226,32 +223,56 @@ export const ObjectCards = () => {
 										variant="gradient"
 										gradient={{ from: 'blue', to: 'darkBlue' }}
 									>
-										{translations[language].status}
+										{parser(translations[language].status)}
 									</Badge>
 								)}
-								<Card.Section
-									className={classes.imageSection}
-									style={{ height: '200px' }}
-								>
-									<Image src={object.album[1]} />
+								<Card.Section className={classes.imageSection}>
+									<Image src={object.album[1]} height={200} />
 								</Card.Section>
 								<Card.Section
 									className={classes.section}
-									style={{ height: '100px' }}
+									style={{ height: '120px' }}
 								>
-									<Group>
-										<Text>{translations[language].title}</Text>
-										<Text>{object.districts}</Text>
+									<Group
+										style={{
+											flexDirection: 'column',
+											alignItems: dir === 'rtl' ? 'flex-end' : 'flex-start',
+										}}
+									>
+										<Text>{parser(translations[language].title)}</Text>
+
+										<Text>{parser(object.districts)}</Text>
 									</Group>
 								</Card.Section>
 								<Card.Section
 									className={classes.section}
 									style={{ height: '200px' }}
 								>
-									<Group>
+									<Group
+										style={{
+											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+										}}
+									>
 										{translations[language].amenities.map((amenity) => {
 											return <Badge>{amenity}</Badge>;
 										})}
+									</Group>
+								</Card.Section>
+								<Card.Section
+									className={classes.section}
+									style={{ height: '100px' }}
+								>
+									<Group
+										style={{
+											flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+										}}
+									>
+										<Text>
+											from: {object.price.min} {object.price.currency}
+										</Text>
+										<Text>
+											to: {object.price.max} {object.price.currency}
+										</Text>
 									</Group>
 								</Card.Section>
 							</Card>

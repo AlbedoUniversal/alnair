@@ -1,7 +1,5 @@
 import {
 	createStyles,
-	Menu,
-	Center,
 	Header,
 	Container,
 	Group,
@@ -10,9 +8,8 @@ import {
 	rem,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 import LogoSVG from 'public/logos/logo.svg';
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
@@ -20,6 +17,7 @@ import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
 const mainLinks = [
 	{
 		name: {
+			ru: 'Карточки',
 			en: 'Cards',
 			ar: 'البطاقات',
 		},
@@ -27,6 +25,7 @@ const mainLinks = [
 	},
 	{
 		name: {
+			ru: 'Таблица с сортировкой',
 			en: 'Sortable Table',
 			ar: 'جدول قابل للفرز',
 		},
@@ -79,7 +78,7 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const langs = ['en', 'ar'];
+const langs = ['ru', 'en', 'ar'];
 
 export const Headers = () => {
 	const { dir, setDir, language, setLanguage } = useContext(DirContext);
@@ -107,6 +106,7 @@ export const Headers = () => {
 		>
 			<Container
 				className={classes.inner}
+				size="lg"
 				style={{ flexDirection: dir === 'ar' ? 'row-reverse' : 'row' }}
 			>
 				<div style={{ color: '#fff' }}>
@@ -116,6 +116,9 @@ export const Headers = () => {
 				<Group spacing={0} position="right" className={classes.links}>
 					{mainLinks.map((item, index) => {
 						const translations = {
+							ru: {
+								name: item.name.ru,
+							},
 							en: {
 								name: item.name.en,
 							},
