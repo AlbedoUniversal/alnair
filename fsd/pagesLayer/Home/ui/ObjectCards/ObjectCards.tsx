@@ -81,11 +81,8 @@ export const ObjectCards = () => {
 		if (filters.price) {
 			filtered = filtered.filter((item) => {
 				const priceMin = item.price.min;
-				const priceMax = item.price.max;
-				return (
-					Number(priceMin) >= Number(filters.price) &&
-					Number(priceMax) <= Number(filters.price)
-				);
+
+				return Number(priceMin) >= Number(filters.price);
 			});
 		}
 
