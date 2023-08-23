@@ -45,7 +45,7 @@ export const SortableTable = () => {
 
 		filtered = filtered.filter((item) => {
 			if (filters.developers.length) {
-				return filters.developers.includes(item.developer.title.[language]);
+				return filters.developers.includes(item.developer.title[language]);
 			}
 
 			return true;

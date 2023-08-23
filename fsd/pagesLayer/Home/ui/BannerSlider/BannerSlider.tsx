@@ -3,8 +3,6 @@ import { Container, Image, rem, createStyles } from '@mantine/core';
 import { objects } from '../SortableTable/data';
 
 export const BannerSlider = () => {
-	console.log(objects);
-
 	return (
 		<Container fluid p={0}>
 			<Carousel>
