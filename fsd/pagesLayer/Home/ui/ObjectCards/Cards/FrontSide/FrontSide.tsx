@@ -90,6 +90,7 @@ export const FrontSide = ({
 				<Group
 					style={{
 						alignItems: dir === 'rtl' ? 'flex-end' : 'flex-start',
+						flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
 					}}
 				>
 					<Text fz="sm">{parser(title)}</Text>
