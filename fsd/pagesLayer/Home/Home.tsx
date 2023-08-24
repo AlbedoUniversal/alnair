@@ -3,6 +3,7 @@ import { BannerSlider } from './ui/BannerSlider';
 import { Form } from './ui/Form';
 import { ObjectCards } from './ui/ObjectCards';
 import { Lexend } from 'next/font/google';
+import { Slogan } from './ui/Slogan';
 
 const inter = Lexend({
 	subsets: ['latin'],
@@ -14,6 +15,7 @@ const HomePage = () => (
 		<main style={{ backgroundColor: '#FAFBFD' }} className={inter.className}>
 			<BannerSlider />
 			<ObjectCards />
+			<Slogan />
 			<Form />
 		</main>
 	</>

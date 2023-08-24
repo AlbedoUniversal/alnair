@@ -27,6 +27,14 @@ const useStyles = createStyles((theme) => ({
 		display: 'flex',
 		width: '100vw',
 	},
+	form: {
+		padding: rem(100),
+		backgroundColor: theme.white,
+		borderRadius: rem(15),
+	},
+	input: {
+		height: rem(100),
+	},
 }));
 export const Form = () => {
 	const { classes } = useStyles();
@@ -51,7 +59,12 @@ export const Form = () => {
 
 	return (
 		<Container fluid className={classes.container} id="contacts">
-			<Box component="form" mx="auto" onSubmit={form.onSubmit(() => {})}>
+			<Box
+				component="form"
+				mx="auto"
+				onSubmit={form.onSubmit(() => {})}
+				className={classes.form}
+			>
 				<Text fz={40} lh={1.8} fw={400} mb={40}>
 					Contact us to get more information
 				</Text>
@@ -61,25 +74,57 @@ export const Form = () => {
 					placeholder="Write your full name"
 					withAsterisk
 					{...form.getInputProps('name')}
+					styles={{
+						input: {
+							height: '50px',
+							borderRadius: '8px',
+						},
+						label: {
+							paddingBottom: '10px',
+							fontSize: '16px',
+						},
+					}}
 				/>
 				<TextInput
 					maw={400}
 					label="Your country"
 					placeholder="Write the desired country"
 					withAsterisk
-					mt="md"
+					mt="xl"
 					{...form.getInputProps('job')}
+					styles={{
+						input: {
+							height: '50px',
+							borderRadius: '8px',
+						},
+						label: {
+							paddingBottom: '10px',
+							fontSize: '16px',
+						},
+					}}
 				/>
 				<TextInput
 					maw={400}
 					label="Your email"
 					placeholder="Write your email"
 					withAsterisk
-					mt="md"
+					mt="xl"
 					{...form.getInputProps('email')}
+					styles={{
+						input: {
+							height: '50px',
+							borderRadius: '8px',
+						},
+						label: {
+							paddingBottom: '10px',
+							fontSize: '16px',
+						},
+					}}
 				/>
-				<Group position="left" mt="md">
-					<Button type="submit">Submit</Button>
+				<Group position="left" mt="xl">
+					<Button type="submit" style={{ borderRadius: '8px' }}>
+						Send
+					</Button>
 				</Group>
 			</Box>
 

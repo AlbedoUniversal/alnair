@@ -36,9 +36,9 @@ const useStyles = createStyles((theme) => ({
 		alignItems: 'flex-start',
 		WebkitBoxAlign: 'start',
 	},
-	group: {
-		alignItems: 'flex-start',
-	},
+	// group: {
+	// 	alignItems: 'flex-start',
+	// },
 	link: {
 		textDecoration: 'none',
 		color: theme.colors.dark,
@@ -65,7 +65,7 @@ export const Footers = () => {
 	return (
 		<div className={classes.footer}>
 			<Container className={classes.inner} size="xl">
-				<Group pt={30} pb={38} className={classes.group}>
+				<Group pt={30} pb={38} position="apart">
 					<Anchor href="/" style={{ textDecoration: 'none' }}>
 						<Group mr={300} className={classes.logoGroup}>
 							<LogoSVG
