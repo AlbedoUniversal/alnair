@@ -1,8 +1,26 @@
 import { Carousel } from '@mantine/carousel';
-import { Container, Image, Text } from '@mantine/core';
-import { objects } from '../SortableTable/data';
+import {
+	Container,
+	Image,
+	Text,
+	createStyles,
+	getStylesRef,
+	rem,
+} from '@mantine/core';
+import { objects } from '../ObjectCards/data';
 
+const useStyles = createStyles(() => ({
+	controls: {
+		ref: getStylesRef('controls'),
+		opacity: 1,
+		justifyContent: 'flex-start',
+		gap: rem(20),
+		bottom: rem(-50),
+		left: rem(50),
+	},
+}));
 export const BannerSlider = () => {
+	const { classes } = useStyles();
 	return (
 		<Container fluid p={0} style={{ position: 'relative' }}>
 			<div
@@ -21,7 +39,7 @@ export const BannerSlider = () => {
 					and JBR.
 				</Text>
 			</div>
-			<Carousel>
+			<Carousel loop classNames={classes}>
 				{objects.map((item) => {
 					const { album } = item;
 
@@ -29,7 +47,7 @@ export const BannerSlider = () => {
 						<>
 							{album.map((photo) => {
 								return (
-									<Carousel.Slide style={{ height: '500px' }}>
+									<Carousel.Slide style={{ height: '600px' }} key={photo}>
 										<Image src={photo} alt={item.title.en} />
 									</Carousel.Slide>
 								);

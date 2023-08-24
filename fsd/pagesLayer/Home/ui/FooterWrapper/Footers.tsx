@@ -1,22 +1,27 @@
-import { Anchor, Container, createStyles, Group, rem } from '@mantine/core';
+import {
+	Anchor,
+	Container,
+	createStyles,
+	Grid,
+	Group,
+	rem,
+	Text,
+} from '@mantine/core';
 
 import LogoSVG from 'public/logos/logo.svg';
 
 const useStyles = createStyles((theme) => ({
 	footer: {
-		marginTop: rem(120),
-		borderTop: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
-		}`,
+		marginTop: rem(15),
 	},
 
 	inner: {
 		display: 'flex',
+		flexDirection: 'column',
 		justifyContent: 'space-between',
-		alignItems: 'center',
 		paddingTop: theme.spacing.xl,
 		paddingBottom: theme.spacing.xl,
-
+		gap: rem(20),
 		[theme.fn.smallerThan('xs')]: {
 			flexDirection: 'column',
 		},
@@ -27,26 +32,76 @@ const useStyles = createStyles((theme) => ({
 			marginTop: theme.spacing.md,
 		},
 	},
+	logoGroup: {
+		alignItems: 'flex-start',
+		WebkitBoxAlign: 'start',
+	},
+	group: {
+		alignItems: 'flex-start',
+	},
+	link: {
+		textDecoration: 'none',
+		color: theme.colors.dark,
+		lineHeight: 1.5,
+		fontSize: rem(16),
+
+		'&:hover': {
+			textDecoration: 'none',
+			color: '#0B63E5',
+		},
+	},
 }));
 
 const mainLinks = [
-	{ name: 'Cards', link: '/' },
-	{ name: 'Sortable table', link: '/sortable' },
+	{ name: 'Projects', link: '#projects' },
+	{ name: 'Reviews', link: '/' },
+	{ name: 'News', link: '/' },
+	{ name: 'Contacts', link: '#contacts' },
 ];
 
 export const Footers = () => {
 	const { classes } = useStyles();
-	const items = mainLinks.map((link) => (
-		<Anchor<'a'> color="dimmed" key={link.name} href={link.link} size="sm">
-			{link.name}
-		</Anchor>
-	));
 
 	return (
 		<div className={classes.footer}>
-			<Container className={classes.inner} size="lg">
-				<LogoSVG style={{ width: '60px', height: '60px', color: '#4F70F9' }} />
-				<Group className={classes.links}>{items}</Group>
+			<Container className={classes.inner} size="xl">
+				<Group pt={30} pb={38} className={classes.group}>
+					<Anchor href="/" style={{ textDecoration: 'none' }}>
+						<Group mr={300} className={classes.logoGroup}>
+							<LogoSVG
+								style={{ width: '40px', height: '40px', color: '#0B63E5' }}
+							/>
+							<Text fz={30} fw={500} lh={1.2} color="#061C3D">
+								Alnair
+							</Text>
+						</Group>
+					</Anchor>
+					<Grid className={classes.links}>
+						{mainLinks.map((link) => (
+							<Grid.Col span={6}>
+								<Anchor<'a'>
+									href={link.link}
+									key={link.name}
+									fz={16}
+									lh={1.5}
+									color="#061C3D"
+									className={classes.link}
+								>
+									{link.name}
+								</Anchor>
+							</Grid.Col>
+						))}
+					</Grid>
+				</Group>
+				<div>
+					<Text color="#6F7886" fz={14} lh={1.5}>
+						Mohammed Bin Rashid Boulevard 1, Burj Khalifa, Zaabil, Emirate of
+						Dubai
+					</Text>
+					<Text color="#6F7886" fz={14} lh={1.5}>
+						© 2023 - Alnair. All rights reserved
+					</Text>
+				</div>
 			</Container>
 		</div>
 	);

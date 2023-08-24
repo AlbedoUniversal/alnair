@@ -3,7 +3,6 @@ import {
 	Header,
 	Container,
 	Group,
-	Button,
 	rem,
 	Text,
 	Anchor,
@@ -29,6 +28,7 @@ const useStyles = createStyles((theme) => ({
 		fontSize: rem(23),
 		fontWeight: 500,
 		lineHeight: 1.1,
+		color: '#061C3D',
 	},
 	links: {
 		[theme.fn.smallerThan('sm')]: {
@@ -41,6 +41,11 @@ const useStyles = createStyles((theme) => ({
 		color: theme.colors.dark,
 		lineHeight: 1.5,
 		fontSize: rem(16),
+
+		'&:hover': {
+			textDecoration: 'none',
+			color: '#0B63E5',
+		},
 	},
 	select: {
 		border: 'none',
@@ -65,31 +70,65 @@ export const Headers = () => {
 		<Header height={HEADER_HEIGHT}>
 			<Container
 				className={classes.inner}
-				size="lg"
+				size="xl"
 				style={{ flexDirection: dir === 'ar' ? 'row-reverse' : 'row' }}
 			>
 				<Group>
-					<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+					<Anchor
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '10px',
+							textDecoration: 'none',
+						}}
+						href="/"
+					>
 						<LogoSVG
-							style={{ width: '30px', height: '30px', color: '#0B63E5' }}
+							style={{
+								width: '30px',
+								height: '30px',
+								color: '#0B63E5',
+								textDecoration: 'none',
+							}}
 						/>
 						<Text className={classes.name}>Alnair</Text>
-					</div>
+					</Anchor>
 					<Anchor
-						href="/projects"
+						href="#projects"
 						className={classes.link}
-						style={{ borderLeft: '1px solid #E6E8EC', paddingLeft: '20px' }}
+						style={{
+							borderLeft: '1px solid #E6E8EC',
+							paddingLeft: '20px',
+						}}
 					>
 						Projects
 					</Anchor>
-					<Anchor href="/projects" className={classes.link}>
+					<Anchor href="#contacts" className={classes.link}>
 						Contacts
 					</Anchor>
 				</Group>
 
 				<Group>
-					<SearchSVG />
-					<PhoneSVG />
+					<Anchor
+						href="#projects"
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							textDecoration: 'none',
+						}}
+					>
+						<SearchSVG />
+					</Anchor>
+					<Anchor
+						href="tel:+971506039118"
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							textDecoration: 'none',
+						}}
+					>
+						<PhoneSVG />
+					</Anchor>
 
 					<Select
 						data={langs}

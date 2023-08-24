@@ -8,12 +8,17 @@ import {
 	Image,
 } from '@mantine/core';
 import parser from 'html-react-parser';
+import CircleSVG from 'public/icons/Ellipse 2.svg';
 const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
 			theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
 		cursor: 'pointer',
 		borderRadius: rem(10),
+		transition: 'transform 0.3s',
+		'&:hover': {
+			transform: 'scale(1.1)',
+		},
 	},
 
 	imageSection: {
@@ -23,10 +28,7 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	section: {
-		padding: theme.spacing.md,
-		borderBottom: `${rem(1)} solid ${
-			theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
-		}`,
+		margin: theme.spacing.md,
 	},
 
 	icon: {
@@ -84,47 +86,46 @@ export const FrontSide = ({
 			<Card.Section className={classes.imageSection}>
 				<Image src={src} height={200} />
 			</Card.Section>
-			<Card.Section className={classes.section} style={{ height: '120px' }}>
+			<Card.Section className={classes.section} style={{ height: '40px' }}>
 				<Group
 					style={{
-						flexDirection: 'column',
 						alignItems: dir === 'rtl' ? 'flex-end' : 'flex-start',
 					}}
 				>
 					<Text fz="sm">{parser(title)}</Text>
-
+					<CircleSVG style={{ alignSelf: 'center' }} />
 					<Text fz="sm">{parser(districts)}</Text>
 				</Group>
 			</Card.Section>
 			<Card.Section
 				className={classes.section}
 				style={{
-					height: '200px',
-
-					msScrollbarBaseColor: 'black',
+					height: '100px',
 				}}
 			>
 				<Group
 					style={{
 						flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
+						gap: '5px',
 					}}
 				>
 					{amenities.map((amenity: any) => {
-						return <Badge>{amenity}</Badge>;
+						return (
+							<Text fz={12} color="#0B63E5">
+								{amenity}
+							</Text>
+						);
 					})}
 				</Group>
 			</Card.Section>
-			<Card.Section className={classes.section} style={{ height: '100px' }}>
+			<Card.Section className={classes.section} style={{ height: '60px' }}>
 				<Group
 					style={{
 						flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
 					}}
 				>
 					<Text>
-						from: {priceMin} {currency}
-					</Text>
-					<Text>
-						to: {priceMax} {currency}
+						from {priceMin} {currency}
 					</Text>
 				</Group>
 			</Card.Section>

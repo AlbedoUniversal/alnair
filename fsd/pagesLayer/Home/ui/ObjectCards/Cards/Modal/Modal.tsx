@@ -21,7 +21,7 @@ interface ModalSideProps {
 export const Modals = ({ description, close, opened, src }: ModalSideProps) => {
 	const { classes } = useStyles();
 	return (
-		<Modal onClose={close} opened={opened} centered>
+		<Modal onClose={close} opened={opened} centered radius={13}>
 			<Card.Section>
 				<Image src={src} />
 			</Card.Section>

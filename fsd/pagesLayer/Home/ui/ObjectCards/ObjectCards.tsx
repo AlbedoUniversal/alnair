@@ -6,13 +6,14 @@ import {
 	createStyles,
 	rem,
 } from '@mantine/core';
-import { objects } from '../SortableTable/data';
+import { objects } from './data';
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
 import { Cards } from './Cards';
 const useStyles = createStyles((theme) => ({
 	container: {
 		marginBlockStart: rem(-25),
+		paddingBlockEnd: rem(120),
 	},
 	categories: {
 		marginBlockEnd: rem(50),
@@ -110,7 +111,7 @@ export const ObjectCards = () => {
 		},
 	};
 	return (
-		<Container className={classes.container}>
+		<Container className={classes.container} size="xl" id="projects">
 			<div
 				style={{
 					background: '#fff',
@@ -167,7 +168,7 @@ export const ObjectCards = () => {
 				</Grid>
 			</div>
 
-			<Grid gutter={30}>
+			<Grid style={{ rowGap: '30px' }} gutter={24}>
 				{filteredData.map((object, i) => {
 					const { amenities } = object;
 					const translations = {
@@ -213,7 +214,6 @@ export const ObjectCards = () => {
 								currency={object.price.currency}
 								status={translations[language].status}
 								dir={dir}
-								index={i}
 							/>
 						</Grid.Col>
 					);

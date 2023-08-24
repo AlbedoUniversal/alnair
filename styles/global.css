@@ -1,5 +1,8 @@
 @import './mixins.css';
 
+html {
+	scroll-behavior: smooth;
+}
 body {
 	@mixin responsiveFont 16, 28, 1.5;
 	font-weight: 400;

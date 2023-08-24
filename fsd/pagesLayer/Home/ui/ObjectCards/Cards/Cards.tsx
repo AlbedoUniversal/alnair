@@ -58,7 +58,6 @@ interface CardsProps {
 	priceMin: string;
 	priceMax: string;
 	currency: string;
-	index: number;
 }
 export const Cards = ({
 	title,
@@ -72,18 +71,8 @@ export const Cards = ({
 	priceMin,
 	priceMax,
 	currency,
-	index,
 }: CardsProps) => {
-	const { classes } = useStyles();
-	const [side, setSide] = useState('front');
 	const [opened, { open, close }] = useDisclosure(false);
-	const handleFlip = () => {
-		if (side === 'front') {
-			setSide('back');
-		} else {
-			setSide('front');
-		}
-	};
 	return (
 		<>
 			<FrontSide
