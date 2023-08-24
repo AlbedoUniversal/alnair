@@ -14,14 +14,6 @@ class MyDocument extends Document {
 					<meta name="robots" content="index, follow" />
 					<meta name="format-detection" content="telephone=no" />
 					<meta name="google" content="notranslate" />
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta property="og:title" content="Deep Digital" />
-					<meta
-						property="og:description"
-						content="Deep Digital — инновационная ИТ-компания, помогающая Сберу, ВТБ, МКБ, Tele2 и Мегафону создавать цифровые сервисы для миллионов людей."
-					/>
-					<meta property="og:image" content="/meta/og.jpg" />
-					<meta property="og:url" content="https://deep.digital/" />
 				</Head>
 				<body>
 					<Main />

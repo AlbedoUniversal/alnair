@@ -8,7 +8,6 @@ import {
 	createStyles,
 	rem,
 	Modal,
-	Code,
 } from '@mantine/core';
 import {
 	useForm,
@@ -19,7 +18,7 @@ import {
 	matches,
 } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
 	container: {
@@ -31,40 +30,28 @@ const useStyles = createStyles((theme) => ({
 }));
 export const Form = () => {
 	const { classes } = useStyles();
-	const [submittedValues, setSubmittedValues] = useState('');
+	const [isValid, setIsValid] = useState(false);
 	const [opened, { open, close }] = useDisclosure(false);
+
 	const form = useForm({
 		initialValues: {
 			name: '',
 			job: '',
 			email: '',
-			favoriteColor: '',
-			age: 18,
 		},
 
 		validate: {
 			name: hasLength({ min: 2, max: 30 }, 'Name must be 2-30 characters long'),
 			job: isNotEmpty(
-				`Enter a country in which you're looking for an apartment `
+				`Write a country in which you're looking for an apartment `
 			),
 			email: isEmail('Invalid email'),
-			favoriteColor: matches(
-				/^#([0-9a-f]{3}){1,2}$/,
-				'Enter a valid hex color'
-			),
-			age: isInRange(
-				{ min: 18, max: 99 },
-				'You must be 18-99 years old to register'
-			),
 		},
 	});
+
 	return (
 		<Container fluid className={classes.container} id="contacts">
-			<Box
-				component="form"
-				mx="auto"
-				// onSubmit={form.onSubmit(() => )}
-			>
+			<Box component="form" mx="auto" onSubmit={form.onSubmit(() => {})}>
 				<Text fz={40} lh={1.8} fw={400} mb={40}>
 					Contact us to get more information
 				</Text>
@@ -92,21 +79,32 @@ export const Form = () => {
 					{...form.getInputProps('email')}
 				/>
 				<Group position="left" mt="md">
-					<Button type="submit" onClick={open}>
-						Submit
-					</Button>
+					<Button type="submit">Submit</Button>
 				</Group>
 			</Box>
 
-			<Modal
-				centered
-				opened={opened}
-				onClose={close}
-				title="Thank you!"
-				style={{ textAlign: 'center' }}
-			>
-				<Text>We will contact you soon!</Text>
-			</Modal>
+			{/* {isValid && (
+				<Modal
+					centered
+					opened={opened}
+					onClose={close}
+					title="Thank you!"
+					style={{ textAlign: 'center' }}
+				>
+					<Text>We will contact you soon!</Text>
+				</Modal>
+			)}
+			{!isValid && (
+				<Modal
+					centered
+					opened={opened}
+					onClose={close}
+					title="Sorry!"
+					style={{ textAlign: 'center' }}
+				>
+					<Text>Fill all fields correctly</Text>
+				</Modal>
+			)} */}
 		</Container>
 	);
 };
