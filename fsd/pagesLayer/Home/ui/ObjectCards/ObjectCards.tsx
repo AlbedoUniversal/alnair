@@ -3,6 +3,7 @@ import {
 	Grid,
 	Input,
 	MultiSelect,
+	Text,
 	createStyles,
 	rem,
 } from '@mantine/core';
@@ -22,7 +23,7 @@ const useStyles = createStyles((theme) => ({
 
 export const ObjectCards = () => {
 	const { classes } = useStyles();
-
+	const [isFound, setIsFound] = useState(true);
 	const { language, dir } = useContext(DirContext);
 	const [filters, setFilters] = useState({
 		price: '',
@@ -61,16 +62,6 @@ export const ObjectCards = () => {
 		filtered = filtered.filter((item) => {
 			if (filters.districts.length) {
 				return filters.districts.includes(item.districts);
-			}
-
-			return true;
-		});
-
-		filtered = filtered.filter((item) => {
-			if (filters.amenities.length) {
-				return item.amenities.some((a) =>
-					filters.amenities.includes(a.amenity.en)
-				);
 			}
 
 			return true;
@@ -167,9 +158,20 @@ export const ObjectCards = () => {
 					</Grid.Col>
 				</Grid>
 			</div>
-
+			{filteredData.length === 0 && (
+				<div
+					style={{
+						display: 'flex',
+						flexDirection: 'column',
+						textAlign: 'center',
+						justifyContent: 'center',
+					}}
+				>
+					<Text fz="xl">Sorry! Nothing is found.</Text>
+				</div>
+			)}
 			<Grid style={{ rowGap: '30px' }} gutter={24}>
-				{filteredData.map((object, i) => {
+				{filteredData.map((object) => {
 					const { amenities } = object;
 					const translations = {
 						ru: {
@@ -200,6 +202,7 @@ export const ObjectCards = () => {
 							salesStatus: object.sales_status?.ar,
 						},
 					};
+
 					return (
 						<Grid.Col span={3}>
 							<Cards
