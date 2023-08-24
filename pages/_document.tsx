@@ -16,7 +16,7 @@ class MyDocument extends Document {
 					<meta name="google" content="notranslate" />
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta property="og:title" content="Alnair Real Estate" />
-					<meta property="og:image" content="/meta/og.jpg" />
+					<meta property="og:image" content="/meta/ogA.jpg" />
 				</Head>
 				<body>
 					<Main />
