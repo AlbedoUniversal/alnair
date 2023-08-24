@@ -14,6 +14,9 @@ class MyDocument extends Document {
 					<meta name="robots" content="index, follow" />
 					<meta name="format-detection" content="telephone=no" />
 					<meta name="google" content="notranslate" />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta property="og:title" content="Alnair Real Estate" />
+					<meta property="og:image" content="/meta/og.jpg" />
 				</Head>
 				<body>
 					<Main />
