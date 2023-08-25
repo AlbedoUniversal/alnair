@@ -2,20 +2,20 @@ import {
 	Box,
 	Button,
 	Container,
+	createStyles,
 	Group,
+	Modal,
+	rem,
 	Text,
 	TextInput,
-	createStyles,
-	rem,
-	Modal,
 } from '@mantine/core';
 import {
-	useForm,
-	isNotEmpty,
+	hasLength,
 	isEmail,
 	isInRange,
-	hasLength,
+	isNotEmpty,
 	matches,
+	useForm,
 } from '@mantine/form';
 import { useDisclosure } from '@mantine/hooks';
 import { useCallback, useState } from 'react';
@@ -62,7 +62,9 @@ export const Form = () => {
 			<Box
 				component="form"
 				mx="auto"
-				onSubmit={form.onSubmit(() => {})}
+				onSubmit={form.onSubmit(() => {
+					console.log('correct');
+				})}
 				className={classes.form}
 			>
 				<Text fz={40} lh={1.8} fw={400} mb={40}>

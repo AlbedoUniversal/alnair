@@ -1,13 +1,12 @@
 import { Carousel } from '@mantine/carousel';
 import {
 	Container,
-	Image,
-	Text,
 	createStyles,
 	getStylesRef,
+	Image,
 	rem,
+	Text,
 } from '@mantine/core';
-import { objects } from '../ObjectCards/data';
 
 const useStyles = createStyles(() => ({
 	controls: {
@@ -19,8 +18,9 @@ const useStyles = createStyles(() => ({
 		left: rem(50),
 	},
 }));
-export const BannerSlider = () => {
+export const BannerSlider = ({ offers }: { offers: any }) => {
 	const { classes } = useStyles();
+
 	return (
 		<Container fluid p={0} style={{ position: 'relative' }}>
 			<div
@@ -40,18 +40,20 @@ export const BannerSlider = () => {
 				</Text>
 			</div>
 			<Carousel loop classNames={classes}>
-				{objects.map((item) => {
+				{offers.map((item: any) => {
 					const { album } = item;
 
 					return (
 						<>
-							{album.map((photo) => {
-								return (
-									<Carousel.Slide style={{ height: '600px' }} key={photo}>
-										<Image src={photo} alt={item.title.en} />
-									</Carousel.Slide>
-								);
-							})}
+							{album.map((photo: any) => (
+								<>
+									{photo.image.map((x: string) => (
+										<Carousel.Slide style={{ height: '600px' }} key={photo[0]}>
+											<Image key={x} src={x} />
+										</Carousel.Slide>
+									))}
+								</>
+							))}
 						</>
 					);
 				})}

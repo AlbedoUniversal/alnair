@@ -1,14 +1,16 @@
 import {
 	Badge,
 	Card,
-	Group,
-	Text,
-	rem,
 	createStyles,
+	Group,
 	Image,
+	rem,
+	Text,
 } from '@mantine/core';
 import parser from 'html-react-parser';
+
 import CircleSVG from 'public/icons/Ellipse 2.svg';
+
 const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
@@ -47,13 +49,13 @@ const useStyles = createStyles((theme) => ({
 		fontSize: rem(8),
 		backgroundColor: theme.white,
 		color: theme.black,
-		paddingBlock: rem(12),
+		paddingBlock: rem(16),
 	},
 }));
 
 interface FrontSideProps {
 	title: string;
-	districts: string;
+	districts: any;
 	amenities: any;
 	priceMin: string;
 	priceMax: string;
@@ -78,24 +80,34 @@ export const FrontSide = ({
 	open,
 }: FrontSideProps) => {
 	const { classes } = useStyles();
+	const { length } = districts[0];
+
+	const district = () => {
+		if (length > 1) {
+			return (
+				<>
+					<Text>{districts[0][0]}</Text>
+					<Text>{districts[0][1]}</Text>
+				</>
+			);
+		}
+
+		return <Text>{districts[0][0]}</Text>;
+	};
+
 	return (
 		<Card className={classes.card} onClick={open} p={0}>
 			{object.districts && (
-				<Badge className={classes.rating}>{parser(districts)}</Badge>
+				<Badge className={classes.rating}>{district()}</Badge>
 			)}
 			<Card.Section className={classes.imageSection}>
 				<Image src={src} height={200} />
 			</Card.Section>
-			<Card.Section className={classes.section} style={{ height: '40px' }}>
-				<Group
-					style={{
-						alignItems: dir === 'rtl' ? 'flex-end' : 'flex-start',
-						flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
-					}}
-				>
-					<Text fz="sm">{parser(title)}</Text>
+			<Card.Section className={classes.section} style={{ height: '70px' }}>
+				<Group>
+					<Text fz="sm">{title}</Text>
 					<CircleSVG style={{ alignSelf: 'center' }} />
-					<Text fz="sm">{parser(districts)}</Text>
+					<Text fz="sm">{districts}</Text>
 				</Group>
 			</Card.Section>
 			<Card.Section
@@ -110,21 +122,15 @@ export const FrontSide = ({
 						gap: '5px',
 					}}
 				>
-					{amenities.map((amenity: any) => {
-						return (
-							<Text fz={12} color="#0B63E5">
-								{amenity}
-							</Text>
-						);
-					})}
+					{amenities.map((amenity: string) => (
+						<Text fz={12} color="#0B63E5" key={amenity}>
+							{amenity}
+						</Text>
+					))}
 				</Group>
 			</Card.Section>
 			<Card.Section className={classes.section} style={{ height: '60px' }}>
-				<Group
-					style={{
-						flexDirection: dir === 'rtl' ? 'row-reverse' : 'row',
-					}}
-				>
+				<Group>
 					<Text>
 						from {priceMin} {currency}
 					</Text>

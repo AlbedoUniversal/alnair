@@ -78,7 +78,7 @@ export const Footers = () => {
 					</Anchor>
 					<Grid className={classes.links}>
 						{mainLinks.map((link) => (
-							<Grid.Col span={6}>
+							<Grid.Col span={6} key={link.name}>
 								<Anchor<'a'>
 									href={link.link}
 									key={link.name}

@@ -1,19 +1,22 @@
 import {
-	createStyles,
-	Header,
-	Container,
-	Group,
-	rem,
-	Text,
 	Anchor,
+	Container,
+	createStyles,
+	Group,
+	Header,
+	rem,
 	Select,
+	Text,
 } from '@mantine/core';
-import PhoneSVG from 'public/icons/Phone.svg';
-import SearchSVG from 'public/icons/gg_search.svg';
 import { useContext } from 'react';
 
+import SearchSVG from 'public/icons/gg_search.svg';
+import PhoneSVG from 'public/icons/Phone.svg';
 import LogoSVG from 'public/logos/logo.svg';
+
 import { DirContext } from '@/shared/lib/context/DirContext/DirContext';
+
+import { Switcher } from '../LanguageSwitcher';
 
 const HEADER_HEIGHT = rem(60);
 
@@ -148,6 +151,7 @@ export const Headers = () => {
 							},
 						}}
 					/>
+					<Switcher />
 				</Group>
 			</Container>
 		</Header>

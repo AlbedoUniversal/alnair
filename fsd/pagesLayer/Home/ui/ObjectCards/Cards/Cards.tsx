@@ -1,8 +1,11 @@
-import { rem, createStyles } from '@mantine/core';
+import { createStyles, rem } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import parser from 'html-react-parser';
 import { useState } from 'react';
+
 import { FrontSide } from './FrontSide';
 import { Modals } from './Modal';
-import { useDisclosure } from '@mantine/hooks';
+
 const useStyles = createStyles((theme) => ({
 	card: {
 		backgroundColor:
@@ -47,17 +50,17 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface CardsProps {
-	title: string;
+	title: any;
 	object: any;
-	status: string;
-	src: string;
-	dir: string;
-	districts: string;
-	description: string;
+	status: any;
+	src: any;
+	dir: any;
+	districts: any;
+	description: any;
 	amenities: any;
-	priceMin: string;
-	priceMax: string;
-	currency: string;
+	priceMin: any;
+	priceMax: any;
+	currency: any;
 }
 export const Cards = ({
 	title,
@@ -73,6 +76,7 @@ export const Cards = ({
 	currency,
 }: CardsProps) => {
 	const [opened, { open, close }] = useDisclosure(false);
+
 	return (
 		<>
 			<FrontSide

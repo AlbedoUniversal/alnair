@@ -1,0 +1,784 @@
+<realty-feed>
+  <generation-date>2023-07-26T09:01:31+04:00</generation-date>
+  <offers>
+    <complex-id>1438</complex-id>
+    <type>residential_complex</type>
+    <logo>https://files.alnair.ae/uploads/2023/7/ce/fd/cefd8bcddfd0f3df7b3eee7079960bcc.png</logo>
+    <title>
+      <ru>Vita Grande</ru>
+      <en>Vita Grande</en>
+      <ar>فيتا غراندي</ar>
+    </title>
+    <description>
+      <ru><![CDATA[<p>От сверкающего фасада из стекла и нержавеющей стали до похожего на оазис спокойствия входа - каждый уровень этой современной башни отличается качеством без компромиссов. Современное сооружение, построенное с использованием современных материалов, ориентировано на исключительные виды, создавая идеальные условия для внутреннего и наружного комфорта, которые определяют стандарты городской жизни. Замечательные закаты, которые окрашивают парки и деревню, согреют резиденции в Vita Grande by METEORA</p>]]></ru>
+      <en><![CDATA[<p>From its shimmering exterior of glass and stainless steel to the oasis-like calm of its entrance, every level of this modern tower conveys quality without compromise. A modern structure advanced using contemporary materials, the building angles toward exceptional views creating the perfect setting for the indoor-outdoor comforts that define the standards of urban living. The remarkable sunsets that color the parks and the village will warm the residences at Vita Grande by METEORA</p>]]></en>
+      <ar><![CDATA[<p> من الخارج المتلألئ المصنوع من الزجاج والفولاذ المقاوم للصدأ إلى الهدوء الذي يشبه الواحة عند مدخله ، ينقل كل مستوى من هذا البرج الحديث الجودة دون المساومة. هيكل حديث متطور باستخدام مواد معاصرة ، زوايا المبنى نحو مناظر استثنائية مما يخلق بيئة مثالية لوسائل الراحة الداخلية والخارجية التي تحدد معايير الحياة الحضرية. ستعمل غروب الشمس الرائع الذي يلون المنتزهات والقرية على تدفئة المساكن في Vita Grande by METEORA </p>]]></ar>
+    </description>
+    <status>
+      <ru>Строится</ru>
+      <en>Under construction</en>
+      <ar>تحت التشيد</ar>
+    </status>
+    <construction_start_at>2023-04-14T00:00:00+04:00</construction_start_at>
+    <construction_progress/>
+    <planned_completion_at>2024-12-30T00:00:00+04:00</planned_completion_at>
+    <predicted_completion_at>2024-12-30T00:00:00+04:00</predicted_completion_at>
+    <amenities>
+      <amenity>
+        <ru>Общий бассейн</ru>
+        <en>Shared Pool</en>
+        <ar>بركة مشتركه</ar>
+      </amenity>
+      <amenity>
+        <ru>Консьерж-сервис</ru>
+        <en>Concierge Service</en>
+        <ar>خدمة الكونسيرج</ar>
+      </amenity>
+      <amenity>
+        <ru>Широкополосный Интернет</ru>
+        <en>Broadband Internet</en>
+        <ar>الإنترنت ذات النطاق العريض</ar>
+      </amenity>
+      <amenity>
+        <ru>Детская игровая площадка</ru>
+        <en>Kids Play Area</en>
+        <ar>منطقة لعب الأطفال</ar>
+      </amenity>
+      <amenity>
+        <ru>Лобби</ru>
+        <en>Lobby</en>
+        <ar>ردهة</ar>
+      </amenity>
+      <amenity>
+        <ru>Детский бассейн</ru>
+        <en>Children’s pool</en>
+        <ar>حمام سباحة للأطفال</ar>
+      </amenity>
+      <amenity>
+        <ru>Крытый паркинг</ru>
+        <en>Covered Parking</en>
+        <ar>مواقف مغطاة للسيارات</ar>
+      </amenity>
+    </amenities>
+    <developer>
+      <title>
+        <ru>Meteora</ru>
+        <en>Meteora</en>
+        <ar>ميتيورا</ar>
+      </title>
+      <logo>https://files.alnair.ae/uploads/2023/7/24/1a/241a3a11c0c9127c7c19da9d9a287adc.png</logo>
+    </developer>
+    <districts>
+      <district>Jumeirah Village Circle (JVC)</district>
+      <district>Al Barsha South Fourth</district>
+    </districts>
+    <address>JVC, Dubai</address>
+    <latitude>25.06009279</latitude>
+    <longitude>55.21818638</longitude>
+    <album>
+      <image>https://files.alnair.ae/uploads/2023/7/42/49/4249028fc09738704885a43f0af1be75.png</image>
+      <image>https://files.alnair.ae/uploads/2023/7/73/2b/732b3e9df1320dacceaa8c599a01eec0.png</image>
+      <image>https://files.alnair.ae/uploads/2023/7/24/fe/24fed46b378001a5b5e58fd11258b6ef.png</image>
+    </album>
+    <buildings_count>1</buildings_count>
+    <for_sale_count>22</for_sale_count>
+    <price>
+      <min>816000</min>
+      <max>1117000</max>
+      <currency>AED</currency>
+    </price>
+    <br_prices>
+      <key>rooms_1</key>
+      <count>22</count>
+      <min_price>816000</min_price>
+      <max_price>1117000</max_price>
+      <min_price_m2>11482</min_price_m2>
+      <max_price_m2>14426</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>59.83</m2>
+        <ft2>644.00</ft2>
+      </min_area>
+      <max_area>
+        <m2>91.97</m2>
+        <ft2>989.96</ft2>
+      </max_area>
+    </br_prices>
+    <updated_at>2023-07-26T08:18:13+04:00</updated_at>
+    <is_sold_out>0</is_sold_out>
+    <payment_plans>
+      <payment_plan>
+        <id>350</id>
+        <title>
+          <ru>План оплаты</ru>
+          <en>Payment Plan</en>
+          <ar>خطة الدفع</ar>
+        </title>
+        <on_booking_percent>5</on_booking_percent>
+        <on_booking_fix/>
+        <on_construction_percent>45</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>10</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent>1</post_handover_percent>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+    </payment_plans>
+    <sales_status>
+      <ru>Предварительный старт</ru>
+      <en>Prelaunch</en>
+      <ar>ما قبل الإطلاق</ar>
+    </sales_status>
+  </offers>
+  <offers>
+    <complex-id>1221</complex-id>
+    <type>residential_complex</type>
+    <logo>https://files.alnair.ae/uploads/2023/5/cc/bb/ccbb6ca2d8f2738a8c55d265599d08d1.png</logo>
+    <title>
+      <ru>Design Quarter</ru>
+      <en>Design Quarter</en>
+      <ar>ربع التصميم</ar>
+    </title>
+    <description>
+      <ru><![CDATA[<p>Дизайнерский квартал в d3 - наше последнее жилое предложение, но это не первое наше родео.<p>Обладая опытом в создании креативных пространств и знаковых достопримечательностей, мы были в авангарде создания одних из самых узнаваемых прибрежных, городских и пригородных сообществ Дубая.</p><p>Дизайнерский квартал d3 сочетает в себе нашу любовь к инновациям и творчеству с нашей страстью к элегантной, современной жизни.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ru>
+      <en><![CDATA[<p>The Design Quarter at d3 is our latest residential offering,<p>but this isn’t our first rodeo.</p><p>Not even close.</p><p>With a legacy in developing creative spaces and iconic landmarks, we have been at the forefront of delivering</p><p>some of Dubai’s most recognisable waterfront, urban,</p><p>and suburban communities.</p><p>Design Quarter at d3 combines our love for innovation and creativity with our passion for elegant, contemporary living.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></en>
+      <ar><![CDATA[<p>حي التصميم في دي 3 هو أحدث عروضنا السكنية,<p>لكن هذه ليست أول مسابقات رعاة البقر لدينا.</p><p>ولا حتى قريب.</p><p>مع إرث في تطوير المساحات الإبداعية والمعالم الشهيرة ، كنا في طليعة تقديم</p><p>بعض من الواجهة البحرية الأكثر شهرة في دبي ، في المناطق الحضرية,</p><p>ومجتمعات الضواحي.</p><p>يجمع حي التصميم في دي 3 بين حبنا للابتكار والإبداع مع شغفنا بالحياة الأنيقة والمعاصرة.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ar>
+    </description>
+    <status>
+      <ru>Строится</ru>
+      <en>Under construction</en>
+      <ar>تحت التشيد</ar>
+    </status>
+    <construction_start_at>2023-05-25T06:49:40+04:00</construction_start_at>
+    <construction_progress>0.90</construction_progress>
+    <planned_completion_at>2027-02-25T06:49:40+04:00</planned_completion_at>
+    <predicted_completion_at>2027-02-25T06:49:40+04:00</predicted_completion_at>
+    <amenities>
+      <amenity>
+        <ru>Общий бассейн</ru>
+        <en>Shared Pool</en>
+        <ar>بركة مشتركه</ar>
+      </amenity>
+      <amenity>
+        <ru>Консьерж-сервис</ru>
+        <en>Concierge Service</en>
+        <ar>خدمة الكونسيرج</ar>
+      </amenity>
+      <amenity>
+        <ru>Охрана</ru>
+        <en>Security</en>
+        <ar>حماية</ar>
+      </amenity>
+      <amenity>
+        <ru>Лобби</ru>
+        <en>Lobby</en>
+        <ar>ردهة</ar>
+      </amenity>
+    </amenities>
+    <developer>
+      <title>
+        <ru>Meraas</ru>
+        <en>Meraas</en>
+        <ar>مراس</ar>
+      </title>
+      <logo>https://files.alnair.ae/uploads/2023/5/49/1f/491ffef96076d62638f9e82b1e949f8e.png</logo>
+    </developer>
+    <districts>
+      <district>Za´Abeel Second</district>
+      <district>Dubai Design District</district>
+    </districts>
+    <address>Design Quarter, Dubai Design District, Dubai</address>
+    <latitude>25.18768758</latitude>
+    <longitude>55.29572502</longitude>
+    <album>
+      <image>https://files.alnair.ae/uploads/2023/5/94/b0/94b089db2588d5c1d4ac09afc28466e2.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/5/a4/b1/a4b17264d414e03119a331bb6423e995.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/5/65/0f/650fffdcf1f64334a3f55513f63295fa.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/5/95/70/9570d6ef4ea9547fbe9ede1d78d17a00.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/5/80/d5/80d5135842faacb01f5d9c3b009953ac.jpg</image>
+    </album>
+    <buildings_count>3</buildings_count>
+    <for_sale_count>29</for_sale_count>
+    <price>
+      <min>2015000</min>
+      <max>7951000</max>
+      <currency>AED</currency>
+    </price>
+    <br_prices>
+      <key>rooms_1</key>
+      <count>8</count>
+      <min_price>2015000</min_price>
+      <max_price>2764000</max_price>
+      <min_price_m2>20197</min_price_m2>
+      <max_price_m2>30968</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>73.95</m2>
+        <ft2>795.99</ft2>
+      </min_area>
+      <max_area>
+        <m2>136.85</m2>
+        <ft2>1,473.04</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_2</key>
+      <count>11</count>
+      <min_price>2750000</min_price>
+      <max_price>3452000</max_price>
+      <min_price_m2>25172</min_price_m2>
+      <max_price_m2>31356</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>108.42</m2>
+        <ft2>1,167.02</ft2>
+      </min_area>
+      <max_area>
+        <m2>116.87</m2>
+        <ft2>1,257.98</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_3</key>
+      <count>10</count>
+      <min_price>4000000</min_price>
+      <max_price>7951000</max_price>
+      <min_price_m2>24132</min_price_m2>
+      <max_price_m2>37138</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>143.72</m2>
+        <ft2>1,546.99</ft2>
+      </min_area>
+      <max_area>
+        <m2>271.46</m2>
+        <ft2>2,921.97</ft2>
+      </max_area>
+    </br_prices>
+    <updated_at>2023-07-26T08:14:22+04:00</updated_at>
+    <is_sold_out>0</is_sold_out>
+    <payment_plans>
+      <payment_plan>
+        <id>103</id>
+        <title>
+          <ru>План платежей</ru>
+          <en>Payment plan</en>
+          <ar>خطة الدفع</ar>
+        </title>
+        <on_booking_percent>20</on_booking_percent>
+        <on_booking_fix/>
+        <on_construction_percent>40</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>40</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+    </payment_plans>
+    <sales_status>
+      <ru>В продаже</ru>
+      <en>On Sale</en>
+      <ar>معروض للبيع</ar>
+    </sales_status>
+  </offers>
+  <offers>
+    <complex-id>1355</complex-id>
+    <type>residential_complex</type>
+    <logo>https://files.alnair.ae/uploads/2023/6/08/22/08223c9f194cc89556f8ff040f3c78cd.png</logo>
+    <title>
+      <ru>PARK VIEWS</ru>
+      <en/>
+      <ar/>
+    </title>
+    <description>
+      <ru><![CDATA[<p>Park Views Residences располагается  неподалеку от парка Забеил, Дубай - это первоклассный новый жилой комплекс, предлагающий апартаменты премиум-класса с 1, 2 и 3 спальнями от Wasl Properties.Эта высотная жилая башня станет грандиозной с точки зрения предоставляемых услуг и удобства для жильцов.Не выходя из своего дома, вы будете наслаждаться одними из самых комфортабельных удобств.<p>Здесь есть множество удобств для здоровья, отдыха, развлечений и многое другое, а окружающая обстановка спроектирована так, чтобы быть эксклюзивной.Таким образом, вы прекрасно насладитесь самым культовым стилем жизни премиум-класса, который исключительно хорошо продуман.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ru>
+      <en><![CDATA[<p>Park Views Residences at Wasl 1, near Zabil Park, Dubai is a first-class new residential complex offering premium 1, 2 and 3 bedroom apartments from Wasl Properties.This high-rise residential tower will be grandiose in terms of services provided and convenience for residents.From the comfort of your home, you will enjoy some of the most comfortable amenities.<p>There are many amenities for health, recreation, entertainment and much more, and the environment is designed to be exclusive.Thus, you will perfectly enjoy the most iconic premium lifestyle, which is exceptionally well thought out.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></en>
+      <ar><![CDATA[<p> بارك فيوز رزيدنسز في وصل 1 ، بالقرب من حديقة زبيل ، دبي هو مجمع سكني جديد من الدرجة الأولى يوفر شقق بغرفة نوم واحدة وغرفتين وثلاث غرف نوم من وصل العقارية ، وسيكون هذا البرج السكني الشاهق فخمًا من حيث الخدمات المقدمة وراحة للمقيمين ، من راحة منزلك ، ستستمتع ببعض وسائل الراحة الأكثر راحة. <p> هناك العديد من وسائل الراحة للصحة والاستجمام والترفيه وغير ذلك الكثير ، وقد تم تصميم البيئة لتكون حصرية. ستستمتع تمامًا بأسلوب الحياة المتميز الأكثر شهرة ، والذي تم التفكير فيه جيدًا بشكل استثنائي. <!-- p--> </p><p> </p><p> </p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ar>
+    </description>
+    <status>
+      <ru>Запланировано</ru>
+      <en>Scheduled</en>
+      <ar>البناء المقرر</ar>
+    </status>
+    <construction_start_at>2023-03-31T06:49:50+04:00</construction_start_at>
+    <construction_progress/>
+    <planned_completion_at/>
+    <predicted_completion_at/>
+    <amenities>
+      <amenity>
+        <ru>Общий бассейн</ru>
+        <en>Shared Pool</en>
+        <ar>بركة مشتركه</ar>
+      </amenity>
+      <amenity>
+        <ru>Консьерж-сервис</ru>
+        <en>Concierge Service</en>
+        <ar>خدمة الكونسيرج</ar>
+      </amenity>
+      <amenity>
+        <ru>Охрана</ru>
+        <en>Security</en>
+        <ar>حماية</ar>
+      </amenity>
+      <amenity>
+        <ru>Детская игровая площадка</ru>
+        <en>Kids Play Area</en>
+        <ar>منطقة لعب الأطفال</ar>
+      </amenity>
+      <amenity>
+        <ru>Лобби</ru>
+        <en>Lobby</en>
+        <ar>ردهة</ar>
+      </amenity>
+    </amenities>
+    <developer>
+      <title>
+        <ru>Wasl</ru>
+        <en>Park 1 L.L.C</en>
+        <ar>بارك 1 ش.ذ.م.م</ar>
+      </title>
+      <logo>https://files.alnair.ae/uploads/2023/6/11/3a/113aa5017e5d3fd382f053140da3056c.png</logo>
+    </developer>
+    <districts>
+      <district>Al Kifaf</district>
+    </districts>
+    <address>Dubai, Zaabeel, Al Kifaf </address>
+    <latitude>25.23278600</latitude>
+    <longitude>55.29472850</longitude>
+    <album>
+      <image>https://files.alnair.ae/uploads/2023/6/8d/c8/8dc8c657be15bfd44217b9b69c23382a.png</image>
+      <image>https://files.alnair.ae/uploads/2023/6/02/bc/02bce16323a8a5aa68a6afad21189c99.png</image>
+      <image>https://files.alnair.ae/uploads/2023/6/96/7e/967eda6ee668536117c3402e70e9f1d5.png</image>
+      <image>https://files.alnair.ae/uploads/2023/6/78/18/781852b49b0f205205efbe137ae0ce18.png</image>
+    </album>
+    <buildings_count>1</buildings_count>
+    <for_sale_count>14</for_sale_count>
+    <price>
+      <min>2183777</min>
+      <max>3685777</max>
+      <currency>AED</currency>
+    </price>
+    <br_prices>
+      <key>rooms_2</key>
+      <count>4</count>
+      <min_price>2183777</min_price>
+      <max_price>2941777</max_price>
+      <min_price_m2>12533</min_price_m2>
+      <max_price_m2>20269</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>107.74</m2>
+        <ft2>1,159.70</ft2>
+      </min_area>
+      <max_area>
+        <m2>230.98</m2>
+        <ft2>2,486.25</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_3</key>
+      <count>10</count>
+      <min_price>3014777</min_price>
+      <max_price>3685777</max_price>
+      <min_price_m2>13385</min_price_m2>
+      <max_price_m2>22631</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>152.39</m2>
+        <ft2>1,640.31</ft2>
+      </min_area>
+      <max_area>
+        <m2>275.37</m2>
+        <ft2>2,964.06</ft2>
+      </max_area>
+    </br_prices>
+    <updated_at>2023-07-26T08:57:38+04:00</updated_at>
+    <is_sold_out>0</is_sold_out>
+    <payment_plans>
+      <payment_plan>
+        <id>270</id>
+        <title>
+          <ru>План оплаты 60/40</ru>
+          <en>Payment plan 60/40</en>
+          <ar>خطة الدفع 60/40</ar>
+        </title>
+        <on_booking_percent>5</on_booking_percent>
+        <on_booking_fix/>
+        <on_construction_percent>55</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>40</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+    </payment_plans>
+    <sales_status>
+      <ru>В продаже</ru>
+      <en>On Sale</en>
+      <ar>معروض للبيع</ar>
+    </sales_status>
+  </offers>
+  <offers>
+    <complex-id>995</complex-id>
+    <type>residential_complex</type>
+    <logo>https://files.alnair.ae/uploads/2022/12/96/6c/966c1f87dd4f578e000bb948c4905c60.jpg</logo>
+    <title>
+      <ru>The Opus</ru>
+      <en>The Opus</en>
+      <ar>أوبوس</ar>
+    </title>
+    <description>
+      <ru><![CDATA[<p>Проект Opus от OMNIYAT, спроектированный  Захой Хадид, занимает 20 этажей многофункционального здания, чтобы ежедневно наслаждаться уникальными резиденциями, эксклюзивными офисами, изысканной кухней и самым долгожданным отелем в регионе.<p>“Здание, которое никогда не спит” полностью спроектировано самым дальновидным архитектором дамой Захой Хадид, что является празднованием ее экстраординарной работы, отражающей ее творческий склад ума в демонстрации видения, навыков и привлекательных дизайнов, а также ее таланта в начале эволюции в области архитектуры.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ru>
+      <en><![CDATA[<p>The Opus by OMNIYAT designed by Dame Zaha Hadid, holds inside a mixed-use 20 storeys, to savour daily experiences in the unique residencies, exclusive offices, fine dining and the most long-awaited hotel in the region.<p>“The building that never sleeps” is designed entirely by the most visionary Architect Dame Zaha Hadid, which is a celebration of her extraordinary work that reflects her creative mind in demonstrating vision, skills and eye-catching designs, furthermore her talent in starting an evolution in the field of architecture.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></en>
+      <ar><![CDATA[<p>أوبوس من أمنيات صممته السيدة زها حديد ، يحمل داخل 20 طابقا متعدد الاستخدامات ، لتذوق التجارب اليومية في الإقامات الفريدة والمكاتب الحصرية والمطاعم الفاخرة والفندق الذي طال انتظاره في المنطقة.<p>تم تصميم" المبنى الذي لا ينام أبدا " بالكامل من قبل المهندس المعماري الأكثر رؤية السيدة زها حديد ، وهو احتفال بعملها الاستثنائي الذي يعكس عقلها الإبداعي في إظهار الرؤية والمهارات والتصاميم اللافتة للنظر ، علاوة على موهبتها في بدء تطور في مجال الهندسة المعمارية.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ar>
+    </description>
+    <status>
+      <ru>Завершено</ru>
+      <en>Completed</en>
+      <ar>منتهى</ar>
+    </status>
+    <construction_start_at>2008-05-26T06:49:23+04:00</construction_start_at>
+    <construction_progress>97.04</construction_progress>
+    <planned_completion_at>2017-10-30T06:49:23+04:00</planned_completion_at>
+    <predicted_completion_at>2017-10-30T06:49:23+04:00</predicted_completion_at>
+    <amenities>
+      <amenity>
+        <ru>Общий бассейн</ru>
+        <en>Shared Pool</en>
+        <ar>بركة مشتركه</ar>
+      </amenity>
+      <amenity>
+        <ru>Консьерж-сервис</ru>
+        <en>Concierge Service</en>
+        <ar>خدمة الكونسيرج</ar>
+      </amenity>
+      <amenity>
+        <ru>Крытый паркинг</ru>
+        <en>Covered Parking</en>
+        <ar>مواقف مغطاة للسيارات</ar>
+      </amenity>
+      <amenity>
+        <ru>Охрана</ru>
+        <en>Security</en>
+        <ar>حماية</ar>
+      </amenity>
+      <amenity>
+        <ru>Домашние животные разрешены</ru>
+        <en>Pets Allowed</en>
+        <ar>مسموح بدخول الحيوانات الأليفة</ar>
+      </amenity>
+      <amenity>
+        <ru>Детская игровая площадка</ru>
+        <en>Kids Play Area</en>
+        <ar>منطقة لعب الأطفال</ar>
+      </amenity>
+      <amenity>
+        <ru>Лобби</ru>
+        <en>Lobby</en>
+        <ar>ردهة</ar>
+      </amenity>
+    </amenities>
+    <developer>
+      <title>
+        <ru>Omniyat</ru>
+        <en>Omniyat</en>
+        <ar>أومنيات</ar>
+      </title>
+      <logo>https://files.alnair.ae/uploads/2023/3/e0/60/e060e6319b12c80ac776c94e4a108faf.jpg</logo>
+    </developer>
+    <districts>
+      <district>Business Bay</district>
+    </districts>
+    <address>The Opus, Business bay, Dubai</address>
+    <latitude>25.18866295</latitude>
+    <longitude>55.26699473</longitude>
+    <album>
+      <image>https://files.alnair.ae/uploads/2023/1/4b/c5/4bc593ef6324eb2d6a83c07a27318e43.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/e6/20/e620aad18324b8c681bd4e55b8b16722.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/db/11/db11ea7b30a1e815bf1c581717be8638.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/22/18/22184bc95210b3b81da09773108f66b0.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/02/87/0287103b43128183a5d4b3a6f891342a.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/5e/0c/5e0c84bd931e0a66c375d3fbfc3f69e1.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/1/a2/e1/a2e16b8837bd25eb8adba1985e4bcac8.jpg</image>
+    </album>
+    <buildings_count>1</buildings_count>
+    <for_sale_count>3</for_sale_count>
+    <price>
+      <min>5534587</min>
+      <max>13038152</max>
+      <currency>AED</currency>
+    </price>
+    <br_prices>
+      <key>rooms_1</key>
+      <count>1</count>
+      <min_price>5534587</min_price>
+      <max_price>5534587</max_price>
+      <min_price_m2>50572</min_price_m2>
+      <max_price_m2>50572</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>109.44</m2>
+        <ft2>1,178.00</ft2>
+      </min_area>
+      <max_area>
+        <m2>109.44</m2>
+        <ft2>1,178.00</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_2</key>
+      <count>2</count>
+      <min_price>12507459</min_price>
+      <max_price>13038152</max_price>
+      <min_price_m2>50592</min_price_m2>
+      <max_price_m2>50592</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>247.22</m2>
+        <ft2>2,661.05</ft2>
+      </min_area>
+      <max_area>
+        <m2>257.71</m2>
+        <ft2>2,773.96</ft2>
+      </max_area>
+    </br_prices>
+    <updated_at>2023-07-26T08:54:05+04:00</updated_at>
+    <is_sold_out>0</is_sold_out>
+    <payment_plans>
+      <payment_plan>
+        <id>98</id>
+        <title>
+          <ru>План оплаты 10/90</ru>
+          <en>Payment plan 10/90</en>
+          <ar>خطة الدفع 10/90</ar>
+        </title>
+        <on_booking_percent>10</on_booking_percent>
+        <on_booking_fix/>
+        <on_construction_percent>90</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent/>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+      <payment_plan>
+        <id>99</id>
+        <title>
+          <ru>План оплаты Penthouse 5/95</ru>
+          <en>Payment plan Penthouse 5/95</en>
+          <ar>خطة الدفع بنتهاوس 5/95</ar>
+        </title>
+        <on_booking_percent>5</on_booking_percent>
+        <on_booking_fix/>
+        <on_construction_percent>70</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>25</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+    </payment_plans>
+    <sales_status>
+      <ru>В продаже</ru>
+      <en>On Sale</en>
+      <ar>معروض للبيع</ar>
+    </sales_status>
+  </offers>
+  <offers>
+    <complex-id>1198</complex-id>
+    <type>residential_complex</type>
+    <logo>https://files.alnair.ae/uploads/2023/4/15/50/1550025d538acc41be81a583f1a37fec.jpg</logo>
+    <title>
+      <ru>Fashionz</ru>
+      <en>Fashionz</en>
+      <ar>الموضة</ar>
+    </title>
+    <description>
+      <ru><![CDATA[<p>FASHIONZ - стиль жизни от кутюр, где прославляется индивидуальность и мода оживает каждый день. Влюбитесь по уши, окунувшись в роскошную жизнь в FASHIONZ, одной из самых высоких башен в Jumeirah Village Triangle. Вдохновленный иконами стиля, FASHIONZ отличается современным дизайном и идеальным сочетанием внутренних и наружных удобств, которые подарят вам мир комфорта, роскоши и стиля.<p>Насладитесь уникальным в своем роде эстетическим центром FashionTV Salon FTV, где вы можете побаловать себя стилем. Роскошный ресторан FashionTV на крыше с бассейном здесь вас ждет изысканная атмосфера и восхитительная кухня, а кафе FTV станет идеальным местом для стильного и в то же время непринужденного ужина с друзьями. Тренажерный зал и спа-салон FashionTV помогут вам поддерживать свою физическую форму и восстановить силы.</p><p>В FASHIONZ каждая деталь была продумана до мелочей, чтобы обеспечить вам непревзойденный жизненный опыт. Приезжайте и ощутите воплощение роскоши жизни в FASHIONZ by DANUBE.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ru>
+      <en><![CDATA[<p>FASHION is a couture lifestyle where individuality is glorified and fashion comes to life every day. Fall head over heels in love with the luxurious life at FASHION, one of the tallest towers in Jumeirah Village Triangle. Inspired by style icons, FASHION features a modern design and a perfect combination of indoor and outdoor amenities that will give you a world of comfort, luxury and style.<p>Enjoy the unique aesthetic center FashionTV Salon FTV, where you can pamper yourself with style. Luxury restaurant FashionTV on the roof with a swimming pool here you will find a refined atmosphere and delicious cuisine, and cafe FTV will be the perfect place for a stylish and at the same time casual dinner with friends. The FashionTV gym and Spa will help you maintain your fitness and restore your strength.</p><p>At FASHIONZ, every detail has been thought through to the smallest detail to provide you with an unsurpassed life experience. Come and experience the embodiment of the luxury of life in FASHIONZ by DANUBE.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></en>
+      <ar><![CDATA[<p>الموضة هي أسلوب حياة راقي حيث يتم تمجيد الفردية وتأتي الموضة إلى الحياة كل يوم. تقع رأسا على عقب في الحب مع الحياة الفاخرة في الأزياء ، واحدة من أطول الأبراج في مثلث قرية الجميرا. مستوحاة من أيقونات الأناقة ، تتميز الموضة بتصميم عصري ومزيج مثالي من وسائل الراحة الداخلية والخارجية التي ستمنحك عالما من الراحة والرفاهية والأناقة.<p>تتمتع فريدة من نوعها مركز الجمالية فاشيونتف صالون فتف ، حيث يمكنك تدليل نفسك مع الاسلوب. مطعم فاخر فاشيونتف على السطح مع حمام سباحة هنا سوف تجد جو المكرر والمأكولات اللذيذة ، وسوف مقهى فتف يكون المكان المثالي لعشاء أنيق وفي الوقت نفسه عارضة مع الأصدقاء. سوف فاشيونتف جيم وسبا تساعدك على الحفاظ على لياقتك واستعادة قوتك.</p><p>في فاشيونز ، تم التفكير في كل التفاصيل إلى أصغر التفاصيل لتزويدك بتجربة حياة غير مسبوقة. تعال وتجربة تجسيد ترف الحياة في فاشيونز من الدانوب.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></p>]]></ar>
+    </description>
+    <status>
+      <ru>Запланировано</ru>
+      <en>Scheduled</en>
+      <ar>البناء المقرر</ar>
+    </status>
+    <construction_start_at>2023-08-01T06:49:40+04:00</construction_start_at>
+    <construction_progress>0.00</construction_progress>
+    <planned_completion_at>2027-02-01T00:00:00+04:00</planned_completion_at>
+    <predicted_completion_at>2027-02-01T00:00:00+04:00</predicted_completion_at>
+    <amenities>
+      <amenity>
+        <ru>Общий бассейн</ru>
+        <en>Shared Pool</en>
+        <ar>بركة مشتركه</ar>
+      </amenity>
+      <amenity>
+        <ru>Консьерж-сервис</ru>
+        <en>Concierge Service</en>
+        <ar>خدمة الكونسيرج</ar>
+      </amenity>
+      <amenity>
+        <ru>Детский бассейн</ru>
+        <en>Children’s pool</en>
+        <ar>حمام سباحة للأطفال</ar>
+      </amenity>
+      <amenity>
+        <ru>Охрана</ru>
+        <en>Security</en>
+        <ar>حماية</ar>
+      </amenity>
+      <amenity>
+        <ru>Широкополосный Интернет</ru>
+        <en>Broadband Internet</en>
+        <ar>الإنترنت ذات النطاق العريض</ar>
+      </amenity>
+      <amenity>
+        <ru>Лобби</ru>
+        <en>Lobby</en>
+        <ar>ردهة</ar>
+      </amenity>
+    </amenities>
+    <developer>
+      <title>
+        <ru>Danube</ru>
+        <en>Danube</en>
+        <ar>نهر الدانوب</ar>
+      </title>
+      <logo>https://files.alnair.ae/uploads/2023/3/ce/cf/cecfd137a1c39320cc6947dac2f6a78a.jpg</logo>
+    </developer>
+    <districts>
+      <district>Al Barsha South Fifth</district>
+      <district>Jumeirah Village Triangle (JVT)</district>
+    </districts>
+    <address>Jumeirah Village, Jumeirah Village Triangle, Dubai</address>
+    <latitude>25.04216850</latitude>
+    <longitude>55.18873571</longitude>
+    <album>
+      <image>https://files.alnair.ae/uploads/2023/4/3c/6b/3c6b2162af242adb5012ad01a081219e.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/4/0b/9e/0b9ea3243fc42552f4f2f1b5fe6c83c7.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/4/ea/10/ea101c205fd67013d7f6a1566c7d21e9.jpg</image>
+      <image>https://files.alnair.ae/uploads/2023/4/89/0d/890d71141f15cedad079dd05c0992b1e.jpg</image>
+    </album>
+    <buildings_count>1</buildings_count>
+    <for_sale_count>47</for_sale_count>
+    <price>
+      <min>1387000</min>
+      <max>2557000</max>
+      <currency>AED</currency>
+    </price>
+    <br_prices>
+      <key>rooms_1</key>
+      <count>30</count>
+      <min_price>1387000</min_price>
+      <max_price>1547000</max_price>
+      <min_price_m2>17149</min_price_m2>
+      <max_price_m2>19656</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>78.60</m2>
+        <ft2>846.04</ft2>
+      </min_area>
+      <max_area>
+        <m2>81.03</m2>
+        <ft2>872.20</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_2</key>
+      <count>14</count>
+      <min_price>1703000</min_price>
+      <max_price>1876000</max_price>
+      <min_price_m2>16373</min_price_m2>
+      <max_price_m2>18791</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>99.41</m2>
+        <ft2>1,070.04</ft2>
+      </min_area>
+      <max_area>
+        <m2>109.39</m2>
+        <ft2>1,177.46</ft2>
+      </max_area>
+    </br_prices>
+    <br_prices>
+      <key>rooms_3</key>
+      <count>3</count>
+      <min_price>2442000</min_price>
+      <max_price>2557000</max_price>
+      <min_price_m2>17906</min_price_m2>
+      <max_price_m2>18749</max_price_m2>
+      <currency>AED</currency>
+      <min_area>
+        <m2>136.38</m2>
+        <ft2>1,467.98</ft2>
+      </min_area>
+      <max_area>
+        <m2>136.38</m2>
+        <ft2>1,467.98</ft2>
+      </max_area>
+    </br_prices>
+    <updated_at>2023-07-26T08:40:55+04:00</updated_at>
+    <is_sold_out>0</is_sold_out>
+    <payment_plans>
+      <payment_plan>
+        <id>40</id>
+        <title>
+          <ru>План оплаты</ru>
+          <en>Payment plan</en>
+          <ar>خطة الدفع</ar>
+        </title>
+        <on_booking_percent/>
+        <on_booking_fix/>
+        <on_construction_percent>65</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>1</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+      <payment_plan>
+        <id>108</id>
+        <title>
+          <ru>План оплаты</ru>
+          <en>Payment plan</en>
+          <ar>خطة الدفع</ar>
+        </title>
+        <on_booking_percent/>
+        <on_booking_fix/>
+        <on_construction_percent>35</on_construction_percent>
+        <on_construction_fix/>
+        <on_handover_percent>1</on_handover_percent>
+        <on_handover_fix/>
+        <post_handover_percent/>
+        <post_handover_fix/>
+        <roi_percent/>
+        <roi_fix/>
+        <currency>AED</currency>
+      </payment_plan>
+    </payment_plans>
+    <sales_status>
+      <ru>Старт продаж</ru>
+      <en>New launch</en>
+      <ar>إطلاق جديد</ar>
+    </sales_status>
+  </offers>
+</realty-feed>
