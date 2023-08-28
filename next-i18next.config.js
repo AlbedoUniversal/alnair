@@ -7,5 +7,5 @@ module.exports = {
 		typeof window === 'undefined'
 			? require('path').resolve('./public/locales')
 			: '/locales',
-	ns: ['translations', 'header'],
+	ns: ['translations', 'header', 'placeholder', 'banner'],
 };

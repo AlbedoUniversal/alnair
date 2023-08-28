@@ -5,14 +5,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import xml2js from 'xml2js';
 
 import nextI18nextConfig from 'next-i18next.config';
-
-import { HomePage } from '@/pagesLayer/Home';
+import { HomePage } from 'src/modules/Home';
 
 const Home = (props: any) => <HomePage {...props} />;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-	const xml = fs.readFileSync('./pages/data.xml', 'utf8');
+	const xml = fs.readFileSync('./pages/data.xml');
 	const result = await xml2js.parseStringPromise(xml);
+
 	const localesFolderRu = './public/locales/ru/';
 	if (!fs.existsSync(localesFolderRu)) {
 		fs.mkdirSync(localesFolderRu);
@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 		},
 	};
 
-	offers.forEach((offer: any) => {
+	offers.forEach((offer) => {
 		// RU
 
 		// titles
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 		locales.ru.amenities.push(
 			offer.amenities.flatMap((item) =>
-				item.amenity.flatMap((amenity) => amenity.ru)
+				item.amenity.flatMap((amenity: any) => amenity.ru)
 			)
 		);
 		// description
@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 		// amenities
 		locales.ar.amenities.push(
 			offer.amenities.flatMap((item) =>
-				item.amenity.flatMap((amenity: any) => amenity.ar)
+				item.amenity.flatMap((amenity) => amenity.ar)
 			)
 		);
 
@@ -148,6 +148,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 				'common',
 				'translations',
 				'header',
+				'placeholder',
+				'banner',
 			])),
 			nextI18nextConfig,
 			data: result,

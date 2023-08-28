@@ -1,10 +1,7 @@
-@import './mixins.css';
-
 html {
 	scroll-behavior: smooth;
 }
 body {
-	@mixin responsiveFont 16, 28, 1.5;
 	font-weight: 400;
 	color: #151515;
 	margin: 0;
@@ -13,24 +10,4 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
-}
-
-body h1 {
-	@mixin responsiveFont 40, 80, 1.1;
-	margin: 0;
-	margin-bottom: 2rem;
-	font-weight: 400;
-}
-
-h2 {
-	@mixin responsiveFont 32, 56, 1.3;
-	margin: 0;
-	margin-bottom: 5rem;
-	font-weight: 400;
-}
-
-h3 {
-	@mixin responsiveFont 24, 28, 1.5;
-	@mixin fluid margin-top, 24, 48;
-	font-weight: 400;
 }

@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["fsd/*"],
+			"@/*": ["src/*"],
 			"@public/*": ["public"]
 		},
 		"target": "es5",

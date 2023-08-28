@@ -1,15 +1,16 @@
 import { MantineProvider } from '@mantine/core';
 import type { AppProps } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation, useTranslation } from 'next-i18next';
 
 import '../styles/global.css';
-import { AppLayout } from '@/pagesLayer/Home/ui/AppLayout';
+import { AppLayout } from '@/config/layout/AppLayout';
+import { themeConfig } from '@/shared/config';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	const AnyComponent = Component as any;
-
+	const { i18n } = useTranslation();
 	return (
-		<MantineProvider withGlobalStyles withNormalizeCSS>
+		<MantineProvider withGlobalStyles theme={themeConfig}>
 			<AppLayout>
 				<AnyComponent {...pageProps} />
 			</AppLayout>
