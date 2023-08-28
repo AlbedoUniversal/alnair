@@ -7,7 +7,7 @@ import { components } from './components';
 // import { focusRingStyles } from './focusRingStyles';
 // import { globalStyles } from './globalStyles';
 // import { other } from './other';
-// import { radius, defaultRadius } from './radius';
+import { defaultRadius, radius } from './radius';
 // import { shadows } from './shadows';
 // import { spacing } from './spacing';
 // import { fontFamily, fontSizes, headings, lineHeight } from './typography';
@@ -21,7 +21,7 @@ export const themeConfig: MantineThemeOverride = {
 	colors,
 	primaryColor,
 	primaryShade,
-	// radius,
+	radius,
 	// globalStyles,
 	// fontFamily,
 	// focusRingStyles,
@@ -32,7 +32,7 @@ export const themeConfig: MantineThemeOverride = {
 	// headings,
 	// shadows,
 	// lineHeight,
-	// defaultRadius,
+	defaultRadius,
 	// activeStyles,
 	// other,
 };

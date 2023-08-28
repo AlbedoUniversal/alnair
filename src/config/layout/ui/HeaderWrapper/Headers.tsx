@@ -7,6 +7,7 @@ import {
 	rem,
 	Text,
 } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 
 import SearchSVG from 'public/icons/gg_search.svg';
 import PhoneSVG from 'public/icons/Phone.svg';
@@ -53,7 +54,11 @@ const useStyles = createStyles((theme) => ({
 
 export const Headers = ({ dir }: { dir: string }) => {
 	const { classes } = useStyles();
-
+	const { t } = useTranslation('layout');
+	const mainLinks = [
+		{ name: t('contact'), link: '#contacts' },
+		{ name: t('projects'), link: '#projects' },
+	];
 	return (
 		<Header height={HEADER_HEIGHT} dir={dir}>
 			<Container className={classes.inner} size="xl">
@@ -77,19 +82,11 @@ export const Headers = ({ dir }: { dir: string }) => {
 						/>
 						<Text className={classes.name}>Alnair</Text>
 					</Anchor>
-					<Anchor
-						href="#projects"
-						className={classes.link}
-						style={{
-							borderLeft: '1px solid #E6E8EC',
-							paddingLeft: '20px',
-						}}
-					>
-						Projects
-					</Anchor>
-					<Anchor href="#contacts" className={classes.link}>
-						Contacts
-					</Anchor>
+					{mainLinks.map((link) => (
+						<Anchor key={link.name} href={link.link} className={classes.link}>
+							{link.name}
+						</Anchor>
+					))}
 				</Group>
 
 				<Group>

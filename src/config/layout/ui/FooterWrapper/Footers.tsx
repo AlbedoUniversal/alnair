@@ -7,6 +7,7 @@ import {
 	rem,
 	Text,
 } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 
 import LogoSVG from 'public/logos/logo.svg';
 
@@ -49,16 +50,16 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const mainLinks = [
-	{ name: 'Projects', link: '#projects' },
-	{ name: 'Reviews', link: '/' },
-	{ name: 'News', link: '/' },
-	{ name: 'Contacts', link: '#contacts' },
-];
-
 export const Footers = ({ dir }: { dir: string }) => {
 	const { classes } = useStyles();
+	const { t } = useTranslation('layout');
 
+	const mainLinks = [
+		{ name: t('projects'), link: '#projects' },
+		{ name: t('reviews'), link: '/' },
+		{ name: t('news'), link: '/' },
+		{ name: t('contact'), link: '#contacts' },
+	];
 	return (
 		<div className={classes.footer} dir={dir}>
 			<Container className={classes.inner} size="xl">
@@ -92,11 +93,10 @@ export const Footers = ({ dir }: { dir: string }) => {
 				</Group>
 				<div>
 					<Text color="#6F7886" fz={14} lh={1.5}>
-						Mohammed Bin Rashid Boulevard 1, Burj Khalifa, Zaabil, Emirate of
-						Dubai
+						{t('address')}
 					</Text>
 					<Text color="#6F7886" fz={14} lh={1.5}>
-						© 2023 - Alnair. All rights reserved
+						{t('rights')}
 					</Text>
 				</div>
 			</Container>
