@@ -19,18 +19,18 @@ const useStyles = createStyles(() => ({
 		left: rem(50),
 	},
 }));
+
 export const BannerSlider = ({ offers }: { offers: any }) => {
 	const { t } = useTranslation('banner');
 	const { classes } = useStyles();
-
 	return (
 		<Container fluid p={0} style={{ position: 'relative' }}>
 			<div
 				style={{
 					position: 'absolute',
-					zIndex: 1000000,
-					top: '130px',
-					left: '60px',
+					paddingInline: rem(60),
+					zIndex: 10000,
+					top: rem(130),
 				}}
 			>
 				<Text fz={44} fw={600} lh={1.1} color="white">

@@ -57,36 +57,33 @@ const useStyles = createStyles((theme) => ({
 }));
 export const PopularDistricts = () => {
 	const { classes } = useStyles();
-	const { i18n, t } = useTranslation('');
+	const { i18n, t } = useTranslation('popular');
 	const cards = [
 		{
 			photo: '/images/AbuDhabi.jpg',
-			name: 'Abu Dhabi',
-			description:
-				'Abu Dhabi is the capital of the UAE and the center of business.',
+			name: t('abuDhabi'),
+			description: t('descriptionAbu'),
 		},
 		{
 			photo: '/images/Dubai.jpg',
-			name: 'Dubai',
-			description:
-				'Dubai – famous for its luxury shopping, restaurants and nightlife',
+			name: t('dubai'),
+			description: t('descriptionDubai'),
 		},
 		{
 			photo: '/images/RASalKhaimah.jpg',
-			name: 'RAS al Khaimah',
-			description:
-				'Ras Al Khaimah ranks 6th in terms of population in the UAE.',
+			name: t('rasal'),
+			description: t('descriptionRas'),
 		},
 		{
 			photo: '/images/Sharjah.jpeg',
-			name: 'Sharjah',
-			description: 'Sharjah is considered the cultural capital of the country.',
+			name: t('sharjan'),
+			description: t('descriptionShar'),
 		},
 	];
 	return (
 		<Container size="xl" className={classes.container}>
 			<Text fz={40} pb={60}>
-				Popular Districts
+				{t('title')}
 			</Text>
 			<Grid>
 				{cards.map((card) => (

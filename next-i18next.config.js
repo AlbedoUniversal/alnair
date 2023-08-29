@@ -7,5 +7,13 @@ module.exports = {
 		typeof window === 'undefined'
 			? require('path').resolve('./public/locales')
 			: '/locales',
-	ns: ['translations', 'layout', 'placeholder', 'banner'],
+	ns: [
+		'translations',
+		'layout',
+		'placeholder',
+		'banner',
+		'popular',
+		'advantages',
+		'form',
+	],
 };

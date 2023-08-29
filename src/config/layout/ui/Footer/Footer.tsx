@@ -9,6 +9,9 @@ import {
 } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
+import FaceSVG from 'public/icons/facebook.svg';
+import InstaSVG from 'public/icons/insta.svg';
+import TwitterSVG from 'public/icons/twitter.svg';
 import LogoSVG from 'public/logos/logo.svg';
 
 const useStyles = createStyles((theme) => ({
@@ -36,6 +39,7 @@ const useStyles = createStyles((theme) => ({
 	logoGroup: {
 		alignItems: 'flex-start',
 		WebkitBoxAlign: 'start',
+		marginInlineEnd: rem(300),
 	},
 	link: {
 		textDecoration: 'none',
@@ -52,8 +56,8 @@ const useStyles = createStyles((theme) => ({
 
 export const Footers = ({ dir }: { dir: string }) => {
 	const { classes } = useStyles();
-	const { t } = useTranslation('layout');
-
+	const { i18n, t } = useTranslation('layout');
+	const arLng = i18n.language === 'ar';
 	const mainLinks = [
 		{ name: t('projects'), link: '#projects' },
 		{ name: t('reviews'), link: '/' },
@@ -65,7 +69,7 @@ export const Footers = ({ dir }: { dir: string }) => {
 			<Container className={classes.inner} size="xl">
 				<Group pt={30} pb={38} position="apart">
 					<Anchor href="/" style={{ textDecoration: 'none' }}>
-						<Group mr={300} className={classes.logoGroup}>
+						<Group className={classes.logoGroup}>
 							<LogoSVG
 								style={{ width: '40px', height: '40px', color: '#0B63E5' }}
 							/>
@@ -90,6 +94,30 @@ export const Footers = ({ dir }: { dir: string }) => {
 							</Grid.Col>
 						))}
 					</Grid>
+					<Group style={{ flexDirection: 'column' }}>
+						<Anchor
+							className={classes.link}
+							href="tel: +971506039118"
+							fw={500}
+							style={{
+								color: '#0B63E5',
+							}}
+						>
+							{!arLng && <span>+</span>}9&nbsp;715&nbsp;060&nbsp;391&nbsp;18
+							{arLng && <span>+</span>}
+						</Anchor>
+						<Group>
+							<Anchor href="/">
+								<InstaSVG />
+							</Anchor>
+							<Anchor href="/">
+								<TwitterSVG />
+							</Anchor>
+							<Anchor href="/">
+								<FaceSVG />
+							</Anchor>
+						</Group>
+					</Group>
 				</Group>
 				<div>
 					<Text color="#6F7886" fz={14} lh={1.5}>

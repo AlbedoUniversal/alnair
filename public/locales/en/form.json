@@ -1,0 +1,10 @@
+{
+	"title": "Contact us to get more information",
+	"labelName": "Name",
+	"placeholderName": "Write your full name",
+	"labelCountry": "Your country",
+	"placeholderCountry": "Write the desired country",
+	"labelEmail": "Your email",
+	"placeholderEmail": "Write your email",
+	"send": "Send"
+}

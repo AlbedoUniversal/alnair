@@ -16,6 +16,7 @@ import {
 	IconFlame,
 	IconReceiptOff,
 } from '@tabler/icons-react';
+import { useTranslation } from 'next-i18next';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -31,36 +32,31 @@ const useStyles = createStyles((theme) => ({
 	},
 }));
 
-const features = [
-	{
-		icon: IconReceiptOff,
-		title: 'News',
-		description:
-			'This section is particularly useful for those who keep track of new projects. Here, you will find the latest news about sales launches, the addition of new projects to our platform, as well as information about events organized by developers',
-	},
-	{
-		icon: IconFileCode,
-		title: 'Knowledge base',
-		description:
-			'This section is particularly useful for beginners. Here you will find information about the principles of our system, key features, and their descriptions. Our system may seem complex, and this section will help you better understand how to make the most of its capabilities',
-	},
-	{
-		icon: IconCircleDotted,
-		title: 'Release Notes',
-		description:
-			'Our service is rapidly evolving, and we are constantly adding new useful features. In this section, you will find the update history of our system, which reflects all the releases and implemented enhancements.',
-	},
-	{
-		icon: IconFlame,
-		title: 'Flexible',
-		description:
-			'Customize colors, spacing, shadows, fonts and many other settings with global theme object',
-	},
-];
-
 export function Advantages() {
 	const { classes } = useStyles();
-
+	const { t } = useTranslation('advantages');
+	const features = [
+		{
+			icon: IconReceiptOff,
+			title: t('itemNews'),
+			description: t('descriptionNews'),
+		},
+		{
+			icon: IconFileCode,
+			title: t('itemKnowledge'),
+			description: t('descriptionKnowledge'),
+		},
+		{
+			icon: IconCircleDotted,
+			title: t('itemRealese'),
+			description: t('descriptionRealese'),
+		},
+		{
+			icon: IconFlame,
+			title: t('itemFlexible'),
+			description: t('descriptionFlexible'),
+		},
+	];
 	const items = features.map((feature) => (
 		<div key={feature.title}>
 			<ThemeIcon
@@ -85,12 +81,9 @@ export function Advantages() {
 			<Grid gutter={80}>
 				<Col span={12} md={5}>
 					<Title className={classes.title} order={2}>
-						A fully featured React components library for your next project
+						{t('title')}
 					</Title>
-					<Text c="dimmed">
-						Effortlessly maintain up-to-date information on your website or CRM
-						system with our feed and web sites.
-					</Text>
+					<Text c="dimmed">{t('description')}</Text>
 
 					<Button
 						variant="gradient"
@@ -99,7 +92,7 @@ export function Advantages() {
 						radius="md"
 						mt="xl"
 					>
-						Get started
+						{t('start')}
 					</Button>
 				</Col>
 				<Col span={12} md={7}>

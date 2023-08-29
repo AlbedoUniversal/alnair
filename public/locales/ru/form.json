@@ -1,0 +1,10 @@
+{
+	"title": "Свяжитесь с нами, чтобы получить дополнительную информацию",
+	"labelName": "Имя",
+	"placeholderName": "Введите свое имя",
+	"labelCountry": "Страна",
+	"placeholderCountry": "Введите желаемую страну",
+	"labelEmail": "Ваш e-mail",
+	"placeholderEmail": "Напишите свой e-mail",
+	"send": "Отправить"
+}

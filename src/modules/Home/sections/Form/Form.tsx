@@ -4,26 +4,15 @@ import {
 	Container,
 	createStyles,
 	Flex,
-	Group,
-	Modal,
 	rem,
 	Text,
 	TextInput,
 } from '@mantine/core';
-import {
-	hasLength,
-	isEmail,
-	isInRange,
-	isNotEmpty,
-	matches,
-	useForm,
-} from '@mantine/form';
-import { useDisclosure } from '@mantine/hooks';
-import { useCallback, useState } from 'react';
+import { hasLength, isEmail, isNotEmpty, useForm } from '@mantine/form';
+import { useTranslation } from 'next-i18next';
 
 const useStyles = createStyles((theme) => ({
 	container: {
-		// paddingBlock: rem(120),
 		textAlign: 'center',
 		justifyContent: 'center',
 		display: 'flex',
@@ -40,9 +29,7 @@ const useStyles = createStyles((theme) => ({
 }));
 export const Form = () => {
 	const { classes } = useStyles();
-	const [isValid, setIsValid] = useState(false);
-	const [opened, { open, close }] = useDisclosure(false);
-
+	const { t } = useTranslation('form');
 	const form = useForm({
 		initialValues: {
 			name: '',
@@ -70,7 +57,7 @@ export const Form = () => {
 				className={classes.form}
 			>
 				<Text fz={40} lh={1.8} fw={400} mb={40}>
-					Contact us to get more information
+					{t('title')}
 				</Text>
 				<Flex
 					direction={'column'}
@@ -85,8 +72,8 @@ export const Form = () => {
 					}}
 				>
 					<TextInput
-						label="Name"
-						placeholder="Write your full name"
+						label={t('labelName')}
+						placeholder={t('placeholderName')}
 						withAsterisk
 						{...form.getInputProps('name')}
 						styles={{
@@ -105,8 +92,8 @@ export const Form = () => {
 					/>
 					<TextInput
 						maw={400}
-						label="Your country"
-						placeholder="Write the desired country"
+						label={t('labelCountry')}
+						placeholder={t('placeholderCountry')}
 						withAsterisk
 						mt="xl"
 						{...form.getInputProps('job')}
@@ -126,8 +113,8 @@ export const Form = () => {
 					/>
 					<TextInput
 						maw={400}
-						label="Your email"
-						placeholder="Write your email"
+						label={t('labelEmail')}
+						placeholder={t('placeholderEmail')}
 						withAsterisk
 						mt="xl"
 						{...form.getInputProps('email')}
@@ -146,33 +133,10 @@ export const Form = () => {
 						}}
 					/>
 					<Button type="submit" style={{ borderRadius: '8px' }}>
-						Send
+						{t('send')}
 					</Button>
 				</Flex>
 			</Box>
-
-			{/* {isValid && (
-				<Modal
-					centered
-					opened={opened}
-					onClose={close}
-					title="Thank you!"
-					style={{ textAlign: 'center' }}
-				>
-					<Text>We will contact you soon!</Text>
-				</Modal>
-			)}
-			{!isValid && (
-				<Modal
-					centered
-					opened={opened}
-					onClose={close}
-					title="Sorry!"
-					style={{ textAlign: 'center' }}
-				>
-					<Text>Fill all fields correctly</Text>
-				</Modal>
-			)} */}
 		</Container>
 	);
 };

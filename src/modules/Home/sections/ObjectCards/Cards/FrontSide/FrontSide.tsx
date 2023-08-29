@@ -7,6 +7,7 @@ import {
 	rem,
 	Text,
 } from '@mantine/core';
+import { useTranslation } from 'next-i18next';
 
 import CircleSVG from 'public/icons/Ellipse 2.svg';
 
@@ -50,6 +51,17 @@ const useStyles = createStyles((theme) => ({
 		color: theme.black,
 		paddingBlock: rem(16),
 	},
+	ratingRtl: {
+		position: 'absolute',
+		top: rem(10),
+		right: rem(10),
+		pointerEvents: 'none',
+		zIndex: 3,
+		fontSize: rem(8),
+		backgroundColor: theme.white,
+		color: theme.black,
+		paddingBlock: rem(16),
+	},
 }));
 
 interface FrontSideProps {
@@ -77,7 +89,8 @@ export const FrontSide = ({
 }: FrontSideProps) => {
 	const { classes } = useStyles();
 	const { length } = districts[0];
-
+	const { i18n } = useTranslation();
+	const arLng = i18n.language === 'ar';
 	const district = () => {
 		if (length > 1) {
 			return (
@@ -94,7 +107,9 @@ export const FrontSide = ({
 	return (
 		<Card className={classes.card} onClick={open} p={0}>
 			{object.districts && (
-				<Badge className={classes.rating}>{district()}</Badge>
+				<Badge className={arLng ? classes.ratingRtl : classes.rating}>
+					{district()}
+				</Badge>
 			)}
 			<Card.Section className={classes.imageSection}>
 				<Image src={src} height={200} />
