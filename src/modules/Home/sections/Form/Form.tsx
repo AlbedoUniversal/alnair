@@ -132,7 +132,7 @@ export const Form = () => {
 							},
 						}}
 					/>
-					<Button type="submit" style={{ borderRadius: '8px' }}>
+					<Button variant="gradient" type="submit" mt={40}>
 						{t('send')}
 					</Button>
 				</Flex>

@@ -87,9 +87,9 @@ export function Advantages() {
 
 					<Button
 						variant="gradient"
-						gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
-						size="lg"
-						radius="md"
+						// gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
+						// size="lg"
+						// radius="md"
 						mt="xl"
 					>
 						{t('start')}

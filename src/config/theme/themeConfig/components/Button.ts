@@ -25,6 +25,13 @@ const Button = {
 				border: 'none',
 			},
 		}),
+		gradient: (theme: any) => ({
+			root: {
+				gradient: { deg: 133, from: 'blue', to: 'cyan' },
+				size: 'lg',
+				borderRadius: rem(20),
+			},
+		}),
 	},
 };
 
