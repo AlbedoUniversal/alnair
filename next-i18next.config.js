@@ -15,5 +15,6 @@ module.exports = {
 		'popular',
 		'advantages',
 		'form',
+		'slogan',
 	],
 };

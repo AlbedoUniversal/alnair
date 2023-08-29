@@ -153,6 +153,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 				'popular',
 				'advantages',
 				'form',
+				'slogan',
 			])),
 			nextI18nextConfig,
 			data: result,
