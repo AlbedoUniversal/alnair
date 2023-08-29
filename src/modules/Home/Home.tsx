@@ -1,6 +1,7 @@
 import { Lexend } from 'next/font/google';
 import { useTranslation } from 'next-i18next';
 
+import { FeaturesTitle } from '../Advantages';
 import { BannerSlider } from '../BannerSlider';
 import { Form } from '../Form';
 import { ObjectCards } from '../ObjectCards';
@@ -34,6 +35,7 @@ const HomePage = ({ data }: { data: any }) => {
 				<BannerSlider offers={offers} />
 				<ObjectCards offers={offers} />
 				<Slogan />
+				<FeaturesTitle />
 				<Form />
 			</main>
 		</>

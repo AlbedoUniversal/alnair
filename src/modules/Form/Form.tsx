@@ -3,6 +3,7 @@ import {
 	Button,
 	Container,
 	createStyles,
+	Flex,
 	Group,
 	Modal,
 	rem,
@@ -22,7 +23,8 @@ import { useCallback, useState } from 'react';
 
 const useStyles = createStyles((theme) => ({
 	container: {
-		paddingBlock: rem(120),
+		// paddingBlock: rem(120),
+		textAlign: 'center',
 		justifyContent: 'center',
 		display: 'flex',
 		width: '100vw',
@@ -60,8 +62,8 @@ export const Form = () => {
 	return (
 		<Container fluid className={classes.container} id="contacts">
 			<Box
+				w={'100%'}
 				component="form"
-				mx="auto"
 				onSubmit={form.onSubmit(() => {
 					console.log('correct');
 				})}
@@ -70,64 +72,83 @@ export const Form = () => {
 				<Text fz={40} lh={1.8} fw={400} mb={40}>
 					Contact us to get more information
 				</Text>
-				<TextInput
-					maw={400}
-					label="Name"
-					placeholder="Write your full name"
-					withAsterisk
-					{...form.getInputProps('name')}
-					styles={{
-						input: {
-							height: '50px',
-							borderRadius: '8px',
-						},
-						label: {
-							paddingBottom: '10px',
-							fontSize: '16px',
-						},
+				<Flex
+					direction={'column'}
+					align="center"
+					gap={10}
+					maw={800}
+					m="0 auto"
+					p={30}
+					sx={{
+						borderRadius: '30px',
+						boxShadow: '0px 0px 7px 2px #dadada',
 					}}
-				/>
-				<TextInput
-					maw={400}
-					label="Your country"
-					placeholder="Write the desired country"
-					withAsterisk
-					mt="xl"
-					{...form.getInputProps('job')}
-					styles={{
-						input: {
-							height: '50px',
-							borderRadius: '8px',
-						},
-						label: {
-							paddingBottom: '10px',
-							fontSize: '16px',
-						},
-					}}
-				/>
-				<TextInput
-					maw={400}
-					label="Your email"
-					placeholder="Write your email"
-					withAsterisk
-					mt="xl"
-					{...form.getInputProps('email')}
-					styles={{
-						input: {
-							height: '50px',
-							borderRadius: '8px',
-						},
-						label: {
-							paddingBottom: '10px',
-							fontSize: '16px',
-						},
-					}}
-				/>
-				<Group position="left" mt="xl">
+				>
+					<TextInput
+						label="Name"
+						placeholder="Write your full name"
+						withAsterisk
+						{...form.getInputProps('name')}
+						styles={{
+							wrapper: {
+								width: '300px',
+							},
+							input: {
+								height: '50px',
+								borderRadius: '8px',
+							},
+							label: {
+								paddingBottom: '10px',
+								fontSize: '16px',
+							},
+						}}
+					/>
+					<TextInput
+						maw={400}
+						label="Your country"
+						placeholder="Write the desired country"
+						withAsterisk
+						mt="xl"
+						{...form.getInputProps('job')}
+						styles={{
+							wrapper: {
+								width: '300px',
+							},
+							input: {
+								height: '50px',
+								borderRadius: '8px',
+							},
+							label: {
+								paddingBottom: '10px',
+								fontSize: '16px',
+							},
+						}}
+					/>
+					<TextInput
+						maw={400}
+						label="Your email"
+						placeholder="Write your email"
+						withAsterisk
+						mt="xl"
+						{...form.getInputProps('email')}
+						styles={{
+							wrapper: {
+								width: '300px',
+							},
+							input: {
+								height: '50px',
+								borderRadius: '8px',
+							},
+							label: {
+								paddingBottom: '10px',
+								fontSize: '16px',
+							},
+						}}
+					/>
 					<Button type="submit" style={{ borderRadius: '8px' }}>
 						Send
 					</Button>
-				</Group>
+				</Flex>
 			</Box>
 
 			{/* {isValid && (

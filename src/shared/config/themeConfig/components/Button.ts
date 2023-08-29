@@ -8,7 +8,8 @@ const Button = {
 	styles(theme: any, { compact }: ButtonStylesParams) {
 		return {
 			root: {
-				paddingInline: rem(10),
+				paddingInline: rem(30),
+				marginTop: rem(40),
 			},
 		};
 	},

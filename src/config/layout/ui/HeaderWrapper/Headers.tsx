@@ -15,7 +15,7 @@ import LogoSVG from 'public/logos/logo.svg';
 
 import { Switcher } from './LanguageSwitcher';
 
-const HEADER_HEIGHT = rem(60);
+const HEADER_HEIGHT = rem(80);
 
 const useStyles = createStyles((theme) => ({
 	inner: {
