@@ -36,3 +36,5 @@ export const themeConfig: MantineThemeOverride = {
 	// activeStyles,
 	// other,
 };
+
+// Todo add global styles

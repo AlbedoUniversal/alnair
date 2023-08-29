@@ -58,7 +58,7 @@ const features = [
 	},
 ];
 
-export function FeaturesTitle() {
+export function Advantages() {
 	const { classes } = useStyles();
 
 	const items = features.map((feature) => (

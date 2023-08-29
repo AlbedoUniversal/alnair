@@ -3,8 +3,8 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation, useTranslation } from 'next-i18next';
 
 import '../styles/global.css';
-import { AppLayout } from '@/config/layout/AppLayout';
-import { themeConfig } from '@/shared/config';
+import { AppLayout } from '@/config/layout';
+import { themeConfig } from '@/config/theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	const AnyComponent = Component as any;
