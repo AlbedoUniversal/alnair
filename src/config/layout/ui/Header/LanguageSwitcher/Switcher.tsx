@@ -13,7 +13,7 @@ export const Switcher = () => {
 	return (
 		<Menu>
 			<Menu.Target>
-				<Button>{t('language')}</Button>
+				<Button variant="outline">{t('language')}</Button>
 			</Menu.Target>
 			<Menu.Dropdown>
 				<Menu.Item onClick={async () => changeLanguages('ru')}>Ru</Menu.Item>

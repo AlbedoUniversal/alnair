@@ -58,7 +58,7 @@ export const Footers = ({ dir }: { dir: string }) => {
 		{ name: t('projects'), link: '#projects' },
 		{ name: t('reviews'), link: '/' },
 		{ name: t('news'), link: '/' },
-		{ name: t('contact'), link: '#contacts' },
+		{ name: t('contacts'), link: '#contacts' },
 	];
 	return (
 		<div className={classes.footer} dir={dir}>

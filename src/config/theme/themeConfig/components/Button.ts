@@ -9,7 +9,6 @@ const Button = {
 		return {
 			root: {
 				paddingInline: rem(30),
-				marginTop: rem(40),
 			},
 		};
 	},
@@ -17,11 +16,13 @@ const Button = {
 		filled: (theme: any) => ({
 			root: {
 				transition: 'background-color 0.2s ease-in-out',
+				marginBlockStart: rem(40),
 			},
 		}),
 		outline: (theme: any) => ({
 			root: {
 				color: theme.colors.blue,
+				border: 'none',
 			},
 		}),
 	},

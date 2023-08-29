@@ -1,8 +1,8 @@
 import { Lexend } from 'next/font/google';
 import { useTranslation } from 'next-i18next';
 
-import { Footers } from './ui/FooterWrapper';
-import { Headers } from './ui/HeaderWrapper';
+import { Footers } from './ui/Footer';
+import { Headers } from './ui/Header';
 
 const inter = Lexend({
 	subsets: ['latin'],

@@ -56,7 +56,7 @@ export const Headers = ({ dir }: { dir: string }) => {
 	const { classes } = useStyles();
 	const { t } = useTranslation('layout');
 	const mainLinks = [
-		{ name: t('contact'), link: '#contacts' },
+		{ name: t('contacts'), link: '#contacts' },
 		{ name: t('projects'), link: '#projects' },
 	];
 	return (

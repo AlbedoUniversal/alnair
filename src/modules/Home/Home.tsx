@@ -9,13 +9,13 @@ interface OffersData {
 }
 const HomePage = ({ data }: { data: any }) => {
 	const { offers } = data['realty-feed'];
-	const { i18n } = useTranslation();
 
 	return (
 		<>
 			<HomePageMeta />
 			<Ui.BannerSlider offers={offers} />
 			<Ui.ObjectCards offers={offers} />
+			<Ui.PopularDistricts />
 			<Ui.Slogan />
 			<Ui.Advantages />
 			<Ui.Form />

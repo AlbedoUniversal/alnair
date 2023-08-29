@@ -7,7 +7,6 @@ import {
 	rem,
 	Text,
 } from '@mantine/core';
-import parser from 'html-react-parser';
 
 import CircleSVG from 'public/icons/Ellipse 2.svg';
 
@@ -71,12 +70,9 @@ export const FrontSide = ({
 	districts,
 	amenities,
 	priceMin,
-	priceMax,
 	currency,
-	dir,
 	object,
 	src,
-	status,
 	open,
 }: FrontSideProps) => {
 	const { classes } = useStyles();
