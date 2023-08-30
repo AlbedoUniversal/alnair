@@ -6,6 +6,7 @@ import {
 	Header,
 	rem,
 } from '@mantine/core';
+import { IconHeart } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 import SearchSVG from 'public/icons/gg_search.svg';
@@ -24,7 +25,8 @@ const useStyles = createStyles((theme) => ({
 		alignItems: 'center',
 	},
 	logo: {
-		marginInlineEnd: rem(16),
+		paddingInlineEnd: rem(16),
+		borderInlineEnd: '1px solid #E6E8EC',
 	},
 	links: {
 		[theme.fn.smallerThan('sm')]: {
@@ -37,6 +39,7 @@ const useStyles = createStyles((theme) => ({
 		fontWeight: 600,
 		textDecoration: 'none',
 		color: theme.colors.gray[3],
+		marginInlineStart: rem(16),
 		'&:hover': {
 			textDecoration: 'none',
 			color: '#0B63E5',
@@ -44,6 +47,16 @@ const useStyles = createStyles((theme) => ({
 	},
 	select: {
 		border: 'none',
+	},
+	send: {
+		paddingInline: rem(18),
+		paddingBlock: rem(8),
+		backgroundColor: theme.colors.blue[4],
+		borderRadius: theme.radius.sm,
+		fontWeight: 600,
+		'&:hover': {
+			textDecoration: 'none',
+		},
 	},
 }));
 
@@ -57,7 +70,7 @@ export const Headers = ({ dir }: { dir: string }) => {
 	return (
 		<Header height={HEADER_HEIGHT} dir={dir}>
 			<Container className={classes.inner} size="xl">
-				<Group>
+				<Group style={{ gap: 0 }}>
 					<Anchor
 						href="/"
 						className={classes.logo}
@@ -96,8 +109,9 @@ export const Headers = ({ dir }: { dir: string }) => {
 					>
 						<PhoneSVG />
 					</Anchor>
-
+					<IconHeart style={{ strokeWidth: '1.3px', color: '#0B63E5' }} />
 					<Switcher />
+					<Anchor className={classes.send}>Send Application</Anchor>
 				</Group>
 			</Container>
 		</Header>

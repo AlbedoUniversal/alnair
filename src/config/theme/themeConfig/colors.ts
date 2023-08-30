@@ -32,7 +32,7 @@ export const colors: MantineThemeColorsOverride = {
 		'#b5d9fc', // 1 unused
 		'#8abef5', // 2 unused
 		'#5da3ed', // 3 unused
-		'#3189e7', // 4 unused
+		'#e7f5ff', // 4 unused
 		'#0B63E5', // 5 [primaryShade]
 		'#2272c8', // 6 accent-hover.
 		'#145ba7', // 7 accent-active.
