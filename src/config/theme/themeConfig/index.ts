@@ -10,7 +10,7 @@ import { components } from './components';
 import { defaultRadius, radius } from './radius';
 // import { shadows } from './shadows';
 // import { spacing } from './spacing';
-import { fontFamily } from './typography';
+import { fontFamily, fontSizes } from './typography';
 
 export const themeConfig: MantineThemeOverride = {
 	colorScheme: 'light',
@@ -21,7 +21,7 @@ export const themeConfig: MantineThemeOverride = {
 	// globalStyles,
 	fontFamily,
 	// focusRingStyles,
-	// fontSizes,
+	fontSizes,
 	// breakpoints,
 	components,
 	// spacing,
