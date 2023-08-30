@@ -33,15 +33,15 @@ const Text = {
 				},
 			},
 		}),
-		// lg: (theme: MantineTheme) => ({
-		// 	root: {
-		// 		lineHeight: 1.4,
+		lg: (theme: MantineTheme) => ({
+			root: {
+				lineHeight: 1.4,
 
-		// 		[theme.fn.smallerThan(769)]: {
-		// 			fontSize: theme.fontSizes.md,
-		// 		},
-		// 	},
-		// }),
+				[theme.fn.smallerThan(769)]: {
+					fontSize: theme.fontSizes.md,
+				},
+			},
+		}),
 		xl: (theme: MantineTheme) => ({
 			root: {
 				lineHeight: 1.4,

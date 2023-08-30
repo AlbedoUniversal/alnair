@@ -18,3 +18,12 @@ export const fontSizes: MantineThemeOverride['fontSizes'] = {
 	xl: '1.25rem', // 20
 	xxl: '1.375rem', // 22
 } as const;
+export const headings: MantineThemeOverride['headings'] = {
+	fontWeight: 400,
+
+	sizes: {
+		h1: { fontWeight: 500, fontSize: rem(50), lineHeight: 1 },
+		h2: { fontWeight: 500, fontSize: rem(44), lineHeight: 1.2 },
+		h3: { fontWeight: 500, fontSize: rem(34), lineHeight: 1.4 },
+	},
+};

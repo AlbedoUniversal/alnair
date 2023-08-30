@@ -1,8 +1,9 @@
 import { Container } from '@mantine/core';
 
+import { BottomBar } from '../BottomBar';
+import { TopBar } from '../TopBar';
+
 import { useStyles } from './Footer.styles';
-import { BottomBar } from './ui/BottomBar';
-import { TopBar } from './ui/TopBar';
 
 export const Footers = ({ dir }: { dir: string }) => {
 	const { classes } = useStyles();

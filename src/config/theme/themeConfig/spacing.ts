@@ -6,6 +6,5 @@ export const spacing: MantineThemeOverride['spacing'] = {
 	sm: rem(14),
 	md: rem(16),
 	lg: rem(18),
-	xl: rem(32),
-	xxl: rem(100),
+	xl: rem(22),
 };

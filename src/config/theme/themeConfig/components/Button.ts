@@ -1,4 +1,4 @@
-import { type ButtonStylesParams, rem } from '@mantine/core';
+import { type ButtonStylesParams, type MantineTheme, rem } from '@mantine/core';
 
 const Button = {
 	defaultProps: {
@@ -8,23 +8,11 @@ const Button = {
 	styles(theme: any, { compact }: ButtonStylesParams) {
 		return {
 			root: {
-				paddingInline: rem(0),
+				height: 'auto',
 			},
 		};
 	},
 	variants: {
-		filled: (theme: any) => ({
-			root: {
-				transition: 'background-color 0.2s ease-in-out',
-				marginBlockStart: rem(40),
-			},
-		}),
-		outline: (theme: any) => ({
-			root: {
-				color: theme.colors.blue,
-				border: 'none',
-			},
-		}),
 		switcher: (theme: any) => ({
 			root: {
 				border: 'none',
@@ -38,12 +26,21 @@ const Button = {
 				marginLeft: rem(2),
 			},
 		}),
-
-		gradient: (theme: any) => ({
+	},
+	sizes: {
+		xs: (theme: MantineTheme, params: ButtonStylesParams) => ({
 			root: {
-				gradient: { deg: 133, from: 'blue', to: 'cyan' },
-				size: 'lg',
-				borderRadius: rem(20),
+				fontSize: theme.fontSizes.md,
+				lineHeight: 1.5,
+				paddingInline: theme.spacing.xl,
+				paddingBlock: theme.spacing.xs,
+			},
+		}),
+		md: (theme: MantineTheme, params: ButtonStylesParams) => ({
+			root: {
+				fontSize: theme.fontSizes.md,
+				height: rem(24),
+				paddingInline: params.compact ? 0 : theme.spacing.md,
 			},
 		}),
 	},

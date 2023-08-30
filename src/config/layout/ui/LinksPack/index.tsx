@@ -2,7 +2,7 @@ import { Grid, Text } from '@mantine/core';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
-import { getFooterLinks } from '../../Footer.constants';
+import { getFooterLinks } from '../Footer/Footer.constants';
 
 import { useStyles } from './LinkPack.styles';
 

@@ -1,22 +1,8 @@
-import {
-	Button,
-	Col,
-	Container,
-	createStyles,
-	Grid,
-	rem,
-	SimpleGrid,
-	Text,
-	ThemeIcon,
-	Title,
-} from '@mantine/core';
-import {
-	IconCircleDotted,
-	IconFileCode,
-	IconFlame,
-	IconReceiptOff,
-} from '@tabler/icons-react';
+import { Container, createStyles, Grid, rem, SimpleGrid } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
+
+import { Left } from './ui/Left';
+import { Right } from './ui/Right';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -34,7 +20,13 @@ const useStyles = createStyles((theme) => ({
 
 export function Advantages() {
 	const { classes } = useStyles();
-	const { t } = useTranslation('advantages');
 
-	return <Container size="xl">frffrfr</Container>;
+	return (
+		<Container size="xl">
+			<SimpleGrid cols={2} spacing="120px">
+				<Left />
+				<Right />
+			</SimpleGrid>
+		</Container>
+	);
 }

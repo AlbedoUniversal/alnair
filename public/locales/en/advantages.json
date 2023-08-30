@@ -1,13 +1,4 @@
 {
-	"title": "A fully featured React components library for your next project",
-	"description": "Effortlessly maintain up-to-date information on your website or CRM system with our feed and web sites.",
-	"start": "Get started",
-	"itemNews": "News",
-	"itemKnowledge": "Knowledge base",
-	"itemRealese": "Release Notes",
-	"itemFlexible": "Flexible",
-	"descriptionNews": "This section is particularly useful for those who keep track of new projects. Here, you will find the latest news about sales launches, the addition of new projects to our platform, as well as information about events organized by developers",
-	"descriptionKnowledge": "This section is particularly useful for beginners. Here you will find information about the principles of our system, key features, and their descriptions. Our system may seem complex, and this section will help you better understand how to make the most of its capabilities",
-	"descriptionRealese": "Our service is rapidly evolving, and we are constantly adding new useful features. In this section, you will find the update history of our system, which reflects all the releases and implemented enhancements",
-	"descriptionFlexible": "Customize colors, spacing, shadows, fonts and many other settings with global theme object"
+	"title": "Reliability, quality, modernity - our main goal",
+	"description": "We pay special attention to details, striving to offer our customers only the most upscale residential and commercial properties."
 }
