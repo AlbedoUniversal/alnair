@@ -8,7 +8,7 @@ const Button = {
 	styles(theme: any, { compact }: ButtonStylesParams) {
 		return {
 			root: {
-				height: 'auto',
+				height: 'fit-content',
 			},
 		};
 	},
