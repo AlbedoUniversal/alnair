@@ -10,7 +10,6 @@ const HomePage = ({ data }: { data: any }) => {
 			<Ui.BannerSlider offers={offers} />
 			<Ui.ObjectCards offers={offers} />
 			<Ui.PopularDistricts />
-			<Ui.Slogan />
 			<Ui.Advantages />
 			<Ui.Form />
 		</>
