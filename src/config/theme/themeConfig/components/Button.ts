@@ -8,7 +8,7 @@ const Button = {
 	styles(theme: any, { compact }: ButtonStylesParams) {
 		return {
 			root: {
-				paddingInline: rem(30),
+				paddingInline: rem(0),
 			},
 		};
 	},
@@ -25,6 +25,20 @@ const Button = {
 				border: 'none',
 			},
 		}),
+		switcher: (theme: any) => ({
+			root: {
+				border: 'none',
+				fontSize: rem(14),
+				lineHeight: rem(18),
+				fontWeight: 400,
+				color: '#6F7886',
+			},
+
+			rightIcon: {
+				marginLeft: rem(2),
+			},
+		}),
+
 		gradient: (theme: any) => ({
 			root: {
 				gradient: { deg: 133, from: 'blue', to: 'cyan' },

@@ -5,7 +5,6 @@ import {
 	Group,
 	Header,
 	rem,
-	Text,
 } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
@@ -24,11 +23,8 @@ const useStyles = createStyles((theme) => ({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 	},
-	name: {
-		fontSize: rem(23),
-		fontWeight: 500,
-		lineHeight: 1.1,
-		color: '#061C3D',
+	logo: {
+		marginInlineEnd: rem(16),
 	},
 	links: {
 		[theme.fn.smallerThan('sm')]: {
@@ -37,11 +33,10 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	link: {
-		textDecoration: 'none',
-		color: theme.colors.dark,
-		lineHeight: 1.5,
 		fontSize: rem(16),
-
+		fontWeight: 600,
+		textDecoration: 'none',
+		color: theme.colors.gray[3],
 		'&:hover': {
 			textDecoration: 'none',
 			color: '#0B63E5',
@@ -64,23 +59,14 @@ export const Headers = ({ dir }: { dir: string }) => {
 			<Container className={classes.inner} size="xl">
 				<Group>
 					<Anchor
+						href="/"
+						className={classes.logo}
 						style={{
 							display: 'flex',
 							alignItems: 'center',
-							gap: '10px',
-							textDecoration: 'none',
 						}}
-						href="/"
 					>
-						<LogoSVG
-							style={{
-								width: '30px',
-								height: '30px',
-								color: '#0B63E5',
-								textDecoration: 'none',
-							}}
-						/>
-						<Text className={classes.name}>Alnair</Text>
+						<LogoSVG />
 					</Anchor>
 					{mainLinks.map((link) => (
 						<Anchor key={link.name} href={link.link} className={classes.link}>

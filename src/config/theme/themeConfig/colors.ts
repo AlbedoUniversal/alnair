@@ -55,7 +55,7 @@ export const colors: MantineThemeColorsOverride = {
 		'#ffffff', // 0
 		'#f8f8f8', // 1
 		'#f0f0f0', // 2
-		'#e0e0e0', // 3
+		'#6F7886', // 3
 		'#FAFBFD', // 4
 		'#a7a5a6', // 5 [primaryShade]. Background-color of MAIN
 		'#a7a5a6', // 6 unused

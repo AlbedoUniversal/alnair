@@ -2,6 +2,8 @@ import { Button, Menu } from '@mantine/core';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
+import ArrowSVG from 'public/icons/chevron-down.svg';
+
 export const Switcher = () => {
 	const router = useRouter();
 	const { i18n, t } = useTranslation('layout');
@@ -13,7 +15,9 @@ export const Switcher = () => {
 	return (
 		<Menu>
 			<Menu.Target>
-				<Button variant="outline">{t('language')}</Button>
+				<Button variant="switcher" rightIcon={<ArrowSVG />}>
+					{t('language')}
+				</Button>
 			</Menu.Target>
 			<Menu.Dropdown>
 				<Menu.Item onClick={async () => changeLanguages('ru')}>Ru</Menu.Item>
