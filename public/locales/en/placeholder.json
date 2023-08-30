@@ -2,5 +2,6 @@
 	"priceMin": "Minimum price",
 	"priceMax": "Maximum price",
 	"developer": "Choose developers",
-	"district": "Choose districts"
+	"district": "Choose districts",
+	"completion": "Complex's completion in %"
 }
