@@ -4,7 +4,7 @@ import { Open_Sans } from 'next/font/google';
 
 export const inter = Open_Sans({
 	subsets: ['latin', 'cyrillic'],
-	weight: ['300', '400', '700'],
+	weight: ['300', '400', '500', '700'],
 });
 
 export const fontFamily: MantineThemeOverride['fontFamily'] =
