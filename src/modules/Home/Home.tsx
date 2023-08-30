@@ -3,7 +3,6 @@ import Ui from './sections';
 
 const HomePage = ({ data }: { data: any }) => {
 	const { offers } = data['realty-feed'];
-	console.log(data);
 
 	return (
 		<>

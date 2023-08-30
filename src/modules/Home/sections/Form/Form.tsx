@@ -51,9 +51,7 @@ export const Form = () => {
 			<Box
 				w={'100%'}
 				component="form"
-				onSubmit={form.onSubmit(() => {
-					console.log('correct');
-				})}
+				onSubmit={form.onSubmit(() => {})}
 				className={classes.form}
 			>
 				<Text fz={40} lh={1.8} fw={400} mb={40}>
