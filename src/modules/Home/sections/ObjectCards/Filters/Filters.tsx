@@ -1,4 +1,12 @@
-import { createStyles, Grid, Input, MultiSelect, rem } from '@mantine/core';
+import {
+	createStyles,
+	Grid,
+	Input,
+	MultiSelect,
+	rem,
+	Select,
+} from '@mantine/core';
+import { IconMathEqualGreater } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
 const useStyles = createStyles((theme) => ({
@@ -78,7 +86,7 @@ export const Filters = ({
 					}}
 				/>
 			</Grid.Col>
-			<Grid.Col span={2}>
+			<Grid.Col span={3}>
 				<MultiSelect
 					data={districtsOptions}
 					placeholder={t('district')}
@@ -89,23 +97,29 @@ export const Filters = ({
 					styles={{
 						input: {
 							border: 'none',
+							borderRadius: 0,
+							borderRight: '1px solid #E6E8EC',
 						},
 					}}
 				/>
 			</Grid.Col>
-			<Grid.Col span={2}>
-				<MultiSelect
+			<Grid.Col span={3}>
+				<Select
 					data={constructionProgressesOptions}
-					placeholder={t('district')}
-					value={filters.districts}
+					placeholder={t('completion')}
+					value={filters.completion}
 					onChange={(value: any) => {
-						handleFilter('districts', value);
+						handleFilter('completion', value);
 					}}
 					styles={{
 						input: {
 							border: 'none',
 						},
+						icon: {
+							top: '2px',
+						},
 					}}
+					icon={<IconMathEqualGreater size={12} />}
 				/>
 			</Grid.Col>
 		</Grid>

@@ -28,7 +28,6 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		districts: [],
 		amenities: [],
 	});
-	console.log(offers.map((offer: any) => offer.construction_progress));
 
 	const title = t('titles', { returnObjects: true }) as [];
 	const description = t('description', { returnObjects: true }) as [];
@@ -62,13 +61,14 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 			});
 		}
 
-		// if (filters.completion) {
-		// 	filtered = filtered.filter((item: any) => {
-		// 		const completion = `${item.construction_progress.toString()}%`;
+		if (filters.completion) {
+			filtered = filtered.filter((item: any) => {
+				const completion = item.construction_progress.toString();
+				console.log(completion);
 
-		// 		return Number(completion) >= Number(filters.completion);
-		// 	});
-		// }
+				return Number(completion) >= Number(filters.completion);
+			});
+		}
 
 		if (filters.developers.length > 0) {
 			filtered = filtered.filter((item: any, i: number) => {
@@ -96,13 +96,7 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		[developers]
 	);
 
-	const constructionProgressesOptions = [
-		'> 0%',
-		'> 25%',
-		'> 50%',
-		'>75%',
-		'100%',
-	];
+	const constructionProgressesOptions = ['0', '25', '50', '75', '90'];
 	const districtsOptions = useMemo(
 		() =>
 			offers.flatMap((item: any) =>
