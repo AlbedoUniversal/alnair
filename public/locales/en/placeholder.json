@@ -1,5 +1,6 @@
 {
-	"price": "Minimum price",
+	"priceMin": "Minimum price",
+	"priceMax": "Maximum price",
 	"developer": "Choose developers",
 	"district": "Choose districts"
 }

@@ -16,32 +16,52 @@ interface FiltersProps {
 	districtsOptions: string[];
 	developersOptions: string[];
 	filters: any;
+	constructionProgressesOptions: string[];
 }
 export const Filters = ({
 	handleFilter,
 	districtsOptions,
 	developersOptions,
 	filters,
+	constructionProgressesOptions,
 }: FiltersProps) => {
 	const { t } = useTranslation('placeholder');
 	const { classes } = useStyles();
 	return (
 		<Grid className={classes.categories}>
-			<Grid.Col span={4}>
+			<Grid.Col span={2}>
 				<Input
-					placeholder={t('price')}
-					value={filters.price}
+					placeholder={t('priceMin')}
+					value={filters.minPrice}
 					onChange={(e) => {
-						handleFilter('price', e.target.value);
+						handleFilter('minPrice', e.target.value);
 					}}
 					styles={{
 						input: {
 							border: 'none',
+							borderRadius: 0,
+							borderRight: '1px solid #E6E8EC',
 						},
 					}}
 				/>
 			</Grid.Col>
-			<Grid.Col span={4}>
+			<Grid.Col span={2}>
+				<Input
+					placeholder={t('priceMax')}
+					value={filters.maxPrice}
+					onChange={(e) => {
+						handleFilter('maxPrice', e.target.value);
+					}}
+					styles={{
+						input: {
+							border: 'none',
+							borderRadius: 0,
+							borderRight: '1px solid #E6E8EC',
+						},
+					}}
+				/>
+			</Grid.Col>
+			<Grid.Col span={2}>
 				<MultiSelect
 					data={developersOptions}
 					placeholder={t('developer')}
@@ -52,13 +72,30 @@ export const Filters = ({
 					styles={{
 						input: {
 							border: 'none',
+							borderRadius: 0,
+							borderRight: '1px solid #E6E8EC',
 						},
 					}}
 				/>
 			</Grid.Col>
-			<Grid.Col span={4}>
+			<Grid.Col span={2}>
 				<MultiSelect
 					data={districtsOptions}
+					placeholder={t('district')}
+					value={filters.districts}
+					onChange={(value: any) => {
+						handleFilter('districts', value);
+					}}
+					styles={{
+						input: {
+							border: 'none',
+						},
+					}}
+				/>
+			</Grid.Col>
+			<Grid.Col span={2}>
+				<MultiSelect
+					data={constructionProgressesOptions}
 					placeholder={t('district')}
 					value={filters.districts}
 					onChange={(value: any) => {

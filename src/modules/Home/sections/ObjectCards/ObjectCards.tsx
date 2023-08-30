@@ -21,11 +21,14 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 	const { t } = useTranslation('translations');
 	const [filteredData, setFilteredData] = useState(offers);
 	const [filters, setFilters] = useState({
-		price: '',
+		minPrice: '',
+		maxPrice: '',
+		completion: '',
 		developers: [],
 		districts: [],
 		amenities: [],
 	});
+	console.log(offers.map((offer: any) => offer.construction_progress));
 
 	const title = t('titles', { returnObjects: true }) as [];
 	const description = t('description', { returnObjects: true }) as [];
@@ -43,13 +46,29 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 	const filterData = () => {
 		let filtered = offers;
 
-		if (filters.price) {
+		if (filters.minPrice) {
 			filtered = filtered.filter((item: any) => {
-				const priceMin = item.price[0].min.toString();
+				const priceMin = item.price[0].max.toString();
 
-				return Number(priceMin) >= Number(filters.price);
+				return Number(priceMin) <= Number(filters.minPrice);
 			});
 		}
+
+		if (filters.maxPrice) {
+			filtered = filtered.filter((item: any) => {
+				const priceMax = item.price[0].min.toString();
+
+				return Number(priceMax) >= Number(filters.maxPrice);
+			});
+		}
+
+		// if (filters.completion) {
+		// 	filtered = filtered.filter((item: any) => {
+		// 		const completion = `${item.construction_progress.toString()}%`;
+
+		// 		return Number(completion) >= Number(filters.completion);
+		// 	});
+		// }
 
 		if (filters.developers.length > 0) {
 			filtered = filtered.filter((item: any, i: number) => {
@@ -77,6 +96,13 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		[developers]
 	);
 
+	const constructionProgressesOptions = [
+		'> 0%',
+		'> 25%',
+		'> 50%',
+		'>75%',
+		'100%',
+	];
 	const districtsOptions = useMemo(
 		() =>
 			offers.flatMap((item: any) =>
@@ -104,6 +130,7 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 					handleFilter={handleFilterChange}
 					districtsOptions={districtsOptions}
 					developersOptions={developersOptions}
+					constructionProgressesOptions={constructionProgressesOptions}
 				/>
 			</div>
 			{filteredData.length === 0 && <NothingFound />}

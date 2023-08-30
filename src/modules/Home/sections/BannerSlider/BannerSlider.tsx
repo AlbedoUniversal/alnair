@@ -9,27 +9,34 @@ import {
 } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
+import PrevSVG from 'public/icons/buttonNext.svg';
+import NextSVG from 'public/icons/buttonPrev.svg';
+
 const useStyles = createStyles(() => ({
 	controls: {
 		ref: getStylesRef('controls'),
-		opacity: 1,
 		justifyContent: 'flex-start',
 		gap: rem(20),
-		bottom: rem(-50),
-		left: rem(50),
+		bottom: rem(-200),
+	},
+	control: {
+		ref: getStylesRef('control'),
+		backgroundColor: 'transparent',
+		border: 'none',
 	},
 }));
 
 export const BannerSlider = ({ offers }: { offers: any }) => {
-	const { t } = useTranslation('banner');
+	const { i18n, t } = useTranslation('banner');
 	const { classes } = useStyles();
+	const arLng = i18n.language === 'ar';
 	return (
 		<Container fluid p={0} style={{ position: 'relative' }}>
 			<div
 				style={{
 					position: 'absolute',
-					paddingInline: rem(60),
-					zIndex: 10000,
+					paddingInline: rem(70),
+					zIndex: 10,
 					top: rem(130),
 				}}
 			>
@@ -40,7 +47,21 @@ export const BannerSlider = ({ offers }: { offers: any }) => {
 					{t('description')}
 				</Text>
 			</div>
-			<Carousel loop classNames={classes}>
+			<Carousel
+				loop
+				classNames={classes}
+				nextControlIcon={<NextSVG />}
+				previousControlIcon={<PrevSVG />}
+				styles={{
+					controls: {
+						width: '100%',
+						left: arLng ? '-70px' : '70px',
+
+						justifyContent: arLng ? 'flex-end !important' : 'flex-start',
+					},
+				}}
+				dir="ltr"
+			>
 				{offers.map((item: any) => {
 					const { album } = item;
 
@@ -49,7 +70,7 @@ export const BannerSlider = ({ offers }: { offers: any }) => {
 							{album.map((photo: any) => (
 								<>
 									{photo.image.map((x: string) => (
-										<Carousel.Slide style={{ height: '600px' }} key={photo[0]}>
+										<Carousel.Slide style={{ height: '700px' }} key={photo[0]}>
 											<Image key={x} src={x} />
 										</Carousel.Slide>
 									))}
