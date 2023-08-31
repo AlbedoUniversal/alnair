@@ -1,31 +1,10 @@
-import {
-	createStyles,
-	Grid,
-	Input,
-	MultiSelect,
-	rem,
-	Select,
-} from '@mantine/core';
+import { Grid, Input, MultiSelect, Select } from '@mantine/core';
 import { IconMathEqualGreater } from '@tabler/icons-react';
 import { useTranslation } from 'next-i18next';
 
-const useStyles = createStyles((theme) => ({
-	container: {
-		marginBlockStart: rem(-25),
-		paddingBlockEnd: rem(120),
-	},
-	categories: {
-		marginBlockEnd: rem(50),
-	},
-}));
+import { type FiltersProps } from './Filters.helpers';
+import { useStyles } from './styles';
 
-interface FiltersProps {
-	handleFilter: any;
-	districtsOptions: string[];
-	developersOptions: string[];
-	filters: any;
-	constructionProgressesOptions: string[];
-}
 export const Filters = ({
 	handleFilter,
 	districtsOptions,
@@ -44,13 +23,7 @@ export const Filters = ({
 					onChange={(e) => {
 						handleFilter('minPrice', e.target.value);
 					}}
-					styles={{
-						input: {
-							border: 'none',
-							borderRadius: 0,
-							borderRight: '1px solid #E6E8EC',
-						},
-					}}
+					classNames={{ input: classes.input }}
 				/>
 			</Grid.Col>
 			<Grid.Col span={2}>
@@ -60,13 +33,7 @@ export const Filters = ({
 					onChange={(e) => {
 						handleFilter('maxPrice', e.target.value);
 					}}
-					styles={{
-						input: {
-							border: 'none',
-							borderRadius: 0,
-							borderRight: '1px solid #E6E8EC',
-						},
-					}}
+					classNames={{ input: classes.input }}
 				/>
 			</Grid.Col>
 			<Grid.Col span={2}>
@@ -77,13 +44,7 @@ export const Filters = ({
 					onChange={(value: string[]) => {
 						handleFilter('developers', value);
 					}}
-					styles={{
-						input: {
-							border: 'none',
-							borderRadius: 0,
-							borderRight: '1px solid #E6E8EC',
-						},
-					}}
+					classNames={{ input: classes.input }}
 				/>
 			</Grid.Col>
 			<Grid.Col span={3}>
@@ -94,13 +55,7 @@ export const Filters = ({
 					onChange={(value: any) => {
 						handleFilter('districts', value);
 					}}
-					styles={{
-						input: {
-							border: 'none',
-							borderRadius: 0,
-							borderRight: '1px solid #E6E8EC',
-						},
-					}}
+					classNames={{ input: classes.input }}
 				/>
 			</Grid.Col>
 			<Grid.Col span={3}>
@@ -111,14 +66,7 @@ export const Filters = ({
 					onChange={(value: any) => {
 						handleFilter('completion', value);
 					}}
-					styles={{
-						input: {
-							border: 'none',
-						},
-						icon: {
-							top: '2px',
-						},
-					}}
+					classNames={{ input: classes.lastInput, icon: classes.iconInput }}
 					icon={<IconMathEqualGreater size={12} />}
 				/>
 			</Grid.Col>
