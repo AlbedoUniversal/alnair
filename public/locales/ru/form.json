@@ -7,5 +7,9 @@
 	"placeholderCountry": "Введите желаемую страну",
 	"labelEmail": "Ваш e-mail",
 	"placeholderEmail": "Напишите свой e-mail",
-	"send": "Отправить"
+	"send": "Отправить",
+	"labelPhone": "Телефон",
+	"placeholderPhone": "Номер телфона",
+	"labelQuestions": "Вопросы",
+	"placeholderQuestions": "Напишите свои вопросы"
 }

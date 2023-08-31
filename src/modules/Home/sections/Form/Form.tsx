@@ -4,8 +4,12 @@ import {
 	Container,
 	createStyles,
 	Flex,
+	getStylesRef,
+	Group,
+	Image,
 	rem,
 	Text,
+	Textarea,
 	TextInput,
 	Title,
 } from '@mantine/core';
@@ -21,11 +25,25 @@ const useStyles = createStyles((theme) => ({
 	},
 	form: {
 		padding: rem(100),
-		backgroundColor: theme.white,
-		borderRadius: rem(15),
 	},
 	input: {
 		height: rem(100),
+	},
+	formContainer: {
+		backgroundColor: theme.white,
+		borderRadius: rem(24),
+		position: 'relative',
+	},
+	content: {
+		paddingBlockStart: rem(72),
+		paddingBlockEnd: rem(100),
+		paddingInline: rem(72),
+		maxWidth: rem(1320),
+	},
+
+	image: {
+		ref: getStylesRef('image'),
+		borderRadiusEndStart: rem(24),
 	},
 }));
 export const Form = () => {
@@ -50,94 +68,111 @@ export const Form = () => {
 	return (
 		<Container fluid id="contacts">
 			<Container size="xl" pb={100} pt={100}>
-				<Box
-					w={'100%'}
-					component="form"
-					onSubmit={form.onSubmit(() => null)}
-					className={classes.form}
-				>
+				<Box component="form" onSubmit={form.onSubmit(() => null)}>
 					<Title align="center" mb={24} order={2}>
 						{t('title')}
 					</Title>
 					<Text size={'xl'} maw={'775px'} mx={'auto'} mb={24}>
 						{t('description')}
 					</Text>
-					<Flex
-						direction={'column'}
-						align="center"
-						gap={10}
-						maw={800}
-						m="0 auto"
-						p={30}
-						sx={{
-							borderRadius: '30px',
-							boxShadow: '0px 0px 7px 2px #dadada',
-						}}
-					>
-						<TextInput
-							label={t('labelName')}
-							placeholder={t('placeholderName')}
-							withAsterisk
-							{...form.getInputProps('name')}
+
+					<Flex className={classes.formContainer}>
+						<Image
+							src="/images/image 5.png"
 							styles={{
-								wrapper: {
-									width: '300px',
-								},
-								input: {
-									height: '50px',
-									borderRadius: '8px',
-								},
-								label: {
-									paddingBottom: '10px',
-									fontSize: '16px',
+								image: {
+									borderEndStartRadius: rem(24),
+									borderStartStartRadius: rem(24),
 								},
 							}}
 						/>
-						<TextInput
-							maw={400}
-							label={t('labelCountry')}
-							placeholder={t('placeholderCountry')}
-							withAsterisk
-							mt="xl"
-							{...form.getInputProps('job')}
-							styles={{
-								wrapper: {
-									width: '300px',
-								},
-								input: {
-									height: '50px',
-									borderRadius: '8px',
-								},
-								label: {
-									paddingBottom: '10px',
-									fontSize: '16px',
-								},
-							}}
-						/>
-						<TextInput
-							maw={400}
-							label={t('labelEmail')}
-							placeholder={t('placeholderEmail')}
-							withAsterisk
-							mt="xl"
-							{...form.getInputProps('email')}
-							styles={{
-								wrapper: {
-									width: '300px',
-								},
-								input: {
-									height: '50px',
-									borderRadius: '8px',
-								},
-								label: {
-									paddingBottom: '10px',
-									fontSize: '16px',
-								},
-							}}
-						/>
-						<Button variant="gradient" type="submit" mt={40}>
-							{t('send')}
-						</Button>
+						<Flex
+							direction={'column'}
+							gap={10}
+							m="0 auto"
+							className={classes.content}
+						>
+							<Group>
+								<TextInput
+									label={t('labelName')}
+									placeholder={t('placeholderName')}
+									{...form.getInputProps('name')}
+									styles={{
+										wrapper: {
+											width: '298px',
+										},
+										input: {
+											height: '50px',
+											borderRadius: '8px',
+											borderColor: '#E6E8EC',
+										},
+										label: {
+											paddingBottom: '10px',
+											fontSize: '16px',
+										},
+									}}
+								/>
+								<TextInput
+									label={t('labelEmail')}
+									placeholder={t('placeholderEmail')}
+									{...form.getInputProps('email')}
+									styles={{
+										wrapper: {
+											width: '298px',
+										},
+										input: {
+											height: '50px',
+											borderRadius: '8px',
+											borderColor: '#E6E8EC',
+										},
+										label: {
+											paddingBottom: '10px',
+											fontSize: '16px',
+										},
+									}}
+								/>
+							</Group>
+							<TextInput
+								label={t('labelPhone')}
+								placeholder={t('placeholderPhone')}
+								styles={{
+									wrapper: {
+										width: '616px',
+									},
+									input: {
+										height: '50px',
+										borderRadius: '8px',
+										borderColor: '#E6E8EC',
+									},
+									label: {
+										paddingBottom: '10px',
+										fontSize: '16px',
+									},
+								}}
+							/>
+							<Textarea
+								label={t('labelQuestions')}
+								placeholder={t('placeholderQuestions')}
+								styles={{
+									wrapper: {
+										width: '616px',
+									},
+									input: {
+										height: '106px',
+
+										borderRadius: '8px',
+										borderColor: '#E6E8EC',
+									},
+									label: {
+										paddingBottom: '10px',
+										fontSize: '16px',
+									},
+								}}
+							/>
+							<Button maw="fit-content" size="xs" type="submit" mt={40}>
+								{t('send')}
+							</Button>
+						</Flex>
 					</Flex>
 				</Box>
 			</Container>

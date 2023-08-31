@@ -7,5 +7,9 @@
 	"placeholderCountry": "أكتب الدولة المطلوبة",
 	"labelEmail": "بريدك الالكتروني",
 	"placeholderEmail": "اكتب بريدك الإلكتروني",
-	"send": "يرسل"
+	"send": "يرسل",
+	"labelPhone": "هاتف",
+	"placeholderPhone": "رقم التليفون",
+	"labelQuestions": "الأسئلة",
+	"placeholderQuestions": "اكتب أسئلتك"
 }

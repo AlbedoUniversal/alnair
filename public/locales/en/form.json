@@ -7,5 +7,9 @@
 	"placeholderCountry": "Write the desired country",
 	"labelEmail": "Your email",
 	"placeholderEmail": "Write your email",
-	"send": "Send"
+	"send": "Send",
+	"labelPhone": "Phone",
+	"placeholderPhone": "Phone number",
+	"labelQuestions": "Questions",
+	"placeholderQuestions": "Describe the essence of your question"
 }
