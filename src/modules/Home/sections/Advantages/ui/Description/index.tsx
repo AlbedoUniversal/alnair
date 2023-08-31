@@ -2,7 +2,7 @@ import { Box, Button, rem, Text, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 export const Description = () => {
-	const { t } = useTranslation('advantages');
+	const { t } = useTranslation(['advantages', 'layout']);
 
 	return (
 		<Box>
@@ -13,7 +13,7 @@ export const Description = () => {
 				{t('description')}
 			</Text>
 			<Button size="xs" w="fit-content">
-				More detailed
+				{t('layout:learnMore')}
 			</Button>
 		</Box>
 	);
