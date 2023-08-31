@@ -8,6 +8,10 @@ const colStyles = {
 	gap: rem(20),
 	display: 'grid',
 	columnGap: rem(20),
+
+	'&:hover': {
+		backgroundColor: '#fbfeff',
+	},
 };
 
 export const InfoCard = ({

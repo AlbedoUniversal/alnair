@@ -25,11 +25,11 @@ export const Cards = () => {
 					<Text size="lg" fw={'500'}>
 						{t('winnerAward')}
 					</Text>
-					<GoToMarker text={t('learnMore')} />
+					<GoToMarker text={t('layout:learnMore')} />
 				</InfoCard>
 				<InfoCard SvgIcon={() => <Cart2021Svg />}>
 					<Text size="lg">{t('winnerAwards')}</Text>
-					<GoToMarker text={t('learnMore')} />
+					<GoToMarker text={t('layout:learnMore')} />
 				</InfoCard>
 			</Grid>
 
@@ -43,13 +43,13 @@ export const Cards = () => {
 					<Text size="lg" fw={'500'}>
 						{t('winnerLaureat')}
 					</Text>
-					<GoToMarker text={t('learnMore')} />
+					<GoToMarker text={t('layout:learnMore')} />
 				</InfoCard>
 				<InfoCard SvgIcon={() => <BallSvg />}>
 					<Text size="lg" fw={'500'}>
 						{t('winnerObject')}
 					</Text>
-					<GoToMarker text={t('learnMore')} />
+					<GoToMarker text={t('layout:learnMore')} />
 				</InfoCard>
 			</Grid>
 		</SimpleGrid>
