@@ -1,1 +1,1 @@
-export { themeConfig } from './themeConfig';
+export { themeConfig } from './design-system';

@@ -5,10 +5,10 @@ import { ObjectCards } from './ObjectCards';
 import { PopularDistricts } from './PopularDistricts';
 
 const Ui = {
-	Advantages,
-	BannerSlider,
 	Form,
+	Advantages,
 	ObjectCards,
+	BannerSlider,
 	PopularDistricts,
 };
 

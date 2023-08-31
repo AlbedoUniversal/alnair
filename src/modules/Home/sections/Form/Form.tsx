@@ -47,7 +47,7 @@ export const Form = () => {
 	});
 
 	return (
-		<Container fluid className={classes.container} id="contacts">
+		<Container fluid className={classes.container} id="contacts" bg={'#F4F7FD'}>
 			<Box
 				w={'100%'}
 				component="form"

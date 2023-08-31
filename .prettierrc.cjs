@@ -9,13 +9,4 @@ module.exports = {
 	singleQuote: true,
 	printWidth: 80,
 	endOfLine: 'lf',
-	overrides: [
-		{
-			files: ['*.yaml', '*.yml'],
-			options: {
-				singleQuote: false,
-				useTabs: false,
-			},
-		},
-	],
 };

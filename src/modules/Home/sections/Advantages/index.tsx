@@ -1,8 +1,8 @@
 import { Container, createStyles, Grid, rem, SimpleGrid } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
+import { Cards } from './ui/Cards';
 import { Left } from './ui/Left';
-import { Right } from './ui/Right';
 
 const useStyles = createStyles((theme) => ({
 	wrapper: {
@@ -22,11 +22,13 @@ export function Advantages() {
 	const { classes } = useStyles();
 
 	return (
-		<Container size="xl">
-			<SimpleGrid cols={2} spacing="120px">
-				<Left />
-				<Right />
-			</SimpleGrid>
+		<Container fluid size="xl" bg={'#F4F7FD'}>
+			<Container size="xl" bg={'#F4F7FD'}>
+				<SimpleGrid cols={2} spacing="120px">
+					<Left />
+					<Cards />
+				</SimpleGrid>
+			</Container>
 		</Container>
 	);
 }

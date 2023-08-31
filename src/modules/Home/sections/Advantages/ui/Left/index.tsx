@@ -1,11 +1,11 @@
-import { Button, rem, SimpleGrid, Text, Title } from '@mantine/core';
+import { Box, Button, rem, SimpleGrid, Text, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
 export const Left = () => {
 	const { t } = useTranslation('advantages');
 
 	return (
-		<SimpleGrid>
+		<Box>
 			<Title mb={rem(24)} order={2}>
 				{t('title')}
 			</Title>
@@ -15,6 +15,6 @@ export const Left = () => {
 			<Button size="xs" w="fit-content">
 				More detailed
 			</Button>
-		</SimpleGrid>
+		</Box>
 	);
 };
