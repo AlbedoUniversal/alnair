@@ -11,7 +11,7 @@ export const ContactsBox = () => {
 	const { classes } = useStyles();
 
 	return (
-		<SimpleGrid>
+		<SimpleGrid spacing={24}>
 			<Link href={'tel:+80000000000'}>
 				<Text size="xl" fw="500">
 					8-000-000-00-00

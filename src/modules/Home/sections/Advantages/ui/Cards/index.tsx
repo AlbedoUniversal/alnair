@@ -6,10 +6,11 @@ import BallSvg from 'public/assets/advantages/ball.svg';
 import GoodSvg from 'public/assets/advantages/good.svg';
 import UrbanSvg from 'public/assets/advantages/urban.svg';
 
-import { Card } from './Card';
+import { GoToMarker } from '@/shared/ui/GoToMarker';
+import { InfoCard } from '@/shared/ui/InfoCard';
 
 export const Cards = () => {
-	const { t } = useTranslation('advantages');
+	const { t } = useTranslation(['advantages', 'layout']);
 
 	return (
 		<SimpleGrid cols={2} spacing={rem(24)}>
@@ -20,16 +21,16 @@ export const Cards = () => {
 					margin: 0,
 				}}
 			>
-				<Card SvgIcon={() => <GoodSvg />}>
+				<InfoCard SvgIcon={() => <GoodSvg />}>
 					<Text size="lg" fw={'500'}>
-						Winner of the Good innovation Award
+						{t('winnerAward')}
 					</Text>
-					<Text>Learn More</Text>
-				</Card>
-				<Card SvgIcon={() => <Cart2021Svg />}>
-					<Text size="lg">Laureat of the Best Service Award</Text>
-					<Text>ИкLearn Moreонка</Text>
-				</Card>
+					<GoToMarker text={t('learnMore')} />
+				</InfoCard>
+				<InfoCard SvgIcon={() => <Cart2021Svg />}>
+					<Text size="lg">{t('winnerAwards')}</Text>
+					<GoToMarker text={t('learnMore')} />
+				</InfoCard>
 			</Grid>
 
 			<Grid
@@ -38,18 +39,18 @@ export const Cards = () => {
 					margin: 0,
 				}}
 			>
-				<Card SvgIcon={() => <UrbanSvg />}>
+				<InfoCard SvgIcon={() => <UrbanSvg />}>
 					<Text size="lg" fw={'500'}>
-						Winner of the Good innovationurban awards
+						{t('winnerLaureat')}
 					</Text>
-					<Text>Иконка</Text>
-				</Card>
-				<Card SvgIcon={() => <BallSvg />}>
+					<GoToMarker text={t('learnMore')} />
+				</InfoCard>
+				<InfoCard SvgIcon={() => <BallSvg />}>
 					<Text size="lg" fw={'500'}>
-						Winner of the Best Object award
+						{t('winnerObject')}
 					</Text>
-					<Text>Learn More</Text>
-				</Card>
+					<GoToMarker text={t('learnMore')} />
+				</InfoCard>
 			</Grid>
 		</SimpleGrid>
 	);

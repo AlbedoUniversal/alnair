@@ -1,7 +1,7 @@
-import { Box, Button, rem, SimpleGrid, Text, Title } from '@mantine/core';
+import { Box, Button, rem, Text, Title } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 
-export const Left = () => {
+export const Description = () => {
 	const { t } = useTranslation('advantages');
 
 	return (

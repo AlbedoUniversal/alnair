@@ -10,7 +10,7 @@ const colStyles = {
 	columnGap: rem(20),
 };
 
-export const Card = ({
+export const InfoCard = ({
 	SvgIcon,
 	children,
 }: {
