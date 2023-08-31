@@ -8,7 +8,7 @@ export const Amenities = ({ amenities }: { amenities: [] }) => {
 		<Card.Section
 			className={classes.section}
 			style={{
-				height: '80px',
+				height: '100px',
 			}}
 		>
 			<Group

@@ -110,7 +110,7 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 				/>
 			</Box>
 			{filteredData.length === 0 && <NothingFound />}
-			<Grid style={{ rowGap: '30px' }} gutter={24}>
+			<Grid style={{ rowGap: '30px' }} gutter={15}>
 				{filteredData.map((object: any, i: number) => (
 					<Grid.Col span={3} key={object['complex-id']}>
 						<Cards

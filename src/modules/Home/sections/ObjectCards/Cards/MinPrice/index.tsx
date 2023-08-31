@@ -13,7 +13,7 @@ export const MinPrice = ({
 	const { classes } = useStyles();
 	const { t } = useTranslation('layout');
 	return (
-		<Card.Section className={classes.section} style={{ height: '40px' }}>
+		<Card.Section className={classes.section} style={{ height: '50px' }}>
 			<Group position="apart">
 				<Text fw={600} fz="sm">
 					from {priceMin} {currency}
