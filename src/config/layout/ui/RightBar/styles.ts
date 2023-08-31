@@ -7,7 +7,7 @@ export const useStyles = createStyles((theme) => ({
 		textDecoration: 'none',
 	},
 	heart: {
-		strokeWidth: '1.3px',
-		color: '#0B63E5',
+		strokeWidth: rem(1.3),
+		color: theme.colors.blue[0],
 	},
 }));

@@ -1,15 +1,14 @@
-import { createStyles, rem } from '@mantine/core';
+import { createStyles } from '@mantine/core';
 
 export const useStyles = createStyles((theme) => ({
 	link: {
-		fontSize: rem(16),
+		fontSize: theme.fontSizes.md,
 		fontWeight: 600,
-		textDecoration: 'none',
 		color: theme.colors.gray[3],
-		marginInlineStart: rem(16),
+		marginInlineStart: theme.spacing.md,
 		'&:hover': {
 			textDecoration: 'none',
-			color: '#0B63E5',
+			color: theme.colors.blue[5],
 		},
 	},
 }));

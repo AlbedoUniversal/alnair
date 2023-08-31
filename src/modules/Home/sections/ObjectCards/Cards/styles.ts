@@ -8,7 +8,7 @@ export const useStyles = createStyles((theme) => ({
 		borderRadius: rem(10),
 		transition: 'transform 0.3s',
 		'&:hover': {
-			transform: 'scale(1.1)',
+			transform: 'scale(1.02)',
 		},
 	},
 
