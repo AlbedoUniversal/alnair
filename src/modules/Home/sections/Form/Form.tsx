@@ -48,7 +48,7 @@ export const Form = () => {
 	});
 
 	return (
-		<Container fluid id="contacts" bg={'#F4F7FD'}>
+		<Container fluid id="contacts">
 			<Container size="xl" pb={100} pt={100}>
 				<Box
 					w={'100%'}
