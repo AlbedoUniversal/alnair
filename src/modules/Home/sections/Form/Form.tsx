@@ -72,7 +72,7 @@ export const Form = () => {
 					<Title align="center" mb={24} order={2}>
 						{t('title')}
 					</Title>
-					<Text size={'xl'} maw={'775px'} mx={'auto'} mb={24}>
+					<Text size={'xl'} maw={'800px'} mx={'auto'} mb={24}>
 						{t('description')}
 					</Text>
 
