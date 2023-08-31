@@ -61,6 +61,10 @@ interface CardsProps {
 	priceMin: any;
 	priceMax: any;
 	currency: any;
+	maxArea: any;
+	minArea: any;
+	minPriceM2: any;
+	maxPriceM2: any;
 }
 export const Cards = ({
 	title,
@@ -74,8 +78,13 @@ export const Cards = ({
 	priceMin,
 	priceMax,
 	currency,
+	maxArea,
+	minArea,
+	minPriceM2,
+	maxPriceM2,
 }: CardsProps) => {
 	const [opened, { open, close }] = useDisclosure(false);
+	console.log(minArea, 'min');
 
 	return (
 		<>
@@ -91,6 +100,9 @@ export const Cards = ({
 				src={src}
 				status={status}
 				open={open}
+				minArea={minArea}
+				minPriceM2={minPriceM2}
+				maxPriceM2={maxPriceM2}
 			/>
 			<Modals
 				description={description}

@@ -1,20 +1,11 @@
-import { Container, createStyles, Grid, rem } from '@mantine/core';
+import { Box, Container, createStyles, Grid, rem } from '@mantine/core';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo, useState } from 'react';
 
 import { Cards } from './Cards';
 import { Filters } from './Filters';
 import { NothingFound } from './NothingFound';
-
-const useStyles = createStyles((theme) => ({
-	container: {
-		marginBlockStart: rem(-25),
-		paddingBlockEnd: rem(120),
-	},
-	categories: {
-		marginBlockEnd: rem(50),
-	},
-}));
+import { useStyles } from './styles';
 
 export const ObjectCards = ({ offers }: { offers: any }) => {
 	const { classes } = useStyles();
@@ -64,8 +55,6 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		if (filters.completion) {
 			filtered = filtered.filter((item: any) => {
 				const completion = item.construction_progress.toString();
-				console.log(completion);
-
 				return Number(completion) >= Number(filters.completion);
 			});
 		}
@@ -111,14 +100,7 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 
 	return (
 		<Container className={classes.container} size="xl" id="projects">
-			<div
-				style={{
-					background: '#fff',
-					zIndex: 10,
-					position: 'relative',
-					borderRadius: '8px',
-				}}
-			>
+			<Box className={classes.filters}>
 				<Filters
 					filters={filters}
 					handleFilter={handleFilterChange}
@@ -126,7 +108,7 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 					developersOptions={developersOptions}
 					constructionProgressesOptions={constructionProgressesOptions}
 				/>
-			</div>
+			</Box>
 			{filteredData.length === 0 && <NothingFound />}
 			<Grid style={{ rowGap: '30px' }} gutter={24}>
 				{filteredData.map((object: any, i: number) => (
@@ -143,6 +125,18 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 							currency={object.price[0].currency}
 							status={status[i]}
 							dir="false"
+							maxArea={object.br_prices.flatMap(
+								(item: any) => item.max_area[0].m2
+							)}
+							minArea={object.br_prices.flatMap(
+								(item: any) => item.min_area[0].m2
+							)}
+							minPriceM2={object.br_prices.flatMap(
+								(item: any) => item.min_price[0]
+							)}
+							maxPriceM2={object.br_prices.flatMap(
+								(item: any) => item.max_price[0]
+							)}
 						/>
 					</Grid.Col>
 				))}

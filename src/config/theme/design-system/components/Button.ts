@@ -5,7 +5,7 @@ const Button = {
 		variant: 'filled',
 		size: 'lg',
 	},
-	styles(theme: any, { compact }: ButtonStylesParams) {
+	styles(theme: MantineTheme, { compact }: ButtonStylesParams) {
 		return {
 			root: {
 				height: 'fit-content',
@@ -13,7 +13,7 @@ const Button = {
 		};
 	},
 	variants: {
-		switcher: (theme: any) => ({
+		switcher: (theme: MantineTheme) => ({
 			root: {
 				border: 'none',
 				fontSize: rem(14),
@@ -24,6 +24,34 @@ const Button = {
 
 			rightIcon: {
 				marginLeft: rem(2),
+			},
+		}),
+		sendHeader: (theme: MantineTheme) => ({
+			root: {
+				paddingInline: rem(18),
+				paddingBlock: rem(10),
+				backgroundColor: theme.colors.blue[4],
+				borderRadius: theme.radius.sm,
+				fontSize: theme.fontSizes.sm,
+				color: theme.colors.blue[5],
+				'&:hover': {
+					textDecoration: 'none',
+					backgroundColor: theme.colors.blue[2],
+				},
+			},
+		}),
+		sendCard: (theme: MantineTheme) => ({
+			root: {
+				paddingInline: rem(14),
+				paddingBlock: rem(7),
+				backgroundColor: theme.colors.blue[4],
+				borderRadius: theme.radius.xs,
+				fontSize: theme.fontSizes.xs,
+				color: theme.colors.blue[5],
+				'&:hover': {
+					textDecoration: 'none',
+					backgroundColor: theme.colors.blue[2],
+				},
 			},
 		}),
 	},
