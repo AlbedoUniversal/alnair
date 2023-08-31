@@ -34,7 +34,7 @@ export const Slider = ({ offers }: { offers: [] }) => {
 						{album.map((photo: any) => (
 							<>
 								{photo.image.map((x: string) => (
-									<Carousel.Slide style={{ height: '700px' }} key={photo[0]}>
+									<Carousel.Slide style={{ height: '560px' }} key={photo[0]}>
 										<Image key={x} src={x} />
 									</Carousel.Slide>
 								))}
