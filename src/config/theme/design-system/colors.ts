@@ -54,7 +54,7 @@ export const colors: MantineThemeColorsOverride = {
 	gray: [
 		'#ffffff', // 0
 		'#f8f8f8', // 1
-		'#f0f0f0', // 2
+		'#E6E8EC', // 2 border inputs
 		'#6F7886', // 3
 		'#FAFBFD', // 4
 		'#a7a5a6', // 5 [primaryShade]. Background-color of MAIN

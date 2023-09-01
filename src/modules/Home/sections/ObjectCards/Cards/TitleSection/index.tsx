@@ -11,7 +11,6 @@ export const TitleSection = ({
 	title: string;
 	district: any;
 }) => {
-	console.log('sdgsd');
 	const { classes } = useStyles();
 	return (
 		<Card.Section className={classes.section} style={{ height: '70px' }}>

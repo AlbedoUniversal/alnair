@@ -16,6 +16,8 @@ import {
 import { hasLength, isEmail, isNotEmpty, useForm } from '@mantine/form';
 import { useTranslation } from 'next-i18next';
 
+import { FormTitle } from './FormTitle';
+
 const useStyles = createStyles((theme) => ({
 	container: {
 		textAlign: 'center',
@@ -42,8 +44,8 @@ const useStyles = createStyles((theme) => ({
 	},
 
 	image: {
-		ref: getStylesRef('image'),
-		borderRadiusEndStart: rem(24),
+		borderEndStartRadius: rem(24),
+		borderStartStartRadius: rem(24),
 	},
 }));
 export const Form = () => {
@@ -68,23 +70,12 @@ export const Form = () => {
 	return (
 		<Container fluid id="contacts">
 			<Container size="xl" pb={100} pt={100}>
+				<FormTitle />
 				<Box component="form" onSubmit={form.onSubmit(() => null)}>
-					<Title align="center" mb={24} order={2}>
-						{t('title')}
-					</Title>
-					<Text size={'xl'} maw={'800px'} mx={'auto'} mb={24}>
-						{t('description')}
-					</Text>
-
 					<Flex className={classes.formContainer}>
 						<Image
 							src="/images/image 5.png"
-							styles={{
-								image: {
-									borderEndStartRadius: rem(24),
-									borderStartStartRadius: rem(24),
-								},
-							}}
+							classNames={{ image: classes.image }}
 						/>
 						<Flex
 							direction={'column'}

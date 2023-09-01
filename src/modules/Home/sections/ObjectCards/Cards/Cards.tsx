@@ -84,7 +84,6 @@ export const Cards = ({
 	maxPriceM2,
 }: CardsProps) => {
 	const [opened, { open, close }] = useDisclosure(false);
-	console.log(minArea, 'min');
 
 	return (
 		<>
