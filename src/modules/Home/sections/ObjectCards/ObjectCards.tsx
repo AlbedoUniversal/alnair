@@ -1,4 +1,5 @@
-import { Box, Container, createStyles, Grid, rem } from '@mantine/core';
+import { Box, Container, Grid, Pagination } from '@mantine/core';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -10,6 +11,8 @@ import { useStyles } from './styles';
 export const ObjectCards = ({ offers }: { offers: any }) => {
 	const { classes } = useStyles();
 	const { t } = useTranslation('translations');
+
+	// Фильтрация карточек
 	const [filteredData, setFilteredData] = useState(offers);
 	const [filters, setFilters] = useState({
 		minPrice: '',
@@ -19,7 +22,6 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		districts: [],
 		amenities: [],
 	});
-
 	const title = t('titles', { returnObjects: true }) as [];
 	const description = t('description', { returnObjects: true }) as [];
 	const amenitites = t('amenities', { returnObjects: true }) as [];
@@ -98,6 +100,15 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 		filterData();
 	}, [filters]);
 
+	// Пагинация
+	const [currentPage, setCurrentPage] = useState(1);
+	const pageSize = 4;
+	const paginatedData = filteredData.slice(
+		(currentPage - 1) * pageSize,
+		currentPage * pageSize
+	);
+
+	const total = Math.ceil(filteredData.length / 4);
 	return (
 		<Container className={classes.container} size="xl" id="projects">
 			<Box className={classes.filters}>
@@ -109,38 +120,45 @@ export const ObjectCards = ({ offers }: { offers: any }) => {
 					constructionProgressesOptions={constructionProgressesOptions}
 				/>
 			</Box>
-			{filteredData.length === 0 && <NothingFound />}
+			{paginatedData.length === 0 && <NothingFound />}
 			<Grid style={{ rowGap: '30px' }} gutter={15}>
-				{filteredData.map((object: any, i: number) => (
-					<Grid.Col span={3} key={object['complex-id']}>
-						<Cards
-							title={title[i]}
-							object={object}
-							amenities={amenitites[i]}
-							description={description[i]}
-							districts={object.districts.map((item: any) => item.district)}
-							src={object.album.map((photo: any) => photo.image[1])}
-							priceMin={object.price[0].min}
-							priceMax={object.price[0].max}
-							currency={object.price[0].currency}
-							status={status[i]}
-							dir="false"
-							maxArea={object.br_prices.flatMap(
-								(item: any) => item.max_area[0].m2
-							)}
-							minArea={object.br_prices.flatMap(
-								(item: any) => item.min_area[0].m2
-							)}
-							minPriceM2={object.br_prices.flatMap(
-								(item: any) => item.min_price[0]
-							)}
-							maxPriceM2={object.br_prices.flatMap(
-								(item: any) => item.max_price[0]
-							)}
-						/>
-					</Grid.Col>
-				))}
+				{paginatedData.map((object: any, i: number) => {
+					const slug = `/residence/${object['complex-id']}`;
+					return (
+						<Grid.Col span={3} key={object['complex-id']}>
+							<Link href={slug}>
+								<Cards
+									title={title[i]}
+									object={object}
+									amenities={amenitites[i]}
+									description={description[i]}
+									districts={object.districts.map((item: any) => item.district)}
+									src={object.album.map((photo: any) => photo.image[1])}
+									priceMin={object.price[0].min}
+									priceMax={object.price[0].max}
+									currency={object.price[0].currency}
+									status={status[i]}
+									dir="false"
+									maxArea={object.br_prices.flatMap(
+										(item: any) => item.max_area[0].m2
+									)}
+									minArea={object.br_prices.flatMap(
+										(item: any) => item.min_area[0].m2
+									)}
+									minPriceM2={object.br_prices.flatMap(
+										(item: any) => item.min_price[0]
+									)}
+									maxPriceM2={object.br_prices.flatMap(
+										(item: any) => item.max_price[0]
+									)}
+								/>
+							</Link>
+						</Grid.Col>
+					);
+				})}
 			</Grid>
+
+			<Pagination total={total} onChange={setCurrentPage} />
 		</Container>
 	);
 };

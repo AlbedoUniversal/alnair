@@ -98,17 +98,17 @@ export const Cards = ({
 				object={object}
 				src={src}
 				status={status}
-				open={open}
+				// open={open}
 				minArea={minArea}
 				minPriceM2={minPriceM2}
 				maxPriceM2={maxPriceM2}
 			/>
-			<Modals
+			{/* <Modals
 				description={description}
 				opened={opened}
 				close={close}
 				src={src}
-			/>
+			/> */}
 		</>
 	);
 };

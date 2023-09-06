@@ -24,7 +24,7 @@ export const useStyles = createStyles((theme) => ({
 	},
 	formContainer: {
 		backgroundColor: theme.white,
-		borderRadius: rem(24),
+		borderRadius: theme.radius.md,
 		position: 'relative',
 	},
 	content: {

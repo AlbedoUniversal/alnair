@@ -9,20 +9,16 @@ import UrbanSvg from 'public/assets/advantages/urban.svg';
 import { GoToMarker } from '@/shared/ui/GoToMarker';
 import { InfoCard } from '@/shared/ui/InfoCard';
 
+import { useStyles } from './styles';
+
 export const Cards = () => {
 	const { t } = useTranslation(['advantages', 'layout']);
-
+	const { classes } = useStyles();
 	return (
 		<SimpleGrid cols={2} spacing={rem(24)}>
-			<Grid
-				sx={{
-					transform: 'translateY(-56px)',
-					rowGap: rem(24),
-					margin: 0,
-				}}
-			>
+			<Grid className={classes.leftColumn}>
 				<InfoCard SvgIcon={() => <GoodSvg />}>
-					<Text size="lg" fw={'500'}>
+					<Text size="lg" fw={500}>
 						{t('winnerAward')}
 					</Text>
 					<GoToMarker text={t('layout:learnMore')} />
@@ -33,12 +29,7 @@ export const Cards = () => {
 				</InfoCard>
 			</Grid>
 
-			<Grid
-				sx={{
-					rowGap: rem(24),
-					margin: 0,
-				}}
-			>
+			<Grid className={classes.rightColumn}>
 				<InfoCard SvgIcon={() => <UrbanSvg />}>
 					<Text size="lg" fw={'500'}>
 						{t('winnerLaureat')}

@@ -13,6 +13,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	const xml = fs.readFileSync('./pages/data.xml');
 	const result = await xml2js.parseStringPromise(xml);
 	const { offers } = result['realty-feed'];
+	const cards = [];
 
 	const localesFolderRu = './public/locales/ru/';
 	if (!fs.existsSync(localesFolderRu)) {

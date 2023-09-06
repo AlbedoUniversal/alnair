@@ -31,7 +31,7 @@ const Button = {
 				paddingInline: rem(18),
 				paddingBlock: rem(10),
 				backgroundColor: theme.colors.blue[4],
-				borderRadius: theme.radius.sm,
+				borderRadius: theme.radius.xs,
 				fontSize: theme.fontSizes.sm,
 				color: theme.colors.blue[5],
 				'&:hover': {

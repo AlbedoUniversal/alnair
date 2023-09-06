@@ -23,7 +23,7 @@ export const FormInputs = () => {
 		},
 	});
 	return (
-		<Flex direction={'column'} gap={10} m="0 auto" className={classes.content}>
+		<Flex direction="column" gap={10} m="0 auto" className={classes.content}>
 			<Group>
 				<TextInput
 					label={t('labelName')}
