@@ -1,14 +1,12 @@
-import { Carousel } from '@mantine/carousel';
 import { Box, Container, Grid, Image, Title } from '@mantine/core';
 
 export const PhotoResidence = ({
 	album,
 	title,
-	logo,
 }: {
 	album: any;
 	title: string;
-	logo: string;
+	logo?: string;
 }) => (
 	<Container fluid style={{ position: 'relative' }} p="0">
 		<Grid grow gutter="xs">

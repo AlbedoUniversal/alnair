@@ -1,16 +1,7 @@
-import {
-	Box,
-	Container,
-	Flex,
-	Grid,
-	Group,
-	Paper,
-	rem,
-	SimpleGrid,
-	Text,
-	Title,
-} from '@mantine/core';
+import { Container, Paper, rem, Text } from '@mantine/core';
 import { useEffect, useState } from 'react';
+
+import { removePTags } from './helper';
 
 export const Description = ({ description }: { description: string }) => {
 	const [cleanDescription, setCleanDescription] = useState(description);
@@ -21,31 +12,11 @@ export const Description = ({ description }: { description: string }) => {
 
 	return (
 		<Container size="xl" mt={rem(120)}>
-			<SimpleGrid cols={2}>
-				<Grid>
-					<Grid.Col>
-						<Paper radius="md" p="xl" shadow="xl">
-							<Text size="xl" lh={2}>
-								{cleanDescription}
-							</Text>
-						</Paper>
-					</Grid.Col>
-				</Grid>
-				<Grid>
-					<Grid.Col>
-						<Paper radius="md" p="xl" shadow="xl">
-							<Box style={{ textAlign: 'center' }}>
-								<Title fz={rem(40)}>Amenities for you</Title>
-							</Box>
-						</Paper>
-					</Grid.Col>
-				</Grid>
-			</SimpleGrid>
+			<Paper radius="md" p="xl" shadow="xl">
+				<Text size="xl" lh={2}>
+					{cleanDescription}
+				</Text>
+			</Paper>
 		</Container>
 	);
-};
-
-export const removePTags = (html: string) => {
-	const regex = /<\/?p>/gi;
-	return html.replace(regex, ' ');
 };

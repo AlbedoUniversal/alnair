@@ -9,7 +9,6 @@ export interface FrontSideProps {
 	object: any;
 	src: string;
 	status: string;
-	open: () => void;
 	minArea: any;
 	minPriceM2: any;
 	maxPriceM2: any;

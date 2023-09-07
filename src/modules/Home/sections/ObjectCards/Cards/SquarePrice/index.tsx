@@ -40,10 +40,6 @@ export const SquarePrice = ({
 					</Group>
 				</Group>
 			</Group>
-			<Group position="apart">
-				<Text></Text>
-				<Text></Text>
-			</Group>
 		</Card.Section>
 	);
 };

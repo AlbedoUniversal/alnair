@@ -18,7 +18,6 @@ export const FrontSide = ({
 	currency,
 	object,
 	src,
-	// open,
 	minArea,
 	minPriceM2,
 	maxPriceM2,
@@ -41,7 +40,7 @@ export const FrontSide = ({
 	};
 
 	return (
-		<Card className={classes.card} p={0}>
+		<Card variant="card" p={0}>
 			{object.districts && <Districts arLng={arLng} district={district} />}
 			<ImageSection src={src} />
 			<TitleSection title={title} district={district} />
